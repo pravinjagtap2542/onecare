@@ -1,0 +1,65 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: $text-color;
+  text-decoration: none;
+
+  @include on-event {
+    color: $text-color;
+    text-decoration: underline;
+  }
+}
+
+img {
+  max-width: 100%;
+  width: auto\9;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+.sliding-arrow {
+	background: url(/cs/cop/assets/images/svgs/caret-right.svg) no-repeat right;
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	-webkit-transition: width 500ms, margin-right 500ms;
+	transition: width 500ms, margin-right 500ms;
+	margin-left: 10px;
+	margin-right: 10px;
+	&:hover {
+		width: 20px;
+		margin-right: 0;
+		background-image: url(/cs/cop/assets/images/svgs/arrow-right.svg);
+	}
+}
+
+.message {
+  padding: 20px 0 20px 0;
+}

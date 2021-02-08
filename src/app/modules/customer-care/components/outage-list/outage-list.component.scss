@@ -1,0 +1,142 @@
+@import "../../../../../stylesheets/abstracts/variables";
+@import "../../../../../stylesheets/abstracts/mixins";
+@import "../../../../../stylesheets/components/titles";
+@import "../../../../../stylesheets/base/_helpers.scss";
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 5px;
+  font-size: 12px;
+//  font-weight: bold;
+  margin-bottom: 3em;
+}
+
+td, th {
+  border: 1px solid #fff;
+  text-align: left;
+  padding: 8px;
+  vertical-align: middle;
+  max-width: 400px;
+  word-break: break-word;
+  min-width: 75px;
+}
+th{
+  background-color: #535151;
+  color: #fff;
+  &.ticket-number-column{
+    width: 82px;
+  }
+  
+  &.resolved-number-column{
+    width: 89px;
+  }
+  
+  &.start-number-column{
+    width: 89px;
+  }
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.outagesHeadingPlanned{
+  margin-top: 3em;
+  font-weight: bold;
+}
+.outagesHeadingUnplanned{
+  margin-top: 2em;
+  font-weight: bold;
+}
+.outageListImg{
+  display: table-cell;
+  margin-left: auto;
+  margin-right: auto;
+  &:hover {
+      cursor: pointer;
+      text-decoration: none;
+  }
+}
+.pText{
+  font-size: 14px;
+  font-weight: bold;
+}
+.spanText{
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+}
+.mainHeading{
+  font-weight: 500 !important;
+}
+.moreImage{
+  display: none;
+}
+// .moreMobile{
+//   display: none;
+// }
+@media screen and (max-width: 767px) {
+  .showMoreHeader{
+    //float: left;
+  }
+  .showMoreData{
+  //  float:right;
+  }
+  .mobile{
+    display: none;
+  }
+  .moreImage{
+    display: block;
+    height: 25px;
+    max-width: 10%;
+    float: right;
+  }
+  .showMoreDataGrid{
+  //  float: left;
+  }
+}
+.loading-shade {
+  top: 10em;
+  width: 100%;
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: absolute;
+  background: #fff;
+  z-index: 99998;
+  height: 600px;
+  .loader{
+    margin: 100px auto;
+  }
+  @media screen and (max-width: 767px) {
+    top: 54em;
+    height: 3000px;
+  }
+}
+
+.showMore {
+  background: #DDDDDD;
+  color: #333;
+  border: none;
+  padding: 1px;
+  font-weight: bold;
+  cursor: pointer;
+}
+button:focus {outline:0;}
+
+.modal.show
+{
+    display: block;
+}
+
+.btn1{
+  border-radius: 5px;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+

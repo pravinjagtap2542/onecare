@@ -1,0 +1,108 @@
+@import "../../../../../stylesheets/abstracts/_variables.scss";
+@import "../../../../../stylesheets/abstracts/_mixins.scss";
+@import "../../../../../stylesheets/base/_helpers.scss";
+
+*:focus {
+  outline: 0 !important
+}
+/************  Vertical Tabs   **************/
+.vertical-tabs {
+  display: flex;
+  flex-direction: row;
+
+  .vertical-tabs-left {
+    flex: 1.5;
+  }
+  .vertical-tabs-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    li {
+      background: $jelly-bean;
+      margin-bottom: 3px;
+      padding: 15px 20px;
+      text-align: left;
+      color: $white;
+      cursor: pointer;
+      &.active {
+        background: $white;
+        color: $text-color;
+        font-weight: 600;
+        @media screen and (max-width: 767px) {
+          background: $jelly-bean;
+          color: $white;
+        }
+      }
+    }
+  }
+  .error {
+    color: red;
+  }
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
+  .form{
+    flex: 1.5;
+  }
+}
+.vertical-tabs-content {
+  flex: 3;
+  background: $white;
+  padding: 40px;
+  .mobile-tab-back {
+    display: none;
+    margin-bottom: 25px;
+    color: #208A99;
+    font-weight: bold;
+    i:before {
+      font-weight: bold;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    display: none;
+    .mobile-tab-back {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &.mobile-only {
+    display: block;
+  }
+}
+/************  Quick Links   **************/
+.quick-links {
+  margin: 20px 0 0;
+  padding: 0 10px;
+  h5 {
+    color: $black;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: $text-font-size-small;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    margin: 20px 0;
+    li {
+      color: $jelly-bean;
+      margin-bottom: 3px;
+      padding: 0 0 10px 0;
+      text-align: left;
+      cursor: pointer;
+      font-size: $text-font-size-small;
+      &:hover {
+        text-decoration: underline;
+      }
+      a {
+        color: $jelly-bean;
+      }
+    }
+  }
+}

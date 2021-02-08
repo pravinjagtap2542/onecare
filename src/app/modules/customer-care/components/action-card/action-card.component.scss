@@ -1,0 +1,43 @@
+@import "../../../../../stylesheets/abstracts/_variables.scss";
+
+.action-inner {
+  height: 100%;
+  display: inline-table;
+  flex-direction: column;
+  min-height: 200px;
+  padding: 9px;
+  .icon-action-inner{
+    display: flex;
+    
+    .icon{
+      img{
+        min-width: 70px;
+        height: 65px;
+        margin: 5px;
+      }
+    }
+    h6 {
+      padding: 11px 0px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+  p {
+    padding: 5px 20px 25px;
+    font-size: $text-font-size-small;
+    height: 90px;
+  }
+  .action-link {
+    background: $jelly-bean;
+    padding: 10px 20px;
+    font-size: $text-font-size-small;
+    line-height: $text-font-size-small;
+    text-align: right;
+    color: $white;
+    margin-top: auto;
+    i {
+      font-size: 10px;
+      padding-left: 5px;
+    }
+  }
+}

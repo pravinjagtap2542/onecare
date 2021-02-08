@@ -1,0 +1,149 @@
+[
+  {
+    "qatype": "values",
+     "defaulttoken": "Region",
+     "context1override": "a,b,c,d",
+     "CCOverrideContent": "PLDS-SERVICE-CALA,PLDS-SERVICE-CALB,PLDS-SERVICE-CALC,PLDS-SERVICE-CALD",
+     "title": "Select your region",
+     "ansvalidation": {},
+     "description": "Select your region",
+     "qcontext": null,
+     "variant": null,
+     "showfileattach": [
+       "1",
+       "0",
+       "1",
+       "0"
+     ],
+     "showsubmitticket": [
+       "0",
+       "0",
+       "1",
+       "1"
+     ],
+     "showchat": [
+       "0",
+       "0",
+       "1",
+       "1"
+     ],
+     "repointto": [
+       "1",
+       "2",
+       "3",
+       "4"
+     ],
+     "qorder": "45",
+     "valuelabel": [
+       "EMEA | eee",
+       "APAC",
+       "CANADA",
+       "SOUTH AMERICA"
+     ]
+   },
+   {
+     "qatype": "longtext",
+     "CCOverrideTarget": null,
+     "title": "Explain your situation",
+     "appendtotitle":"true",
+     "ansvalidation": {
+       "minLength": 10,
+       "isRequired": true
+     },
+     "description": "Explanations",
+     "qcontext": null,
+     "CCOverrideContent": null,
+     "variant": "1",
+     "repointto": null,
+     "qorder": null,
+     "defaulttoken": "firstname,lastname",
+     "valuelabel": [
+       "EMEA"
+     ]
+   },
+   {
+     "qatype": "number",
+     "CCOverrideTarget": null,
+     "title": "Number of sites",
+     "ansvalidation": {
+       "minNumber": "3",
+       "maxNumber": "10",
+       "isRequired": false
+     },
+     "description": "Enter approximate number of sites",
+     "qcontext": null,
+     "CCOverrideContent": null,
+     "variant": null,
+     "repointto": null,
+     "qorder": null,
+     "valuelabel": null
+   },
+   {
+     "qatype": "date",
+     "CCOverrideTarget": null,
+     "title": "Invoice Date?",
+     "ansvalidation": {
+       "minDate": 7,
+       "maxDate": 15,
+       "isRequired": false
+     },
+     "description": "Invoice Date?",
+     "qcontext": null,
+     "CCOverrideContent": null,
+     "variant": "2",
+     "repointto": null,
+     "qorder": "52",
+     "valuelabel": null
+   },
+   {
+     "qatype": "date",
+     "CCOverrideTarget": null,
+     "title": "PO Date?",
+     "ansvalidation": {},
+     "description": "PO Date?",
+     "qcontext": null,
+     "CCOverrideContent": null,
+     "variant": "2",
+     "repointto": null,
+     "qorder": "53",
+     "valuelabel": null
+   },
+   {
+     "qatype": "values",
+     "CCOverrideTarget": "CONTEXT2",
+     "title": "Select EMEA Category",
+     "ansvalidation": {},
+     "description": "Question1",
+     "qcontext": null,
+     "CCOverrideContent": "PLDS-SERVICE-CALA,PLDS-SERVICE-CALB,PLDS-SERVICE-CALC,PLDS-SERVICE-CALD",
+     "variant": "1",
+     "repointto": null,
+     "qorder": "45",
+     "valuelabel": [
+       "EMEA Category 1",
+       "EMEA Category 2",
+       "EMEA Category 3",
+       "EMEA Category 4",
+       "EMEA Category 5"
+     ]
+   },
+   {
+     "qatype": "values",
+     "CCOverrideTarget": "Context1",
+     "CCOverrideContent": "AVA-CUSTOPS-COLLECTIONS,AVA-CUSTOPS-COLLECTIONS,AVA-CUSTOPS-MAINTENANCE,AVA-CUSTOPS-COLLECTIONS,AVA-CUSTOPS-MAINTENANCE",
+     "title": "Region",
+     "ansvalidation": {},
+     "description": "Select the region invoiced",
+     "qcontext": "Variable1",
+     "variant": 4,
+     "repointto": null,
+     "qorder": null,
+     "valuelabel": [
+       "APAC",
+       "CALA",
+       "CANADA",
+       "EMEA",
+       "US"
+     ]
+   }
+ ]

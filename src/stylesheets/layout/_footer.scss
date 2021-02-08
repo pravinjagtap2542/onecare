@@ -1,0 +1,174 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+.footer{
+    padding: 30px 0;
+    margin-top: 20px;
+    background: $color-white;
+    border-top: 8px solid #DA291C;
+    .footer-links {
+        max-width: $max-width;
+        margin: 0 auto;
+        color: $text-gray;
+        font-size: 14px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        div {
+            flex: 1;
+            line-height: 30px;
+        }
+        // ul {
+        //     margin: 0;
+        //     li {
+        //         display: inline-block;
+        //         list-style: none;
+        //         a {
+        //             color: $text-gray;
+        //             padding: 0 15px;
+        //             border-right: 1px solid $text-gray;
+        //             &:hover {
+        //                 color: $text-gray;
+        //             }
+                    
+        //         }
+        //         &:last-child {
+        //             a {
+        //                 border: 0;
+        //             }
+                    
+        //         }
+
+        //     }
+
+        // }
+        
+        .links{
+            p{
+                display: inline-block;
+                        list-style: none;
+                        a {
+                            color: $text-gray;
+                            padding: 0 15px;
+                            border-right: 1px solid $text-gray;
+                            &:hover {
+                                color: #DA291C;
+                                text-decoration: none;
+                            }
+                            
+                        }
+                        &:last-child {
+                            a {
+                                border: 0;
+                            }
+                            
+                        }
+            }
+        }
+      
+        p {
+            font-size: 14px;
+        }
+        .logo {
+            background: url(/cs/cop/assets/images/avaya-logo-red.svg) no-repeat bottom left;
+            height: 30px;
+            width: 200px;
+        }
+        .links {
+            flex: 2;
+            text-align: center;
+        }
+        .copyright {
+            text-align: right;
+        }
+
+        a.optanon-alert-box-close { display:none; }
+
+div.optanon-show-settings-left { display:none; }
+
+div.optanon-show-settings-right { display:none; }
+
+
+
+div.optanon-show-settings-popup {  display:none !important; left:-9999px; }
+
+#optanon-show-settings-popup {  display:none !important;  }
+
+
+
+div.optanon-show-settings-popup-wrapper {
+
+    display: inline-block;
+
+}
+
+
+
+div.optanon-show-settings-popup-wrapper div.optanon-show-settings-middle {
+
+    border: 0;
+
+    background: 0 0!important;
+
+    float: none;
+
+    height: auto!important;
+
+    padding: 0;
+
+}
+
+div.optanon-show-settings-popup-wrapper div.optanon-show-settings-middle a.optanon-show-settings {
+
+    color: #A2A2A4 !important;
+
+    font-weight: 300;
+
+    margin-top: 0!important;
+
+    float: none!important;
+
+    font-size: 100%;
+    font-size: 14px;
+    font-family: "Proxima Nova", proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+
+}
+div.optanon-show-settings-popup-wrapper div.optanon-show-settings-middle a.optanon-show-settings:hover {
+
+    color: #DA291C;
+
+}
+
+.optanon-show-settings:hover {
+    color: #DA291C !important;
+}
+
+a:hover {
+    color: #DA291C !important;
+} 
+
+a.optanon-show-settings { cursor:pointer; }
+    }
+    @media screen and (max-width: 767px) {
+      padding: 30px 20px;
+      .footer-links {
+        display: block;
+        text-align: left;
+
+        .links {
+            margin-left: -10px;
+            text-align: left;
+            ul li {
+                padding: 5px 0;
+                a {
+                    padding: 0 7px;
+                }
+            }
+        }
+        
+        .copyright {
+            text-align: left;
+        }
+      }
+    }
+}

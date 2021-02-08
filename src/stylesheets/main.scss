@@ -1,0 +1,93 @@
+@charset 'UTF-8';
+
+// 1. Configuration and helpers
+@import "abstracts/variables", "abstracts/functions", "abstracts/mixins";
+
+// 2. Vendors
+@import "vendor/normalize", "vendor/custom-material-styles";
+
+// 3. Base stuff
+@import "base/base", "base/fonts", "base/fontcustom", "base/typography", "base/helpers";
+
+// 4. Layout-related sections
+@import "layout/header", "layout/footer", "layout/layout";
+
+// 5. Components
+@import "components/button", "components/card", "components/modal";
+
+// 6. Page-specific styles
+// These would be at individual component level.
+// @import
+//   'pages/home';
+
+// 7. Themes
+@import "themes/default";
+
+.ngx-pagination {
+  .disabled {
+    padding: 0px !important;
+  }
+}
+.ngx-pagination .current {
+  line-height: 20px !important;
+  padding: 5px !important;
+  border-right: 1px solid #f1f1f3 !important;
+  background: transparent !important;
+  color: #e5661c !important;
+  cursor: default !important;
+
+  :hover,
+  :focus,
+  :active {
+    color: #e5661c !important;
+    outline: none !important;
+    border: none !important;
+    cursor: default !important;
+  }
+
+  span:active {
+    color: #e5661c !important;
+  }
+}
+
+.ngx-pagination a,
+.ngx-pagination button {
+  padding: 5px !important;
+}
+
+.my-pagination {
+  text-align: center !important;
+}
+
+
+
+.ngx-dropdown-container[_ngcontent-kat-c21] .ngx-dropdown-list-container[_ngcontent-kat-c21] ul.selected-items[_ngcontent-kat-c21] li[_ngcontent-kat-c21]{
+  background-color: #208a99 !important;
+}
+.ngx-dropdown-container[_ngcontent-kat-c21] .ngx-dropdown-list-container[_ngcontent-kat-c21] ul.selected-items[_ngcontent-kat-c21] li[_ngcontent-kat-c21] .nsdicon-close[_ngcontent-kat-c21]{
+  float: right;
+}
+
+.ngx-dropdown-container {
+  .ngx-dropdown-list-container{
+   ul.selected-items{
+    li{
+    background-color: #208a99 !important;
+    .nsdicon-close{
+      float: right !important;
+    }
+  }
+   }
+  }
+}
+
+
+.ngx-dropdown-container .ngx-dropdown-button .display-text {
+  display: inline-block;
+  width: calc(100% - 20px);
+  max-width: 460px !important;
+  white-space: nowrap !important;
+  overflow-x: hidden !important;
+  text-overflow: ellipsis !important;
+  text-align: left;
+}

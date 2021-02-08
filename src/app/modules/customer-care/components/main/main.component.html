@@ -1,0 +1,17 @@
+<cop-hero *ngIf="!isPublic"></cop-hero>
+<cop-my-activities *ngIf="openRequestsView && !isPublic"></cop-my-activities>
+<cop-servicenow-tickets-list *ngIf="openRequestsView && isPublic"></cop-servicenow-tickets-list>
+<div #processContainer class="av-layout-row"></div>
+
+<div class="av-modal" *ngIf="showModal">
+  <cop-action-modal></cop-action-modal>
+</div>
+<div class="av-modal" *ngIf="modifyTicket">
+  <cop-modify-ticket></cop-modify-ticket>
+</div>
+<div class="av-modal" *ngIf="showOutageList">
+  <cop-outage-list></cop-outage-list>
+</div>
+<!-- <div *ngIf="showDetails" id="modal-container" class="av-modal"></div> -->
+
+

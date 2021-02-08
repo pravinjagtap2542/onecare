@@ -1,0 +1,16 @@
+{
+    "Status": "UserExist",
+    "Zip_Code": "",
+    "Addressline2": "",
+    "Emailid": "emp1@avaya.com",
+    "Addressline1": "",
+    "Country": "",
+    "editable": "false",
+    "Title": "",
+    "City": "",
+    "Work_Phone": "",
+    "EnableState": "0",
+    "State": "",
+    "Lastname": "Employee",
+    "Firstname": "User1"
+}

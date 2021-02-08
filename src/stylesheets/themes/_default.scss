@@ -1,0 +1,11 @@
+// -----------------------------------------------------------------------------
+// When having several themes, this file contains everything related to the
+// default one.
+// -----------------------------------------------------------------------------
+
+body {
+    max-width: 1440px;
+    margin: 0 auto !important;
+    border: 1px solid $color-light-gray;
+    background: $color-lighter-gray;
+}

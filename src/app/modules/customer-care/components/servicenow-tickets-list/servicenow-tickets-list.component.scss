@@ -1,0 +1,172 @@
+@import "../../../../../stylesheets/abstracts/_variables.scss";
+@import "../../../../../stylesheets/abstracts/_mixins.scss";
+.tabs-container {
+  max-width: $max-width;
+  margin: 0px auto 0;
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0;
+    li {
+      flex: 1;
+      border-top: 5px solid $silver;
+      background: $gallery;
+      margin-right: 5px;
+      padding: 0 12px;
+      text-align: center;
+      max-width: 200px;
+      font-weight: bold;
+      outline: none;
+      cursor: pointer;
+      height: 46px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      &.active {
+        border-top: 5px solid $brand-color;
+        background: $white;
+      }
+      &:first-child{
+        //max-width: 70px;
+      }
+      i {
+        margin-right: 10px;
+        color: $mine;
+      }
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 900px) {
+    ul {
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    margin: 0;
+    ul {
+      padding: 0;
+      background: $tundora;
+    }
+  }
+}
+.req-table.mat-table {
+    font-family: $avaya-font;
+    max-width: 100%;
+    font-size: $text-font-size-small;
+    border: 1px solid $silver;
+    border-collapse: collapse;
+    .mat-row {
+      min-height: auto;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      border-bottom: 0;
+      &:nth-child(2n+1) {
+        background: $mercury;
+      }
+      .mat-column-ticketId {
+        cursor: pointer;
+      }
+    }
+    .mat-cell, .mat-header-cell {
+      padding: 5px;
+      border-left: 1px solid $silver;
+      color: $text-color;
+      font-size: $text-font-size-small;
+      flex: auto;
+      // align-items: flex-start;
+      &.mat-column-ticketId {
+        width: 13%;
+        color: $jelly-bean;
+        cursor: pointer;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      &.mat-column-startDate {
+        width: 20%;
+      }
+      &.mat-column-title {
+        width: 40%;
+      }
+      &.mat-column-status {
+        width: 15%;
+      }
+      &.mat-column-possibleActions {
+        width: 22%;
+      }
+      &:first-child {
+        border-left: none;
+      }
+      select {
+        border: 1px solid $silver;
+        border-radius: $border-radius;
+        background-color: $white;
+        padding: 2px 13px;
+        width: 100%;
+        height: 30px;
+        outline: none;
+      }
+    }
+    .mat-header-row {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      .mat-header-cell {
+        background-color: $tundora;
+        color: $white;
+        padding: 5px;
+        border-left: 1px solid $silver;
+      }
+  
+    }
+  }
+.tab-content {
+  padding: $comp-block-padding;
+  background: $white;
+  position: relative;
+  .tab-content-inner {
+    max-width: $max-width;
+    margin: 0 auto;
+    h3,p {
+      margin-bottom: 20px;
+    }
+  }
+
+  .table-header-group {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    margin-bottom: 10px;
+    .table-header {
+      flex: 1;
+      h4{
+        font-size: 16px;
+        font-weight: bold;
+      }
+      p {
+        padding-top: 5px;
+      }
+    }
+    .table-filter {
+      flex: 1;
+      height: 34px;
+      font-size: $text-font-size-small;
+      font-family: $avaya-font;
+      .icon-filter {
+        font-size: 15px;
+        color: $mine;
+      }
+    }
+    @media screen and (max-width: 767px) {
+      display: block;
+      .table-filter {
+        margin: 15px 0;
+        width: 100%;
+      }
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    padding: 50px 20px;
+  }
+}

@@ -1,0 +1,182 @@
+<header class="header">
+  <section class="header-logo-links">
+    <div class="header-width">
+      <!-- <a href="{{originUrl}}" target="_self" class="header-logo"></a> -->
+      <div class="logo-wrapper">
+        <div class="logo-container">
+          <div class="logo"></div>
+          <div class="image-container"><a href="{{originUrl}}"><img
+                src="../../../../cs/cop/assets/images/avaya_logo_onecare_@2.png"
+                alt="Avaya Sales &amp; Partner Portal"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-menu" (click)="showMenu=!showMenu">
+        <i class="icon-menu"></i>
+      </div>
+      <ul class="header-links" [class.show]="showMenu" *ngIf="!isAvayaCloudOffice && !isAvayaCCass">
+        <!-- <li *ngFor="let link of fillData"> -->
+        <li class="menuList" [ngClass]="{'ml-auto ': link.alttext == 'language'}" *ngFor="let link of publicHeaderlink"
+          copDropdown (clickOutside)="closeMenuItems()">
+          <a (click)="linkTarget(link, self)"
+            *ngIf="link.alttext != 'signin' && link.alttext != 'language'">{{ link.title }}
+            <span *ngIf="link.HasSubHeaderLink">
+              <i class="icon-arrow-down" aria-hidden="true"></i>
+            </span>
+          </a>
+          <a *ngIf="link.alttext == 'language'" (clickOutside)="closeLanguageDropdown()">
+            <span (click)="openLanguageDropdown()" class="img-cursor" *ngIf="!show">
+              <i class="icon-website iconAlignment"></i>
+            </span>
+            <span class="img-cursor d-inline-block pl-2 pt-1 d-sm-none mob-ico-text"
+              (click)="openLanguageDropdown()">{{link.title}}</span>
+          </a>
+          <ul class="menu-dropdown" *ngIf="!hideListMenus">
+            <li copSubDropdown class="menu" *ngFor="let sub of link.SubHeaderLinks">
+              <a href="{{sub.url}}">{{sub.title}}
+                <span *ngIf="sub.HasSubHeaderLink">
+                  <i class="icon-arrow-right" aria-hidden="true"></i>
+                </span>
+              </a>
+            </li>
+
+          </ul>
+        </li>
+
+        <li class="menuList ml-auto" *ngIf="!isAvayaCloudOffice && !isAvayaCCass && !isSearchPage">
+          <!-- <li class="menuList ml-auto" *ngIf="!isAvayaCloudOffice && !isAvayaCCass"> -->
+
+          <a href="{{sinInLink.url}}">{{ 'OneCareSignIn'| translate }}</a>
+        </li>
+        <li class="menuList ml-auto" *ngIf="isSearchPage">
+          <a href="{{sinInLink.url}}" *ngIf="userInfo.usertype && userInfo.usertype=='Public'">
+            <span>{{ 'OneCareSignIn'| translate }}</span>
+          </a>
+            </li>
+      </ul>
+     
+      
+      <ul class="header-links" [class.show]="showMenu" *ngIf="isAvayaCloudOffice || isAvayaCCass">
+
+        <li class="menuList" *ngFor="let link of publicHeaderlink" copDropdown
+           (clickOutside)="closeMenuItems()">
+
+          <a (click)="linkTarget(link, self)"
+            *ngIf="link.alttext != 'signin' && link.alttext != 'language'">{{ link.title }}
+            <span *ngIf="link.HasSubHeaderLink">
+              <i class="icon-arrow-down" aria-hidden="true"></i>
+            </span>
+          </a>
+
+          <!-- <a *ngIf="link.alttext == 'language' && isAvayaCloudOffice" (clickOutside)="closeLanguageDropdown()">
+            <span (click)="openLanguageDropdown()" class="img-cursor" *ngIf="!show">
+              <i class="icon-website"></i>
+            </span>
+            <span class="img-cursor d-inline-block pl-2 pt-1 d-sm-none mob-ico-text"
+              (click)="openLanguageDropdown()">{{link.title}}</span>
+          </a> -->
+
+          <ul class="menu-dropdown" *ngIf="!hideListMenus">
+            <li copSubDropdown class="menu" *ngFor="let sub of link.SubHeaderLinks"><a href="{{sub.url}}">{{sub.title}}
+                <span *ngIf="sub.HasSubHeaderLink">
+                  <i class="icon-arrow-right" aria-hidden="true"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+
+        </li>
+
+        <li (clickOutside)="closeMenuItems()" copDropdown class="menuList user-avatar requestsmenu  ml-auto" *ngIf="ringSSoSession">
+          <a class="btn requests-ico"><span>
+            <!-- <i class="icon-shop" aria-hidden="true"></i> -->
+            {{'MyTicket' | translate}}
+          </span>
+            <!-- <span class="img-cursor d-inline-block pl-2 pt-1 d-sm-none mob-ico-text">{{'requests' | translate}}</span> -->
+          </a>
+           <ul class="menu-dropdown user-dropdown" *ngIf="!hideListMenus">
+            <li (click)="OpenRequestsView('my')"><a>{{'acoMyTickets' | translate}}</a></li>
+            <li (click)="OpenRequestsView('history')"><a>{{'Historyrequests' | translate}}</a></li>
+          </ul> 
+        </li>
+
+        <li class="menuList" *ngFor="let link of publicHeaderlink" copDropdown
+         (clickOutside)="closeMenuItems()" [ngClass]="{'ml-auto': link.alttext == 'language' &&  !ringSSoSession}">
+
+        <a *ngIf="link.alttext == 'language' && isAvayaCloudOffice" (clickOutside)="closeLanguageDropdown()">
+          <span (click)="openLanguageDropdown()" class="img-cursor" *ngIf="!show">
+            <i class="icon-website iconAlignment"></i>
+          </span>
+          <span class="img-cursor d-inline-block pl-2 pt-1 d-sm-none mob-ico-text"
+            (click)="openLanguageDropdown()">{{link.title}}</span>
+        </a>
+
+        <ul class="menu-dropdown" *ngIf="!hideListMenus">
+          <li copSubDropdown class="menu" *ngFor="let sub of link.SubHeaderLinks"><a href="{{sub.url}}">{{sub.title}}
+              <span *ngIf="sub.HasSubHeaderLink">
+                <i class="icon-arrow-right" aria-hidden="true"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+
+      </li>
+        <li class="searchInputHeader showDesktopView" 
+          *ngIf="isSearchOpen">
+          <a>
+            <span (click)="openSearchView()" class="img-cursor" *ngIf="!show">
+              <i class="icon-search-marketplace pt-2"></i>
+            </span>
+            <span class="img-cursor d-inline-block pl-2 pt-1 d-sm-none mob-ico-text">Search</span>
+          </a>
+          
+
+        </li>
+        <li copprofDropdown (clickOutside)="closeProfileDropdown()" class="user-avatar"
+          *ngIf="isAvayaCloudOffice && ringSSoSession">
+          <a><span><i class="icon-avatar iconAlignment" (click)="openProfileDropdown()"></i></span>
+            <span class="img-cursor d-inline-block pl-2 pt-1 d-sm-none mob-ico-text">{{'profile' | translate}}</span>
+          </a>
+          <ul class="user-dropdown public cop-prof">
+            <li class="user"><a (click)="doNothing()"
+                [attr.title]="ringSSoSession.userRole">{{ringSSoSession.firstName}} {{ringSSoSession.lastName}}</a></li>
+            <li class="">
+              <a class="img-cursor" (click)="revokeSsoSesion()">{{'OneCareLogout' | translate}}</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menuList" [ngClass]="{'ml-auto': isSearchOpen &&  !isAvayaCloudOffice}"
+          *ngIf="(isAvayaCloudOffice && !ringSSoSession) || (!isAvayaCloudOffice && !isAvayaCCass)">
+          <a href="{{sinInLink?.url}}">{{ 'OneCareSignIn'| translate }}
+
+          </a>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="searchMainDiv" *ngIf="show">
+      <div class="search-box-inner">
+        <span><a>
+            <img src="../../../../cs/cop/assets/svg/search-black.png" width="20"></a></span>
+        <input type="text" class="searchInput" placeholder="{{'OneCareSearchPlaceholder' | translate}}"
+          [(ngModel)]="searchStr" (keyup)="onLoginEventFired($event, searchStr)" autofocus #headSearch>
+        {{headSearch.focus()}}
+      </div>
+      <div (click)="show = !show">
+        <span class="removeSearch">X</span>
+      </div>
+      <div class="easy-autocomplete-container" id="eac-container-searchInput"
+        *ngIf="searchResponse?.body?.results.length > 0 && showDropHide">
+        <ul>
+          <li class="selected" *ngFor="let autoFill of searchResponse?.body?.results">
+            <div class="eac-item" tabindex="1" (click)='searchDropDownSelect(autoFill.name)'><b>{{autoFill.name}}</b>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</header>

@@ -1,0 +1,62 @@
+<div *ngIf='!rowsExist && showComponentInfo'>
+	<h3>{{'OneCareWelcomeMessage' | translate}} </h3>
+	<p>{{'clickOnATileBelowToAccess' | translate}} </p>
+	<!-- <p>To create a new request, start by selecting a topic below.</p> -->
+</div>
+<div class="loading-shade" *ngIf="isLoadingResults && showComponentInfo">
+	<div class="loader" alt="Please wait..."></div>
+</div>
+<div *ngIf='rowsExist && showComponentInfo'>
+	<div class="table-header-group">
+		<div class="table-header">
+			<h4>{{ header }} <span *ngIf= "deligationResponseArray.length > 0"> - </span><span *ngIf= "deligationResponseArray.length > 0" class="red-msg">{{'YouHaveActiveDelegation(s)' | translate}} </span></h4>
+			<p>{{ description }}</p>
+		</div>
+		<mat-form-field class="table-filter">
+			<input matInput (keyup)="applyFilter($event.target.value)" placeholder="{{'FilterRequests' | translate}}">
+				<mat-icon matSuffix>
+					<i class="icon-filter"></i>
+				</mat-icon>
+			</mat-form-field>
+		</div>
+	</div>
+	<div class="tabular-data-wrapper" [hidden]="!rowsExist && !showComponentInfo">
+		<mat-table    [dataSource]="tickets"    matSort    class="req-table"    matSortActive="startDate"    matSortDirection="desc"    matSortDisableClear>
+			<!-- Request ID Column -->
+			<ng-container matColumnDef="ticketId">
+				<mat-header-cell *matHeaderCellDef mat-sort-header>{{'requestId' | translate}}  </mat-header-cell>
+				<mat-cell *matCellDef="let ticket" (click)="openModalAction(null,ticket.ticketId)"> {{ticket.ticketId}} </mat-cell>
+			</ng-container>
+			<!-- Start Date Column -->
+			<ng-container matColumnDef="startDate">
+				<mat-header-cell *matHeaderCellDef mat-sort-header>{{'startDate' | translate}}  </mat-header-cell>
+				<mat-cell *matCellDef="let ticket"> {{ticket.startDate | date:'M/dd/yyyy h:mm:ss a'}} </mat-cell>
+			</ng-container>
+			<!-- Title Column -->
+			<ng-container matColumnDef="title">
+				<mat-header-cell *matHeaderCellDef>{{'title' | translate}}  </mat-header-cell>
+				<mat-cell *matCellDef="let ticket" title={{ticket.title}}> {{ ticket.title && ticket.title.length > 50 ? (ticket.title | slice:0:47) + '...' : ticket.title }}</mat-cell>
+				<!-- <mat-cell *matCellDef="let ticket"> {{ ticket.title }}</mat-cell> -->
+			</ng-container>
+			<!-- Status Column -->
+			<ng-container matColumnDef="status">
+				<mat-header-cell *matHeaderCellDef mat-sort-header>{{'status' | translate}}  </mat-header-cell>
+				<mat-cell *matCellDef="let ticket"> {{ticket.status}} </mat-cell>
+			</ng-container>
+			<!-- Request ID Column -->
+			<ng-container matColumnDef="possibleActions" class="req-col col-req-action">
+				<mat-header-cell *matHeaderCellDef>{{'action' | translate}}  </mat-header-cell>
+				<mat-cell *matCellDef="let ticket">
+					<select (change)="openModalAction($event,ticket.ticketId)">
+						<option>{{'selectAction' | translate}}</option>
+						<option *ngFor="let action of ticket.possibleActions" [id]="ticket.ticketId" [value]="action.id"> {{ action.name }} </option>
+					</select>
+				</mat-cell>
+			</ng-container>
+			<mat-header-row *matHeaderRowDef="displayedColumns" class="req-header"></mat-header-row>
+			<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+		</mat-table>
+		<div [hidden]="!rowsExist && !showComponentInfo">
+			<mat-paginator [pageSizeOptions]="[5, 10, 20, 30]" showFirstLastButtons></mat-paginator>
+		</div>
+	</div>

@@ -1,0 +1,114 @@
+@import "../../../../../stylesheets/abstracts/variables";
+
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+}
+p {
+  font-size: 16px;
+  padding: 20px 0 0;
+}
+.table-header-group {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  margin-bottom: 10px;
+  .table-header {
+    flex: 1;
+    p {
+      padding-top: 5px;
+    }
+  }
+  .table-filter {
+    flex: 1;
+    height: 34px;
+    font-size: $text-font-size-small;
+    font-family: $avaya-font;
+    .icon-filter {
+      font-size: 15px;
+      color: $mine;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    display: block;
+    .table-filter {
+      margin: 15px 0;
+      width: 100%;
+    }
+  }
+}
+.req-table.mat-table {
+  font-family: $avaya-font;
+  max-width: 100%;
+  font-size: $text-font-size-small;
+  border: 1px solid $silver;
+  border-collapse: collapse;
+  .mat-row {
+    min-height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    border-bottom: 0;
+    &:nth-child(2n+1) {
+      background: $mercury;
+    }
+    .mat-column-ticketId {
+      cursor: pointer;
+    }
+  }
+  .mat-cell, .mat-header-cell {
+    padding: 5px;
+    border-left: 1px solid $silver;
+    color: $text-color;
+    font-size: $text-font-size-small;
+    flex: auto;
+    // align-items: flex-start;
+    &.mat-column-ticketId {
+      width: 13%;
+      color: $jelly-bean;
+      cursor: pointer;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &.mat-column-startDate {
+      width: 20%;
+    }
+    &.mat-column-title {
+      width: 40%;
+    }
+    &.mat-column-status {
+      width: 15%;
+    }
+    &.mat-column-possibleActions {
+      width: 22%;
+    }
+    &:first-child {
+      border-left: none;
+    }
+    select {
+      border: 1px solid $silver;
+      border-radius: $border-radius;
+      background-color: $white;
+      padding: 2px 13px;
+      width: 100%;
+      height: 30px;
+      outline: none;
+    }
+  }
+  .mat-header-row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    .mat-header-cell {
+      background-color: $tundora;
+      color: $white;
+      padding: 5px;
+      border-left: 1px solid $silver;
+    }
+
+  }
+}
+.full-width {
+  width: 100%;
+}

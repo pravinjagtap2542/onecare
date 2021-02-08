@@ -1,0 +1,45 @@
+h1 {
+	font-family: $playfair-font-bold;
+	font-size: $h1-font-size;
+	line-height: 52px;
+  font-weight: 600;
+}
+
+h2 {
+	font-family: $playfair-font-bold;
+	font-size: $h2-font-size;
+	line-height: 40px;
+  font-weight: 600;
+  &.pattern-underline {
+    padding-bottom: 25px;
+    //margin-bottom: 60px;
+    text-align: center;
+    color: black;
+  }
+}
+
+h3 {
+	font-family: $gotham-ssm-font;
+	font-size: $h3-font-size;
+	line-height: 30px;
+	font-weight: 400;
+}
+
+h4 {
+	font-family: $gotham-ssm-font;
+	font-size: $h4-font-size;
+	line-height: 26px;
+	font-weight: 500;
+}
+
+h5 {
+  font-family: $gotham-ssm-font;
+  font-size: $h5-font-size;
+  font-weight: 500;
+}
+
+h6 {
+  font-family: $gotham-ssm-font;
+  font-size: $text-font-size-small;
+  font-weight: 300;
+}

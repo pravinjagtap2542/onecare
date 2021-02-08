@@ -1,0 +1,67 @@
+<div class="row news" *ngFor="let news of newsData ; let i = index" [ngClass]="{'even': i%2 == 0 }">
+    <div class="col-md-6" [ngClass]="{'pl-0': i%2 == 0 ,  'pr-0' : i%2 !=0}" *ngIf="news?.tileicon">
+        <div class="image ">
+            <img src="{{news?.tileicon}}" class="w-100">
+        </div>
+    </div>
+    <div class="col-md-6" [ngClass]="{'pl-0': i%2 == 0 ,  'pr-0' : i%2 !=0}"
+        *ngIf="news?.mediaContent && ( news?.tileicon == null || !news?.tileicon)">
+        <div class="image ">
+
+            <p>
+                <iframe class="w-100" allow="autoplay *; fullscreen *; encrypted-media *" allowfullscreen=""
+                    frameborder="0" height="500" mozallowfullscreen="" [src]="news.mediaContent | safeResource"
+                    webkitallowfullscreen="" width="560">
+                </iframe>
+            </p>
+
+        </div>
+    </div>
+    <div class=" pl-0"
+        [ngClass]="{'col-md-6 col-12': news?.tileicon || news?.mediaContent,'col-12 col-md-12':news?.mediaContent =='' && !news?.tileicon}">
+        <div class="text-section">
+            <div class="av-eyebrow-text marquee-menu-item">
+                <p class="pb-2">{{news?.Category}}</p>
+                <div class="eyebrow-underline"></div>
+            </div>
+            <h2>{{news?.title}}</h2>
+            <div class="bullets">
+                <p>{{news?.description}}</p>
+            </div>
+
+            <div class="multi-links row">
+                <div [ngClass]="{'col-md-6 col-12': news?.tileicon || news?.mediaContent,'col-6 col-md-3': news?.mediaContent =='' && !news?.tileicon}"
+                    *ngFor="let link of news?.KBLinks">
+                    <a href="{{link.url}}" target="_blank"> {{link.title}}<span class="sliding-arrow"></span></a>
+
+                </div>
+                <div class="col-12" *ngIf="news?.tileicon && news?.mediaContent">
+                    <button (click)="openInfoPopup(news.mediaContent)" class="mt-4 btn btn-primary mx-auto"> Watch
+                        Video</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- modal pop up -->
+<div class="modal" [ngClass]="{'show':showModal}">
+    <div class="modal-dialog">
+        <div class="modal-content">     
+            <div class="modal-header">
+                
+                <button type="button" class="close" data-dismiss="modal" (click)="closeInfoPopup()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="w-100" *ngIf="safeSrcinModal">
+                    <iframe allow="autoplay *; fullscreen *; encrypted-media *" allowfullscreen="" frameborder="0"
+                        height="500" mozallowfullscreen="" [src]="safeSrcinModal | safeResource"
+                        webkitallowfullscreen="" width="700" class="iframeMobile">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+ //@import 'bootstrap/scss/bootstrap.scss';
+ //@import '~bootstrap/dist/css/bootstrap.min.css'; 
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import 'stylesheets/main.scss';
+@import "~font-awesome/css/font-awesome.css";
+mat-expansion-panel#whiteWrapRemove span {
+    white-space: normal;
+}
+
+mat-expansion-panel#whiteWrapRemove1 span {
+    white-space: normal;
+}
+
+mat-expansion-panel#whiteWrapRemove2 span {
+    white-space: normal;
+}
+
+#filterNoWrap span.mat-checkbox-label {
+    white-space: normal;
+    word-break: break-word;
+}
+
+.mat-checkbox-inner-container {
+   margin-top: 5px !important;
+}
+
+.mat-list-base .mat-list-item {
+    height: auto !important; 
+    margin-bottom: 5px;
+}
+.mat-list-base .mat-list-item .mat-list-item-content {
+    display: contents !important;
+  }
+.scrollbar-for-home .ng-scrollbar-thumb {
+    background-color: #DA291C ;
+    width: 59%;
+     
+
+  }
+  .scrollbar-for-home .ng-scrollbar-thumb:hover, .scrollbar-for-home .ng-scrollbar-thumb:active {
+    background-color: dodgerblue;
+  }
+

@@ -1,0 +1,25 @@
+<div class="tabs-container">
+  <ul>
+    <!-- <li [ngClass]="{'active': tabActive =='home'}"
+		(click)="tabAction('home')">
+		<i class="icon-gov"></i><span></span>
+	  </li> -->
+    <li [routerLink]="[myrequestsOriginUrl]" [ngClass]="{'active': tabActive=='myrequests'}"
+      (click)="tabAction('myrequests')">
+      <i class="icon-clipboard"></i><span> {{'myRequests' | translate}}</span>
+    </li>
+    <li  [routerLink]="[delegationOriginUrl]" *ngIf='delegationBoolean'  [ngClass]="{'active': tabActive=='dgrequests'}"
+      (click)="tabAction('dgrequests')">
+      <i class="icon-clipboard"></i><span> {{'delegatedRequests' | translate}}</span>
+    </li>
+    <li  [routerLink]="[historyOriginUrl]" [ngClass]="{'active': tabActive=='history'}" (click)="tabAction('history')">
+      <i class="icon-history"></i><span> {{'historyRequests' | translate}}</span>
+    </li>
+  </ul>
+</div>
+
+<div class="tab-content">
+  <div class="tab-content-inner">
+    <router-outlet></router-outlet>
+  </div>
+</div>

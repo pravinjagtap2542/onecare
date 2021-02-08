@@ -1,0 +1,65 @@
+/**Modal SCSS**/
+.av-modal {
+  width:100%;
+  height:100%;
+  display: block;
+  position: absolute;
+  top:0;
+  left:0px;
+  background:rgba(0,0,0,0.9);
+  z-index:99998;
+  height: 3000px;
+  /* Inner */
+  .av-modal-inner {
+    max-width:85%;
+    width:100%;
+    padding:30px;
+    position:relative;
+    top:60px;
+    left:50%;
+    -webkit-transform:translateX(-50%);
+    transform:translateX(-50%);
+    background: $color-gray-1;
+    .av-modal-header {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: row;
+      h2 {
+        color: $jelly-bean;
+        font-weight: 300;
+        width: calc(100% - 50px);
+      }
+      i {
+        //float: right;
+        font-size: 35px;
+        width: 50px;
+        color: #4c4c4c;
+        cursor: pointer;
+        // position: absolute;
+        // top: -20px;
+        // right: -70px;
+      }
+    }
+  }
+  &.show {
+    display: block;
+  }
+  @media screen and (max-width: 767px) {
+    .av-modal-inner {
+      top: 0;
+      padding: 20px;
+      .av-modal-header {
+        h2 {
+          font-size: 28px;
+          width: calc(100% - 30px);
+        }
+        i {
+          width: 25px;
+        }
+      }
+    }
+  }
+    // @media screen and (max-width: 767px) {
+    //   background:rgba(255,255,255,1);
+    // }
+}

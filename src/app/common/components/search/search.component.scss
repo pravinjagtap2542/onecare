@@ -1,0 +1,58 @@
+@import "../../../../stylesheets/abstracts/variables";
+@import "../../../../stylesheets/components/titles";
+
+.container {
+  max-width: $max-width;
+
+  .grid {
+    display: grid;
+    padding: 20px;
+    justify-content: center;
+
+    h2 {
+      color: $color-black;
+    }
+
+    .row {
+      display: grid;
+      margin-top: 20px;
+
+      // a {
+      //   grid-column: 2 / 3;
+      // }
+
+      input {
+        grid-column: 1 / 2;
+        width: 600px;
+        justify-self: end;
+        border-radius: $border-radius 0 0 $border-radius;
+        border-width: 1px 0 1px 1px;
+        border-color: $brand-color;
+        padding: 10px;
+        outline: none;
+
+        &::placeholder {
+          color: lightgray;
+          opacity: 1; /* Firefox */
+        }
+
+        &::-ms-input-placeholder { /* Microsoft Edge */
+          color: lightgray;
+        }
+      }
+      .search {
+        grid-column: 2 / 3;
+        justify-self: start;
+        line-height: normal;
+        height: 40px;
+        width: 40px;
+        outline: 0;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: #fff url(../../../../cs/cop/assets/images/search.png) 98% right no-repeat;
+      }
+    }
+  }
+}
+

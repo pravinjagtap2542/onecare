@@ -1,0 +1,317 @@
+<div [ngClass]="selectedTabs ? 'vertical-tabs-content mobile-show' : 'vertical-tabs-content mobile-hide'">
+  <div class="mobile-tab-back" (click)="tabBackNav()">
+    <i class="icon-arrow-left"></i>
+    <span>{{'OneCareBackToMenu' | translate}}</span>
+  </div>
+  <p>{{selectedCategoryAssoc?.description}}</p><br>
+  <div class="quick-links" *ngIf="innerWidthCopForm < 798 && kbLinks && kbLinks.kblinks && kbLinks.kblinks.length > 0">
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        <h6>{{kbLinks?.kbtitle}}</h6>
+      </mat-expansion-panel-header>
+      <p>{{kbLinks?.kbdescription}}</p>
+      <mat-action-row>
+        <ul>
+          <li *ngFor="let kbdoc of kbLinks?.kblinks">
+            <a href="{{kbdoc?.url}}" target="_blank">{{kbdoc?.title}}</a>
+          </li>
+        </ul>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </div>
+  <div class="loading-shade formLoader" *ngIf="isLoadingResults">
+    <div class="loader formInnerLoader" alt="Please wait..."></div>
+  </div>
+  <!-- <button (click)="onSubmitClick()"> Click </button> -->
+  <form (ngSubmit)="onSubmit()" [formGroup]="form" *ngIf="!isLoadingResults">
+    <div>
+      <div *ngFor="let question of questions; let i=index">
+        <div [formGroup]="form">
+          <label *ngIf="question.controlType !== 'readonly'" class="formLabel" [ngClass]="{'d-none':hideFormField && question.isHidden}"
+            [attr.for]="question.key">{{question.label}} <span *ngIf="question.required" class="error">*</span></label>
+          <div [ngSwitch]="question.controlType">
+            <div *ngSwitchCase="'textbox'">
+              
+              <input [formControlName]="question.key" [id]="question.key" [value]="question.value"
+                [(ngModel)]="question.value" [type]="question['type']" [required]="question.required" [pattern]="question.isRegExp" 
+                (keyup)="validateText($event,question)" [ngClass]="{'d-none':hideFormField && question.isHidden}" [readonly]="readOnlyFormField && question.isEditable">
+                <!-- <div class="readonlyText" [innerHTML]="question.value | safeHtml" *ngIf="question.isEditable"></div> -->
+            </div>
+            <div *ngSwitchCase="'number'">
+              <input [formControlName]="question.key" [id]="question.key" [value]="question.value"
+                [type]="question['type']" [required]="question.required"  [pattern]="question.isRegExp">
+            </div>
+
+            <div class="date-input" *ngSwitchCase="'date'">
+              <div>
+                <input matInput readonly [formControlName]="question.key" [value]="question.value"
+                  [matDatepicker]="picker" [min]="question['minDate']" [max]="question['maxDate']"
+                  [(ngModel)]="question.preSelectedDropDownValue" placeholder="{{'chooseaDate' | translate}}">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker touchUi="true"></mat-datepicker>
+              </div>
+            </div>
+            <div *ngSwitchCase="'longtext'">
+              <textarea [formControlName]="question.key" [(ngModel)]="question.value" [id]="question.key"
+                (keyup)="validateInput($event,question)" [required]="question.required">{{ question.value }}</textarea>
+            </div>
+            <div *ngSwitchCase="'readonly'">
+              <div class="readonlyText" [innerHTML]="question.value | safeHtml">
+              </div>
+            </div>
+            <div *ngSwitchCase="'dropdown'">
+              <!-- <select [formControlName]="question.key" [id]="question.key"
+              [(ngModel)]="question.preSelectedDropDownValue"
+              (change)="userSelected($event.target.value, i, $event.target.selectedIndex, question.filterId, question.required, questions)"
+              [required]="question.required">
+              <option *ngIf="isSafari" selected [value]="SelectDropDown" class="hideElement">Select...</option>
+              <option *ngFor="let opt of question['options']" [value]="opt.key">{{opt.value}}</option>
+            </select> -->
+
+
+
+            <ngx-select-dropdown [config]="config" [options]="question['options']" [formControlName]="question.key"
+            [id]="question.key"
+            
+              (change)="userSelected($event, i, question.filterId, question.required, question,question['options'])"
+              [multiple]="false"
+              [required]="question.required"
+              >
+              </ngx-select-dropdown>
+
+
+
+            
+              <!-- <mat-form-field>
+              <input type="text"
+              placeholder="Select..."
+              [(ngModel)]="question"
+              [formControl]="control"
+              [formControlName]="question.key" 
+              [matAutocomplete]="auto" [value]="question"  (keyup)="filterTextChange($event,question)" matInput>
+            <mat-autocomplete #auto="matAutocomplete"   [formControlName]="question.key" [id]="question.key" (optionSelected)='userSelected($event.target.value, i, $event.target.selectedIndex, question.filterId, question.required, questions)'>
+              <mat-option *ngIf="isSafari" selected [value]="SelectDropDown" class="hideElement">
+                Select...
+              </mat-option>
+              <mat-option  *ngFor="let opt of filteredQuestion" [value]="opt.key"  (onSelectionChange)="userSelected($event.target.value, i, $event.target.selectedIndex, question.filterId, question.required, questions)">
+                {{opt.value}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field> -->
+
+
+
+
+
+
+            <!-- <input [attr.list]="'datalist'+question.key" placeholder="Select or Search" [formControlName]="question.key" [id]="question.key"
+            [(ngModel)]="question.preSelectedDropDownValue"
+            (change)="userSelected($event.target.value, i, $event.target.selectedIndex, question.filterId, question.required, question)"
+            [required]="question.required"
+            class="Data-List" />
+
+            <datalist id="datalist{{question.key}}">
+              <option *ngIf="isSafari" selected [value]="SelectDropDown" class="hideElement">Select...</option>
+              <option *ngFor="let opt of question['options']" [value]="opt.key">{{opt.value}}</option>
+            </datalist> -->
+               
+
+
+
+
+
+
+
+            <!-- <ngx-select [question]="question['options']" [optionTextField]="opt.key"
+            placeholder="Select or Search" [formControlName]="question.key" [id]="question.key"
+            [(ngModel)]="question.preSelectedDropDownValue"
+            (selectionChanges)="userSelected($event.target.value, i, $event.target.selectedIndex, question.filterId, question.required, questions)"
+            [required]="question.required"
+            class="Data-List">
+            {{opt.value}
+           </ngx-select> -->
+
+
+
+
+
+              <!-- <div  *ngIf="!initialUserSelected && i == 0">
+                <label *ngIf="ticketCreateMethod !== 'none' && question.controlType !== 'readonly'" class="formLabel" [attr.for]="question.key">{{question.label}} <span *ngIf="question.required" class="error">*</span></label>
+                <select
+                  [formControlName]="question.key"
+                  [id]="question.key"
+                  [(ngModel)]="question.preSelectedDropDownValue"
+                  (change)="userSelected($event.target.value, i, $event.target.selectedIndex)"
+                  [required]="question.required">
+                  <option [value]="" *ngIf="isSafari" selected>Select...</option>
+                  <option
+                    *ngFor="let opt of question['options']"
+                    [value]="opt.key"
+                    >{{opt.value}}</option>
+                </select>
+              </div> -->
+            </div>
+          </div>
+          <div class="error"
+            *ngIf="question.controlType === 'dropdown' && myself(question.key)?.touched && myself(question.key)?.invalid">
+            {{'OneCareSelectAValueMessage' | translate}}</div>
+          <div class="error"
+            *ngIf="question.controlType === 'date' && myself(question.key)?.touched && myself(question.key)?.invalid">
+            {{'OneCareSelectADateMessage' | translate}}</div>
+          <div class="error" *ngIf="question.controlType === 'number' && myself(question.key)?.invalid">
+            <span *ngIf='myself(question.key)?.touched && myself(question.key)?.errors?.required; else elseBlock'>{{'OneCareEnterInputMessage' | translate}}</span>
+            <ng-template #elseBlock>
+              <span *ngIf='myself(question.key)?.errors?.min'> {{'OneCareAcceptableMinimum' | translate}} :
+                {{ myself(question.key).errors.min.min }} </span>
+              <span *ngIf='myself(question.key)?.errors?.max'> {{'OneCareAcceptableMaximum' | translate}} :
+                {{ myself(question.key).errors.max.max }}</span>
+            </ng-template>
+          </div>
+          <div class="error"
+            *ngIf="(question.controlType === 'textbox' || question.controlType === 'longtext') && question.required && myself(question.key) && myself(question.key).errors && myself(question.key).errors.minlength">
+            {{'MinimumOf' | translate}} {{myself(question.key).errors.minlength.requiredLength}} {{'OneCareCharsAreNeeded' | translate}}</div>
+          <div class="error" *ngIf="(question.controlType === 'textbox') && question.required && ignoreError && question.value == '' "> {{'OneCareFieldCannotBeEmpty' | translate}}</div>
+          <div class="error" *ngIf="(question.controlType === 'longtext') && question.required && ignoreErrorInput">{{'OneCareFieldCannotBeEmpty' | translate}}</div>
+            
+            <div class="error" *ngIf="(question.controlType === 'textbox' || question.controlType === 'longtext') && question.required && myself(question.key) && myself(question.key).errors && myself(question.key).errors?.pattern">{{'OneCarePleaseEnterValidInputs' | translate}}</div>
+
+
+
+        </div>
+      </div>
+      <div *ngIf="ticketCreateMethod == 'siebel'">
+        <ng-container *ngIf="selectedCategoryAssoc?.id == 1397215135581">
+          <label class="formLabel"> {{'subscription' | translate}}Subscription <span class="error">*</span></label>
+          <input [id]="Subscription" [(ngModel)]="siebelSubscription" [required]="true"
+            (keyup)="validateSiebelSubInput($event)" *ngIf="checkNoValueSubPro == 'null'">
+          <select [id]="Subscription" [required]="true"
+            (change)="siebelUserSelected($event.target.value,'subscription')" *ngIf="checkNoValueSubPro != 'null'">
+            <option [ngValue]="null" class="hideOption"></option>
+            <option *ngFor="let opt of siebelMagentoQuestions">{{opt.subscription}}</option>
+          </select>
+        </ng-container>
+      </div>
+      <div *ngIf="ticketCreateMethod !== 'none' && showfileattach && publicShowfileattach && !isLoadingResults">
+        <label class="formLabel" for="fileAttach" *ngIf="selectedIndexDropdown >=0 && checkMandatory == 3">{{'OneCareFileAttachments' | translate}}
+          <span class='red'>&nbsp;*</span></label>
+         
+        <label class="formLabel" for="fileAttach" *ngIf="selectedIndexDropdown >=0 &&  checkMandatory != 3">{{'OneCareFileAttachments' | translate}}
+          </label>
+        <!-- <input type="file" class="attach-file" (change)="onSelect($event.target.files)" multiple *ngIf="!isUploadValid"> -->
+        <label for="file-upload" class="custom-file-upload" *ngIf="!isUploadValid">
+         {{'OneCareUploadFile' | translate}}
+        </label>
+        <input id="file-upload" type="file" name="input-file" (change)="onSelect($event.target.files)" multiple [required]="selectedIndexDropdown >=0 && checkMandatory == 3" />
+     
+        <div *ngIf="selectedFiles.length > 0" class="file-upload-table">
+          <div class="table-header-row">
+            <div class="table-header-col name">{{'OneCareName' | translate}}</div>
+            <div class="table-header-col size">{{'OneCareSize' | translate}}</div>
+            <div class="table-header-col action">{{'OneCareActions' | translate}}</div>
+          </div>
+          <div class="table-row" *ngFor="let file of selectedFiles; index as i">
+            <div class="table-col name"><strong>{{ file?.name }}</strong></div>
+            <div class="table-col size">{{ file?.size | fileSize:false }}</div>
+            <div class="table-col action">
+              <button type="button" (click)="removeUploadFile(i)">
+                {{'OneCareRemove' | translate}}
+              </button>
+            </div>
+          </div>
+        </div>
+        <label class="publicFormLabel" *ngIf="listOfInclude">{{'OneCareAllowedFileTypes' | translate}}: {{listOfInclude}} ({{selectedCategoryAssoc?.AttachmentSize}} MB)</label>
+        <p *ngIf="!mandatoryUpload" class="error"> {{'OneCareUploadValidDocumentMessage' | translate}}</p>
+        <p class="error mt-2" *ngIf="uploadValidation">{{fileNameinMessage}}: {{'OneCareFileTypeNotSupportedMessage' | translate}}</p>
+        <p class="error" *ngIf="duplicateFileName">{{'OneCareDuplicateFileNameMessage' | translate}}</p>
+        <p class="error" *ngIf="attachmentSizeErrorExceed">{{'OneCareFileSizeExceedingMessage' | translate}} ({{selectedCategoryAssoc?.AttachmentSize}} MB)</p>
+        <p class="error" *ngIf="attachmentSizeErrorBelow">{{'OneCareFileSizeMessage' | translate}}</p>
+        <p class="error" *ngIf="attachmentNumberError">{{'OneCareMaxFileAllowedMessage' | translate}} : {{attachmentNumberCount}}</p>
+      </div>
+    </div>
+  </form>
+
+
+  <div class="checkBoxDiv"
+    *ngIf="showchat && selectedCategoryAssoc?.chatURL && selectedCategoryAssoc?.chatURL != '' && !isLoadingResults">
+    <ng-container *ngIf="ticketCreateMethod != 'none'">
+      <input id="chatCB" class="checkBox" type="checkbox" (change)='onChecked($event)'>
+      <label for="chatCB" class="checkBoxLabel"> {{'OneCareChatNowMeesage' | translate}}
+        <span><img class="chatImg" src="../../../../cs/cop/assets/images/Avaya_Chat.png" /></span>
+     </label> <br>
+     <label class="disclaimerMessage">{{'OneCareChatWindowMessage' | translate}}</label>
+    </ng-container>
+    <!-- *ngIf = "openChat == true" -->
+    <div *ngIf="publicPage && ticketCreateMethod == 'none'">
+      <div class="recaptcha">
+        <re-captcha (resolved)="resolved($event)" siteKey="{{captchaKey}}"></re-captcha>
+      </div>
+      <div class="form-row enableBtn">
+        <button *ngIf="selectedCategoryAssoc?.chatURL != ''" type="button"
+          class="btn primary-btn m-auto"  [disabled]="!captchaSucces  || form.invalid " (click)="onChatSubmit()">{{'OneCareChatButton' | translate}}</button>
+      </div>
+    </div>
+    <div *ngIf="publicPage && ticketCreateMethod !== 'none'">
+      <div class="form-row enableBtn">
+        <button *ngIf="ticketCreateMethod == 'none' && selectedCategoryAssoc?.chatURL != ''" type="button"
+          class="btn primary-btn m-auto" (click)="onChatSubmit()">{{'OneCareChatButton' | translate}}</button>
+      </div>
+    </div>
+    <div *ngIf="!publicPage">
+      <div class="form-row enableBtn">
+        <button *ngIf="ticketCreateMethod == 'none' && selectedCategoryAssoc?.chatURL != ''" type="button"
+          class="btn primary-btn m-auto" (click)="onChatSubmit()">{{'OneCareChatButton' | translate}}</button>
+      </div>
+    </div>
+    
+  </div>
+  <div *ngIf="publicPage">
+    <div class="errorText" *ngIf="hpsmCartItemErrorMsg != ''">{{hpsmCartItemErrorMsg}}</div>
+    <div *ngIf="ticketCreateMethod !== 'none' && !newTicketId  && showsubmitticket && !isLoadingResults"
+      class="button-wrapper">
+      <!-- showButtononUpload :{{!showButtononUpload}} captchaSucces: {{!captchaSucces}}   form.invalid :{{  form.invalid}} isSelect :{{isSelect}}
+    isUploadValid : {{isUploadValid}} isClickedOnce:{{isClickedOnce}} ignoreError:{{ignoreError}} ignoreErrorInput:{{ignoreErrorInput}} isMandaryUpload:{{isMandaryUpload()}} -->
+      <ng-container *ngIf="selectedCategoryAssoc?.id == 1397215135581">
+        <div class="recaptcha">
+          <re-captcha (resolved)="resolved($event)" siteKey="{{captchaKey}}"></re-captcha>
+        </div>
+        <button type="button"
+          [disabled]="!showButtononUpload || !captchaSucces || form.invalid || isSelect || isUploadValid || isClickedOnce || ignoreError || ignoreErrorInput || siebelSubscriptionValidation || isMandaryUpload() "
+          class="btn primary-btn" (click)="onSubmit()">{{'OneCareSubmitutton' | translate}}</button>
+      </ng-container>
+      <ng-container *ngIf="selectedCategoryAssoc?.id != 1397215135581">
+        <div class="recaptcha">
+          <re-captcha (resolved)="resolved($event)" siteKey="{{captchaKey}}"></re-captcha>
+        </div>
+        <!-- showButtononUpload:{{!showButtononUpload}} captchaSuccess:{{ !captchaSucces}} form.invalid: {{form.invalid}} isSelect: {{isSelect}}
+        isUploadValid: {{isUploadValid}} isClickedOnce:{{isClickedOnce}} ignoreError: {{ignoreError}} ignoreErrorInput:{{ignoreErrorInput}} isMandaryUpload:{{isMandaryUpload()}}
+        uploadValidation: {{uploadValidation}} -->
+        <button type="button"
+          [disabled]="!showButtononUpload || !captchaSucces || form.invalid || isSelect || isUploadValid || isClickedOnce || ignoreError || ignoreErrorInput || isMandaryUpload()"
+          class="btn primary-btn" (click)="onSubmit()">{{'OneCareSubmitutton' | translate}}</button>
+      </ng-container>
+      <div class="info" *ngIf="isFileScanProgress">{{'OneCareFileScanProgress' | translate}}</div>
+    </div>
+  </div>
+
+  <div *ngIf="!publicPage">
+    <div class="errorText" *ngIf="hpsmCartItemErrorMsg != ''">{{hpsmCartItemErrorMsg}}</div>
+    <div *ngIf="ticketCreateMethod !== 'none' && !newTicketId  && showsubmitticket && !isLoadingResults"
+      class="button-wrapper">
+      <ng-container *ngIf="selectedCategoryAssoc?.id == 1397215135581">
+        <button type="button"
+          [disabled]="!showButtononUpload || form.invalid || isSelect || isUploadValid || isClickedOnce || ignoreError || ignoreErrorInput || siebelSubscriptionValidation || isMandaryUpload() "
+          class="btn primary-btn" (click)="onSubmit()">{{'OneCareSubmitutton' | translate}}</button>
+      </ng-container>
+      <ng-container *ngIf="selectedCategoryAssoc?.id != 1397215135581">
+        <!-- showButtononUpload:{{!showButtononUpload}} captchaSuccess:{{ !captchaSucces}} form.invalid: {{form.invalid}} isSelect: {{isSelect}}
+        isUploadValid: {{isUploadValid}} isClickedOnce:{{isClickedOnce}} ignoreError: {{ignoreError}} ignoreErrorInput:{{ignoreErrorInput}} isMandaryUpload:{{isMandaryUpload()}}
+        uploadValidation: {{uploadValidation}} -->
+        <button type="button"
+          [disabled]="!showButtononUpload || form.invalid || isSelect || isUploadValid || isClickedOnce || ignoreError || ignoreErrorInput || isMandaryUpload()"
+          class="btn primary-btn" (click)="onSubmit()">{{'OneCareSubmitutton' | translate}}</button>
+      </ng-container>
+      <div class="info" *ngIf="isFileScanProgress">{{'OneCareFileScanProgress' | translate}}</div>
+    </div>
+  </div>
+
+</div>

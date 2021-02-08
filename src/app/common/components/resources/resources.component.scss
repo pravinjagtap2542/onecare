@@ -1,0 +1,28 @@
+@import "../../../../stylesheets/abstracts/variables";
+@import "../../../../stylesheets/components/titles";
+
+.pattern-underline {
+	// background: url('/cs/cop/assets/images/svgs/avaya-bar.svg') no-repeat 50% 100%;
+}
+
+.container {
+  max-width: $max-width;
+  padding: $comp-block-padding;
+	display: none;
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .morebutton {
+      grid-column: 1 / 4;
+      text-align: center;
+      cursor: pointer;
+      padding: 20px;
+
+      h6 {
+        font-weight: 500;
+      }
+    }
+  }
+}

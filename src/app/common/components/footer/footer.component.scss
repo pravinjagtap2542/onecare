@@ -1,0 +1,234 @@
+//footer.component.ts
+
+.optanon-alert-box-wrapper {
+    max-width: 1440px !important;
+}
+#optanon-show-settings-popup {
+    display: none !important;
+}
+
+.privacy-content .optanon-show-settings-popup-wrapper {
+    float: none;
+    display: inline-block
+}
+
+.privacy-content .optanon-show-settings-popup-wrapper .optanon-show-settings-button .optanon-show-settings-left {
+    display: none;
+    height: auto !important;
+    width: auto !important;
+}
+
+.privacy-content .optanon-show-settings-popup-wrapper .optanon-show-settings-button .optanon-show-settings-middle {
+    border: none;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 26px;
+    font-family: 'HCo Gotham SSm';
+    padding-top: 0;
+    //text-decoration: underline;
+    display: inline-block;
+    float: none;
+    color: #DA291C !important;
+    cursor: pointer
+}
+
+.privacy-content .optanon-show-settings-popup-wrapper .optanon-show-settings-button .optanon-show-settings-middle .optanon-show-settings {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 26px;
+    font-family: 'HCo Gotham SSm';
+    color: #DA291C !important;
+    cursor: pointer
+}
+
+.privacy-content .optanon-show-settings-popup-wrapper .optanon-show-settings-button .optanon-show-settings-middle .optanon-show-settings span {
+    color: #cc0000;
+    font-family: 'HCo Gotham SSm';
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 26px;
+    color: #DA291C !important;
+    cursor: pointer
+}
+
+a.optanon-alert-box-close { display:none; }
+
+div.optanon-show-settings-left { display:none; }
+
+div.optanon-show-settings-right { display:none; }
+
+
+
+div.optanon-show-settings-popup {  display:none !important; left:-9999px; }
+
+#optanon-show-settings-popup {  display:none !important;  }
+
+
+
+div.optanon-show-settings-popup-wrapper {
+
+    display: inline-block;
+
+}
+
+
+
+div.optanon-show-settings-popup-wrapper div.optanon-show-settings-middle {
+
+    border: 0;
+
+    background: 0 0!important;
+
+    float: none;
+
+    height: auto!important;
+
+    padding: 0;
+
+}
+
+div.optanon-show-settings-popup-wrapper div.optanon-show-settings-middle a.optanon-show-settings {
+
+    color: #A2A2A4 !important;
+
+    font-weight: 300;
+
+    margin-top: 0!important;
+
+    float: none!important;
+
+    font-size: 100%;
+
+}
+
+a.optanon-show-settings { cursor:pointer; }
+
+.privacy-content .optanon-show-settings-popup-wrapper .optanon-show-settings-button .optanon-show-settings-right {
+    display: none
+}
+
+.av-footer .av-sub-footer .inner .policy p .optanon-show-settings-popup-wrapper .optanon-show-settings-button .optanon-show-settings-left {
+    display: none
+}
+
+.av-footer .av-sub-footer .inner .policy p .optanon-show-settings-popup-wrapper .optanon-show-settings-button .optanon-show-settings-middle {
+    border-top: none;
+    border-bottom: none;
+    padding-right: 15px;
+    border-right: 1px solid #b9b9b9;
+    float: none;
+    padding-bottom: 4px;
+    padding-top: 0px !important
+}
+
+.av-footer .av-sub-footer .inner .policy p .optanon-show-settings-popup-wrapper .optanon-show-settings-button .optanon-show-settings-middle .optanon-show-settings {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 26px;
+    font-family: 'HCo Gotham SSm';
+    margin-top: 0 !important;
+    color: #4b4b4b !important;
+    cursor: pointer
+}
+
+.av-footer .av-sub-footer .inner .policy p .optanon-show-settings-popup-wrapper .optanon-show-settings-button .optanon-show-settings-middle .optanon-show-settings:hover {
+    color: #DA291C !important;
+    cursor: pointer
+}
+
+.av-footer .av-sub-footer .inner .policy p .optanon-show-settings-popup-wrapper .optanon-show-settings-button .optanon-show-settings-right {
+    display: none
+}
+
+
+.privacy-content .optanon-show-settings-popup-wrapper {
+	float: none;
+	display: inline-block
+}
+
+.privacy-content .optanon-show-settings-popup-wrapper .optanon-show-settings-button .optanon-show-settings-left {
+	display: none;
+	height: auto !important;
+	width: auto !important
+}
+
+.privacy-content .optanon-show-settings-popup-wrapper .optanon-show-settings-button .optanon-show-settings-middle {
+	border: none;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 26px;
+	font-family: 'HCo Gotham SSm';
+	padding-top: 0;
+	//text-decoration: underline;
+	display: inline-block;
+	float: none;
+	color: #DA291C !important;
+	cursor: pointer
+}
+
+.privacy-content .optanon-show-settings-popup-wrapper .optanon-show-settings-button .optanon-show-settings-middle .optanon-show-settings {
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 26px;
+	font-family: 'HCo Gotham SSm';
+	color: #DA291C !important;
+	cursor: pointer
+}
+
+.privacy-content .optanon-show-settings-popup-wrapper .optanon-show-settings-button .optanon-show-settings-middle .optanon-show-settings span {
+	color: #cc0000;
+	font-family: 'HCo Gotham SSm';
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 26px;
+	color: #DA291C !important;
+	cursor: pointer
+}
+
+.privacy-content .optanon-show-settings-popup-wrapper .optanon-show-settings-button .optanon-show-settings-right {
+	display: none
+}
+
+.av-footer .av-sub-footer .inner .policy p .optanon-show-settings-popup-wrapper .optanon-show-settings-button .optanon-show-settings-left {
+	display: none
+}
+
+.av-footer .av-sub-footer .inner .policy p .optanon-show-settings-popup-wrapper .optanon-show-settings-button .optanon-show-settings-middle {
+	border-top: none;
+	border-bottom: none;
+	padding-right: 15px;
+	border-right: 1px solid #b9b9b9;
+	float: none;
+	padding-bottom: 4px;
+	padding-top: 0px !important
+}
+
+.av-footer .av-sub-footer .inner .policy p .optanon-show-settings-popup-wrapper .optanon-show-settings-button .optanon-show-settings-middle .optanon-show-settings {
+	font-size: 13px;
+	font-weight: 300;
+	line-height: 26px;
+	font-family: 'HCo Gotham SSm';
+	margin-top: 0 !important;
+	color: #4b4b4b !important;
+	cursor: pointer
+}
+
+.av-footer .av-sub-footer .inner .policy p .optanon-show-settings-popup-wrapper .optanon-show-settings-button .optanon-show-settings-middle .optanon-show-settings:hover {
+	color: #DA291C !important;
+	cursor: pointer
+}
+
+.av-footer .av-sub-footer .inner .policy p .optanon-show-settings-popup-wrapper .optanon-show-settings-button .optanon-show-settings-right {
+	display: none
+}
+
+
+.footer .footer-links div.optanon-show-settings-popup-wrapper div.optanon-show-settings-middle a.optanon-show-settings
+{
+    color: #A2A2A4 !important;
+    font-weight: normal;
+    margin-top: 0 !important;
+    float: none !important;
+    font-size: 14px;
+    font-family: "Proxima Nova", proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}

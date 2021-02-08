@@ -1,0 +1,22 @@
+<div class="main-container">
+  <div class="row">
+    <com-search></com-search>
+  </div>
+  <br>
+  <div class="row">
+    <div class="carousel">
+
+      <carousel>
+        <ng-container *ngFor="let item of items;">
+          <ng-container *carouselItem>
+            <div class="item">
+              <img src="{{item.imageUrl}}" alt="Not found!!">
+              <!-- <div class="title">{{item.title}}</div> -->
+            </div>
+          </ng-container>
+        </ng-container>
+      </carousel>
+
+    </div>
+  </div>
+</div>

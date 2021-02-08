@@ -1,0 +1,72 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+
+
+
+
+/// Regular font family
+/// @type List
+$avaya-font: 'Proxima Nova', proxima-nova,'Helvetica Neue', Helvetica, Arial, sans-serif;
+$playfair-font-bold: Playfair Display, Bold;
+$gotham-ssm-font: 'HCo Gotham SSm';
+
+/// Default text Color
+$text-color:#4c4c4c;
+$text-gray: #A2A2A4;
+/// Colors color names from http://chir.ag/projects/name-that-color/#208A99
+$brand-color: #DA291C !default;
+$white: rgb(255, 255, 255) !default;
+$gallery: #ededed !default;
+$mercury: #e7e7e7 !default;
+$alto: #E1DEDE;
+$silver: #ccc;
+$tundora: #4c4c4c !default;
+$jelly-bean: #208A99;
+$black: #000;
+$alto: #d5d5d5;
+$teal: #168A9A;
+$mine: #333333;
+$hero-bg: #585E60;
+$color-red: #DA291C;
+$color-black: #000;
+$color-white: #fff;
+$color-dark-gray: #313133;
+$color-gray: #575759;
+$color-gray-1: #efefef;
+$color-medium-gray: #ccc;
+$color-light-gray: #f1f1f3;
+$color-lighter-gray: #f9f9fa;
+$color-light-blue: #a3cae9;
+$color-dark-blue: #2099fa;
+$color-green: #2dcc70;
+$color-orange: #ff9e3d;
+$color-primary-red-hover: #c01a1e;
+
+/// font size
+$h1-font-size: 42px;
+$h2-font-size: 36px;
+$h3-font-size: 30px;
+$h4-font-size: 24px;
+$h5-font-size: 20px;
+$h6-font-size: 16px;
+$text-font-size: 16px;
+$text-font-size-small: 14px;
+$text-font-size-smaller: 12px;
+
+/// Component Block Padding
+$comp-block-padding: 60px 0 60px 0;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 90% !default;
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/cs/cop/assets/';
+$base-url: '/cs/cop/assets/' !default;
+
+// Border Radius
+$border-radius: 6px;

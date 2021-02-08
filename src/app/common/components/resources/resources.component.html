@@ -1,0 +1,55 @@
+<div class="container">
+  <h2 class="pattern-underline">{{'resources' | translate}}Resources</h2>
+  <div class="grid">
+    <div> <h5>{{ allResources.resources.category[0].title }}</h5> </div>
+    <div></div>
+    <div> <h5>{{ allResources.resources.category[1].title }}</h5> </div>
+    <div> <!-- Column 1 -->
+      <ul>
+        <li *ngFor="let link of initLinks[0]; let odd = odd">
+          <a *ngIf="!odd" href="{{ link.url }}" title="{{ link.alttext }}">{{ link.title }}</a>
+        </li>
+      </ul>
+    </div>
+    <div> <!-- Column 2 -->
+      <ul>
+        <li *ngFor="let link of initLinks[0]; let odd = odd">
+          <a *ngIf="odd" href="{{ link.url }}" title="{{ link.alttext }}">{{ link.title }}</a>
+        </li>
+      </ul>
+    </div>
+    <div> <!-- Column 3 -->
+      <div class="links">
+        <ul>
+          <li *ngFor="let link of initLinks[1]">
+            <a href="{{ link.url }}" title="{{ link.alttext }}">{{ link.title }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div *ngIf="expanded"> <!-- Column 1 -->
+      <ul>
+        <li *ngFor="let link of remaininLinks[0]; let odd = odd">
+          <a *ngIf="!odd" href="{{ link.url }}" title="{{ link.alttext }}">{{ link.title }}</a>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="expanded"> <!-- Column 2 -->
+      <ul>
+        <li *ngFor="let link of remaininLinks[0]; let odd = odd">
+          <a *ngIf="odd" href="{{ link.url }}" title="{{ link.alttext }}">{{ link.title }}</a>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="expanded"> <!-- Column 3 -->
+      <ul>
+        <li *ngFor="let link of remaininLinks[1]">
+          <a href="{{ link.url }}" title="{{ link.alttext }}">{{ link.title }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="morebutton" (click)="expanded = !expanded"><h6>Show {{ expanded ? 'Less' : 'More' }}<span class="sliding-arrow"></span></h6></div>
+  </div>
+</div>

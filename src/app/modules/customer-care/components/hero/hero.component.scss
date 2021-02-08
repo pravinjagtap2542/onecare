@@ -1,0 +1,64 @@
+@import "../../../../../stylesheets/abstracts/_variables.scss";
+.hero {
+  background-color: $hero-bg;
+  background-repeat: no-repeat;
+  height: 94px;
+  margin-top:69px;
+  .hero-title {
+      max-width: $max-width;
+      margin: 0 auto;
+      color: $white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+  }
+  @media screen and (max-width: 1024px){
+   // padding: 0 20px;
+  }
+  @media screen and (max-width: 767px){
+    background-image: none!important;
+    //margin-top: 29%;
+    //margin-top: 35px;
+  }
+}
+.spp-container ul.breadcrumb li.bc-active, .header-wrapper ul.breadcrumb li.bc-active, .modal ul.breadcrumb li.bc-active {
+  color: #DA291C;
+  cursor: auto;
+}
+.spp-container ul.breadcrumb li i, .header-wrapper ul.breadcrumb li i, .modal ul.breadcrumb li i {
+  font-size: 18px;
+  color: gray;
+  position: relative;
+  top: -2px;
+  padding: 0px 8px 0px 8px;
+}
+
+.breadcrumb li i {
+ font-size: 11px;
+    color: gray;
+    position: relative;
+    top: 0px;
+    padding: 0px 14px 0px 8px;
+    vertical-align: middle;
+}
+.BackToHome
+{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  //background-color: grey;
+  border-radius: 0.25rem;
+}
+.icon-arrow-right
+{
+  vertical-align: middle;
+}
+.HomePage{
+  cursor: pointer;
+}
+.searchResult{
+  color: #DA291C;
+}

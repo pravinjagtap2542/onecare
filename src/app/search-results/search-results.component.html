@@ -1,0 +1,75 @@
+<section class="hero" [ngStyle]="{'background-image': heroImage }">
+	<div class="hero-title">
+		<h3> <a href="/customercare/en/home/" target="_self" class="headTitleSection">{{'oneCarePortal' | translate}} </a></h3>
+		<p  class="white-text">{{'HowCanWeAssist' | translate}}</p>
+	</div>
+</section>
+<div class="av-container">
+	<!-- Start Flexible Template wrapper -->
+	<div class="av-layout-row">
+		<div class="av-center">
+			<div class="av-search-results">
+				<div class="search-top">
+					<div>
+						<h2>{{'OneCareWelcomeMessage' | translate}}</h2>
+					</div>
+					<div class="search-bar">
+						<input type="text" [value]="searchTerm" #fileinput (keyup)="getfileinput($event)"
+							placeholder="What can we help you find?" />
+						<img class="img-cursor" (click)="getfileinput($event)" width="20"
+							src="../../cs/cop/assets/svg/search-icon.svg">
+					</div>
+				</div>
+				<div class="gray-title-bar">
+					<ul>
+						<li (click)="clickEvent('avaya')" [ngClass]="{'active': profile === 'avaya_en'}">Avaya Knowledge</li>
+						<li  (click)="clickEvent('oneCare')" [ngClass]="{'active': profile === 'onecare_servicecatalog'}">Service Catalog</li>
+					</ul>
+				</div>
+				<div class="loading-shade" *ngIf="isLoadingResults">
+					<div class="loader" alt="Please wait..."></div>
+				</div>
+				<div class="search-body">
+					<div class="col-left">
+						<div class="results" [hidden]="isLoadingResults">
+							<div class="block">
+								<div class="show-results" *ngIf="totalRecords > 0 ">
+									<p class="red-msg">Showing {{fromSearchResult}} - {{toSearchResult}} of
+										{{totalRecords}} Results </p>
+								</div>
+								<ng-container *ngIf="searchResultJsonResponse?.body?.results.length > 0">
+									<div class="inner"
+										*ngFor="let serachValues of searchResultJsonResponse?.body?.results | paginate: { itemsPerPage:10, currentPage: pageChange, totalItems: searchResultJsonResponse?.body?.totalResults}">
+										<div class="col">
+											<h3 class="searchH3"
+												[innerHTML]="setMergeTitle(serachValues.url,serachValues.tileTitle, serachValues.formTitle)"
+												id="JSONContainer">
+												<!-- <a  href="{{serachValues.url}}" > {{serachValues.tileTitle}} <span class="arrowIcon" *ngIf=""> >> </span> {{serachValues.formTitle}} </a> -->
+											</h3>
+											<p id="JSONContainer" [innerHTML]="serachValues.formDescription"></p>
+											<!-- <p>{{serachValues.tileDescription}}</p> -->
+										</div>
+									</div>
+								</ng-container>
+								<ng-container *ngIf="totalRecords <= 0">
+									<div class="inner" [hidden]="isLoadingResults">
+										<div class="col">
+											<p>We're sorry, but the search term you entered did not return any results.
+											</p>
+											<p>Please adjust your search terms and try again.</p>
+										</div>
+									</div>
+								</ng-container>
+							</div>
+							<pagination-controls *ngIf="totalRecords > 9" class="my-pagination"
+								(pageChange)="onPageChange($event)" previousLabel="" nextLabel="">
+							</pagination-controls>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Flexible Template wrapper -->
+	</div>
+	<!-- End main container -->

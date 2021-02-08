@@ -1,0 +1,79 @@
+/* /**Action card SCSS
+.action-card-block {
+  background: $mercury;
+  padding: 50px 0 35px;
+  .action-card-block-wrapper {
+    max-width: $max-width;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .action-card {
+      flex: 1;
+      border-top: 5px solid $brand-color;
+      background: $white;
+      margin-right: 15px;
+      margin-bottom: 15px;
+      min-width: 240px;
+      max-width: 277px;
+      cursor: pointer;
+      h6 {
+        padding: 25px 20px 20px;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      p {
+        padding: 0 20px 25px;
+        font-size: $text-font-size-small;
+      }
+      .action-link {
+        background: $jelly-bean;
+        padding: 10px 20px;
+        font-size: $text-font-size-small;
+        line-height: $text-font-size-small;
+        text-align: right;
+        color: $white;
+        i {
+          font-size: 10px;
+          padding-left: 5px;
+        }
+      }
+      &.action-card-create {
+        background: none;
+        border: none;
+        h6 {
+          padding: 25px 20px 10px 0;
+          font-size: 30px;
+          font-weight: 600;
+        }
+        p {
+          padding: 0 20px 0 0;
+          font-size: 16px;
+        }
+        &:after {
+          content: "\e90a";
+          font-size: 38px;
+          display: inline-block;
+          font-family: "fontcustom";
+          font-style: normal;
+          font-weight: bold;
+          font-variant: normal;
+          line-height: 1;
+          text-decoration: inherit;
+          text-rendering: optimizeLegibility;
+          text-transform: none;
+          -moz-osx-font-smoothing: grayscale;
+          -webkit-font-smoothing: antialiased;
+          font-smoothing: antialiased;
+          color:$alto;
+          float: right;
+          padding: 0 20px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1024px){
+    padding: 50px 20px 35px;
+  }
+}
+ */

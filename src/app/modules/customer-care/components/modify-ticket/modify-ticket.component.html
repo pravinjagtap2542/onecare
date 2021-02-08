@@ -1,0 +1,184 @@
+<div class="av-modal-inner">
+  <div class="av-modal-header">
+      <h2 x-ms-format-detection="none">{{'request' | translate}} {{requestedTicket?.InteractionID}}</h2>
+    <i class="close-modal" (click)="closeModal()">X</i>
+  </div>
+  <div class="modify-ticket">
+    <div class="modify-ticket-info">
+      <div class="label-group">
+        <div class="label">{{'ticketId' | translate}}</div>
+        <div class="label-info" x-ms-format-detection="none">{{requestedTicket?.InteractionID}}</div>
+      </div>
+      <div class="label-group">
+        <div class="label">{{'status' | translate}}</div>
+        <div class="label-info">{{requestedTicket?.Status}}</div>
+      </div>
+      <div class="label-group" *ngIf="ticketDestination !='serviceNow'">
+        <div class="label">{{'resolverTeam' | translate}}</div>
+        <div class="label-info">{{requestedTicket?.AssignmentGroup}}</div>
+      </div>
+      <div class="label-group" *ngIf="ticketDestination !='serviceNow'">
+        <div class="label">{{'serviceRecipient' | translate}}</div>
+        <div class="label-info">{{requestedTicket?.ServiceRecipient}}</div>
+      </div>
+      <div class="label-group" >
+        <div class="label">{{'openTime' | translate}}</div>
+        <div class="label-info">{{requestedTicket?.OpenTime | date:'M/dd/yyyy h:mm:ss a' }}</div>
+      </div>
+      <div class="label-group" *ngIf="ticketDestination !='serviceNow'">
+        <div class="label">{{'toBeResolvedBefore' | translate}}</div>
+        <div class="label-info">{{requestedTicket?.ExpectedResolution | date:'M/dd/yyyy h:mm:ss a' }}</div>
+      </div>
+      <div class="label-group" *ngIf="ticketDestination !='serviceNow'">
+        <div class="label">{{'service' | translate}}</div>
+        <div class="label-info">{{requestedTicket?.Service}}</div>
+      </div>
+      <div class="label-group" *ngIf="ticketDestination !='serviceNow'">
+        <div class="label">{{'approvalStatus' | translate}}</div>
+        <div class="label-info"></div>
+      </div>
+    </div>
+    <div class="modify-ticket-tabs">
+      <ul class="tabs">
+        <li (click)="selectAction('view')" [ngClass]="selectedOption === 'view' ? 'selected' : ''" >{{'details' | translate}}</li>
+        <li (click)="selectAction('edit')" [ngClass]="selectedOption === 'edit' ? 'selected' : ''" *ngIf="ticketType !== 'historyTicket' && !showNoUpdate && ticketType !== 'history'">{{'updates' | translate}}</li>
+        <li (click)="selectAction('close')" [ngClass]="selectedOption === 'close' ? 'selected' : ''" *ngIf="ticketType !== 'historyTicket' && !siebelTicket && ticketType !== 'history'">{{'closeRequest' | translate}}</li>
+        <li (click)="selectAction('reopen')"
+          [ngClass]="selectedOption === 'reopen' ? 'selected' : ''"
+          *ngIf="showReOpen && ticketType !== 'current'">{{'reopenRequest' | translate}}</li>
+      </ul>
+      <!--Details Content-->
+      <div *ngIf="selectedOption === 'view'" class="tab-content">
+        <p>{{'ticketDetails' | translate}}</p>
+        <div class="title ">{{'title' | translate}}</div>
+        <div class="info mainTitle">{{requestedTicket?.Title}}</div>
+        <div class="title">{{'description' | translate}}</div>
+        <div class="info" *ngIf="ticketDestination!='serviceNow'">
+          <!-- <ul><li *ngFor="let description of requestedTicket.Description">{{description | json}}</li></ul> -->
+          <ul><li *ngFor="let description of requestedTicket?.Description">{{description}}</li></ul>
+        </div>
+        <div class="info" *ngIf="ticketDestination =='serviceNow'">
+          
+          <ul><li>{{requestedTicket?.Description}}</li></ul>
+        </div>
+        <div class="title" *ngIf="ticketType === 'historyTicket'">{{'solution' | translate}}</div>
+        <div class="info" *ngIf="ticketType === 'historyTicket'"> <ul><li *ngFor="let solution of requestedTicket?.Solution">{{solution}}</li></ul></div>
+        <div class="heading"  *ngIf="ticketDestination!='serviceNow' && noOfAtt > 0">{{'fileAttachment' | translate}}</div>
+        <ul *ngIf="!this.siebelTicket && noOfAtt > 0">
+          <li class="fileName" (click)="downloadAttachment(cont)" *ngFor="let cont of attResp.content">{{cont.attachment.name}}</li>
+        </ul>
+        <ul *ngIf="this.siebelTicket && noOfAtt > 0">
+          <li *ngFor="let cont of attResp">{{cont.attachment.name}}</li>
+        </ul>
+        <div class="updates-heading" *ngIf="ticketDestination=='serviceNow' && requestedTicket?.Worknotes">{{'previousUpdates' | translate}}</div>
+        <div class="info" *ngIf="ticketDestination=='serviceNow' && requestedTicket?.Worknotes">
+          <ul *ngIf="ticketDestination=='serviceNow'"><li><pre>{{ requestedTicket?.Worknotes}}</pre></li></ul>
+          <!-- <ul *ngIf="ticketDestination=='serviceNow'">
+            <li *ngFor="let UA of requestedTicket.Worknotes">
+              <pre>{{UA}}</pre>
+            </li>
+          </ul> -->
+        </div>
+      </div>
+      <!--Updates Content-->
+      <div *ngIf="selectedOption === 'edit'" class="tab-content">
+        <p>{{'provideDetailsOfUpdateBelow' | translate}}</p>
+        <form (ngSubmit)="addUpdate(requestedTicket.InteractionID)" [formGroup]="form">
+          <div class="title">Details</div>
+          <textarea class="updates-info-textarea" formControlName="UpdateAction" [value]="commentDescription"></textarea>
+
+          <div class="w-100" *ngIf="ticketDestination!='serviceNow'">
+          <div class="heading">{{'fileAttachment' | translate}}</div>
+          <input type="file"
+                 class="attach-file"
+                 (change)="onSelect($event.target.files)"
+                 multiple>
+          <div *ngIf="selectedFiles.length > 0" class="file-upload-table">
+            <div class="table-header-row">
+              <div class="table-header-col name">{{'name' | translate}}</div>
+              <div class="table-header-col size">{{'Size' | translate}}</div>
+              <div class="table-header-col action">{{'action' | translate}}</div>
+            </div>
+            <div class="table-row" *ngFor="let file of selectedFiles; index as i">
+              <div class="table-col name"><strong>{{ file?.name }}</strong></div>
+              <div class="table-col size">{{ file?.size/1024 | number:'.2' }} KB</div>
+              <div class="table-col action">
+                <button type="button" (click)="selectedFiles.splice(i, 1)">
+                  {{'OneCareRemove' | translate}}
+                </button>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="submitUpdate">
+            <button type="submit" [disabled]="form.invalid || isClickedOnce" class="btn btn-primary">{{'OneCareSubmit' | translate}}</button>
+            <div class="fileScaninfo" *ngIf="isFileScanProgress">{{'OneCareFileScanProgress' | translate}}</div>
+           
+          </div>
+        </form>
+        <div class="updates-heading" *ngIf="ticketDestination!='serviceNow'">{{'previousUpdates' | translate}}</div>
+        <div class="info" *ngIf="ticketDestination!='serviceNow'">
+          <ul *ngIf="!siebelTicket"><li><pre>{{ requestedTicket?.UpdateAction | UpdSummary }}</pre></li></ul>
+          <ul *ngIf="siebelTicket">
+            <li *ngFor="let UA of requestedTicket.UpdateAction">
+              <pre>{{UA}}</pre>
+            </li>
+          </ul>
+        </div>
+       
+      </div>
+      <!-- Close Request Content-->
+      <div *ngIf="selectedOption === 'close'" class="tab-content">
+        <p>{{'provideReasonToCloseTicket' | translate}}</p>
+        <!-- <form (ngSubmit)="closeReopenTicket('close')" [formGroup]="form">
+          <div class="title">Reason <span class="error">*</span></div>
+          <textarea class="updates-info-textarea" required formControlName="Solution"></textarea>
+          <select class="FilterDropdown" name="status" *ngIf="ticketType=='serviceNow'"
+            (change)="onOptionsSelected($event,$event.target.value)" [(ngModel)]="snCloseState">
+            <option [value]="sta" value="" disabled selected hidden>States</option>
+						<option [value]="Resolved" value="Resolved">Resolved</option>
+						<option [value]="Cancelled" value="Cancelled" class="optionFilterDropdown">Cancelled</option>
+					
+					</select>
+          <div class="button-wrapper">
+            <button type="submit" [disabled]="form.invalid || isClickedOnce" class="btn btn-primary">{{'closeTicket' | translate}}</button>
+          </div>
+        </form> -->
+        <form (ngSubmit)="closeReopenTicket('close')" [formGroup]="form">
+         
+          <!-- <select class="FilterDropdown actionDropdown" name="status"  *ngIf="ticketDestination=='serviceNow'"  required 
+            (change)="onOptionsSelected($event,$event.target.value)" [(ngModel)]="snCloseState">
+            <option [value]="sta" value="" disabled selected>{{'selectAction' | translate}}</option>
+              <option [value]="Resolved" value="Resolved">{{'resolved' | translate}}</option>
+					
+						  <option [value]="Cancelled" value="Cancelled" class="optionFilterDropdown">{{'cancelledTicket' | translate}}</option>
+					
+          </select> -->
+
+          <select class="FilterDropdown actionDropdown" name="status"  *ngIf="ticketDestination=='serviceNow'"  required  (change)="onOptionsSelected($event,$event.target.value)">
+            <option>{{'selectAction' | translate}}</option>
+            <option *ngFor="let action of possibleActions" [id]="action.id" [value]="action.id"> {{ action.name }} </option>
+          </select>
+          <span class="error"  *ngIf="ticketDestination=='serviceNow'">*</span>
+
+          <div class="title">Reason <span class="error">*</span></div>
+          <textarea class="updates-info-textarea" required formControlName="Solution"></textarea>
+          <div class="button-wrapper">
+            <button type="submit" [disabled]="form.invalid || isClickedOnce || (!snCloseState && ticketDestination =='serviceNow') " class="btn btn-primary">{{'closeTicket' | translate}}</button>
+          </div>
+        </form>
+      </div>
+      <!-- Re-open Request Content-->
+      <div *ngIf="selectedOption === 'reopen'" class="tab-content">
+        <p>{{'provideReasonToReopenTicket' | translate}}</p>
+        <form (ngSubmit)="closeReopenTicket('reopen')" [formGroup]="form">
+          <div class="title">Reason</div>
+          <textarea class="updates-info-textarea" formControlName="UpdateAction"></textarea>
+          <div class="button-wrapper">
+            <button type="submit" [disabled]="isClickedOnce" class="btn btn-primary">{{'reopenTickets' | translate}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+{
+   "@count":103,
+   "@start":1,
+   "@totalcount":103,
+   "Messages":[
+
+   ],
+   "ResourceName":"CustOpsInteraction",
+   "ReturnCode":0,
+   "content":[
+      {
+         "CustOpsInteraction":{
+            "AddlStatusUpdates":"yes",
+            "Area":"Service Suite - Customer Operations",
+            "AssignmentGroup":"AVA-CUSTOPS-ONBOARDING",
+            "Category":"incident",
+            "Description":[
+               "First Name : test",
+               "Last Name : test",
+               "Email Id : test",
+               "Phone Number : test",
+               "Subscription Type : UC",
+               "Severity : 2",
+               "Description : teststetstss"
+            ],
+            "EUConnectivity":"avayaoffice-cabled",
+            "ExpectedResolution":"2018-11-06T22:00:00+00:00",
+            "Impact":"2",
+            "InteractionID":"IT1811856",
+            "Location":"COPPELL-304499",
+            "Medium":"Customer Ops Portal",
+            "NotifyBy":"E-mail",
+            "OpenTime":"2018-11-01T21:32:33+00:00",
+            "OpenedBy":"ws_customerops",
+            "Owner":"ws_customerops",
+            "PrimaryContact":"VRAMIREDDY",
+            "SLABreach":true,
+            "Service":"OTHER",
+            "ServiceArea":"Other",
+            "ServiceRecipient":"VRAMIREDDY",
+            "Severity":"4",
+            "Status":"Open - Idle",
+            "SubArea":"Onboarding Help | Access Issues, SSO or PRM",
+            "Title":"Storefront Support - Storefront",
+            "Urgency":"3",
+            "PriorityMatrixAffectedUsers":"21",
+            "PriorityMatrixProactivity":"4",
+            "Solution":[
+               "Obsolete",
+               "Test"
+               ]
+         }
+      },
+      {
+         "CustOpsInteraction":{
+            "AddlStatusUpdates":"yes",
+            "Area":"Service Suite - Customer Operations",
+            "AssignmentGroup":"AVA-CUSTOPS-ONBOARDING",
+            "Category":"incident",
+            "Description":[
+               "First Name : test",
+               "Last Name : test",
+               "Email Id : test",
+               "Phone Number : test",
+               "Subscription Type : UC",
+               "Severity : 3",
+               "Description : rarawrawaea"
+            ],
+            "EUConnectivity":"avayaoffice-cabled",
+            "ExpectedResolution":"2018-11-06T22:00:00+00:00",
+            "Impact":"2",
+            "InteractionID":"IT1811857",
+            "Location":"COPPELL-304499",
+            "Medium":"Customer Ops Portal",
+            "NotifyBy":"E-mail",
+            "OpenTime":"2018-11-01T23:01:52+00:00",
+            "OpenedBy":"ws_customerops",
+            "Owner":"ws_customerops",
+            "PrimaryContact":"VRAMIREDDY",
+            "SLABreach":true,
+            "Service":"OTHER",
+            "ServiceArea":"Other",
+            "ServiceRecipient":"VRAMIREDDY",
+            "Severity":"4",
+            "Status":"Open - Idle",
+            "SubArea":"Onboarding Help | Access Issues, SSO or PRM",
+            "Title":"Storefront Support - Storefront",
+            "Urgency":"3",
+            "PriorityMatrixAffectedUsers":"21",
+            "PriorityMatrixProactivity":"4" ,
+            "Solution":[
+               "Obsolete",
+               "Test"
+               ]
+         }
+      }
+    
+   ]
+}

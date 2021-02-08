@@ -1,0 +1,55 @@
+[
+  {
+    "qatype": "values",
+    "CCOverrideTarget": "CONTEXT1",
+    "title": "Return Question 1",
+    "ansvalidation": {},
+    "description": "Question1",
+    "qcontext": null,
+    "CCOverrideContent": "PLDS-SERVICE-CALA",
+    "variant": "34",
+    "repointto": [
+      "none",
+      "none",
+      "12",
+      "43"
+    ],
+    "qorder": "45",
+    "valuelabel": [
+      "APAC",
+      "NAR",
+      "EU",
+      "GGM"
+    ]
+  },
+  {
+    "qatype": null,
+    "CCOverrideTarget": null,
+    "title": "EMEA Return Question1",
+    "ansvalidation": {},
+    "description": "EMEA Question1",
+    "qcontext": null,
+    "CCOverrideContent": null,
+    "variant": null,
+    "repointto": null,
+    "qorder": null,
+    "valuelabel": [
+      "EMEA"
+    ]
+  },
+  {
+    "qatype": null,
+    "CCOverrideTarget": null,
+    "title": "APAC Return Question1",
+    "ansvalidation": {},
+    "description": "APAC Question1",
+    "qcontext": null,
+    "CCOverrideContent": null,
+    "variant": "34",
+    "repointto": null,
+    "qorder": "50",
+    "valuelabel": [
+      "APAC"
+    ]
+  }
+]

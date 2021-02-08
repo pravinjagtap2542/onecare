@@ -1,0 +1,59 @@
+<div class="av-modal-inner">
+  <div class="av-modal-header">
+    <h2> {{ catalog?.title }} </h2>
+    <i class="" [routerLink]="public" *ngIf="originUrlPath && !isAvayaCloudOffice && !isAvayaCCass">X</i>
+    <i class="" (click)="navigateToAvayaCloudOffice()" *ngIf="(originUrlPath && isAvayaCloudOffice) || (originUrlPath && isAvayaCCass) ">X</i>
+    <i class="" [routerLink]="[origin]" *ngIf="!originUrlPath">X</i>
+  </div>
+  <div class="vertical-tabs">
+    <div class="vertical-tabs-left">
+      <ul class="vertical-tabs-links" *ngIf="originUrlPath">
+        <li *ngFor="let category of catalog?.categoryassocs" [class.active]="category.id === currFunction"
+          [attr.title]="category.description" [routerLink]="public"
+          [queryParams]="{modal: 'show', function: catalog.id, category: category.id, view: catalog.view, origin: 'public'}"
+          (click)="selectFunction(category.id)">
+          {{category.title}}
+        </li>
+      </ul>
+      <ul class="vertical-tabs-links" *ngIf="!originUrlPath">
+        <li *ngFor="let category of catalog?.categoryassocs" [class.active]="category.id === currFunction"
+          [attr.title]="category.description" [routerLink]="[origin]"
+          [queryParams]="{modal: 'show', function: catalog.id, category: category.id, view: catalog.view, origin: origin}"
+          (click)="selectFunction(category.id)">
+          {{category.title}}
+        </li>
+      </ul>
+      <div class="quick-links" *ngIf="innerWidth > 797 && KBLinks &&  KBLinks.kblinks && KBLinks.kblinks.length > 0">
+        <h5>{{KBLinks?.kbtitle}}</h5>
+        <p>{{KBLinks?.kbdescription}}</p>
+        <ul>
+          <li *ngFor="let kbdoc of KBLinks?.kblinks">
+            <a href="{{kbdoc?.url}}" target="_blank">{{kbdoc?.title}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- <div class="vertical-tabs-left" *ngIf="!originUrlPath">
+      <ul class="vertical-tabs-links">
+        <li *ngFor="let category of catalog?.categoryassocs" [class.active]="category.id === currFunction"
+          [attr.title]="category.description" [routerLink]="[origin]"
+          [queryParams]="{modal: 'show', function: catalog.id, category: category.id, origin: origin}"
+          (click)="selectFunction(category.id)">
+          {{category.title}}
+        </li>
+      </ul>
+      <div class="quick-links" *ngIf="innerWidth > 797 && KBLinks &&  KBLinks.kblinks && KBLinks.kblinks.length > 0">
+        <h5>{{KBLinks?.kbtitle}}</h5>
+        <p>{{KBLinks?.kbdescription}}</p>
+        <ul>
+          <li *ngFor="let kbdoc of KBLinks?.kblinks">
+            <a href="{{kbdoc?.url}}" target="_blank">{{kbdoc?.title}}</a>
+          </li>
+        </ul>
+      </div>
+    </div> -->
+    <div class="form">
+      <cop-form></cop-form>
+    </div>
+  </div>
+</div>

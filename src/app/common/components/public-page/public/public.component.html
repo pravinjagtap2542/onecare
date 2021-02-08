@@ -1,0 +1,386 @@
+<section *ngIf="(!isAvayaCloudOffice && !is404Page) || is404Page" class="hero"
+	[ngStyle]="{'background-image': heroData?.image.imageUrl }">
+	<div class="hero-title">
+		<h3>{{ heroData.title }}</h3>
+		<p>{{ heroData.description }}</p>
+	</div>
+</section>
+
+<section *ngIf="isAvayaCloudOffice && !is404Page" class="ring-central-logo">
+	<a href="{{acoUrl}}" target="_self" class="aco-logo"></a>
+</section>
+
+<div class="av-container" *ngIf="!is404Page && openSearchView">
+	<!-- Start Flexible Template wrapper -->
+	<div class="av-layout-row">
+		<div class="av-center">
+			<div class="av-search-results">
+				<div class="search-top">
+					<div>
+						<h2>{{'OneCareWelcomeMessage' | translate}}</h2>
+						<p class="subText" *ngIf="!isAvayaCCass && !isAvayaCloudOffice && sinInLink">
+							{{'OneCareMakeSure' | translate}} <a
+								href="{{sinInLink}}">{{'OneCareSignIn' | translate}}</a>
+							{{'OneCareSignInMessage' | translate}}</p>
+						<p class="subText" *ngIf="isAvayaCloudOffice && sinInLink && !ringSSOSession">
+							{{'OneCareMakeSure' | translate}} <a
+								href="{{sinInLink}}">{{'OneCareSignIn' | translate}}</a>
+							{{'RingSignInMessage' | translate}}</p>
+					</div>
+					<div class="search-bar">
+						<img class="img-cursor" (click)="getfileinput($event)" width="20"
+							src="../../cs/cop/assets/svg/search-icon.svg">
+						<input type="text" class="searchTerm" [value]="searchTerm" #fileinput
+							(keyup)="getfileinput($event)" placeholder="{{'OneCareSearchPlaceholder' | translate}}" />
+					</div>
+					<select class="FilterDropdown" name="status"
+						(change)="onOptionsSelected($event,$event.target.value)">
+						<option [value]="sta" value="" disabled selected hidden>{{'filters' | translate}}</option>
+						<option class="optionFilterDropdown " *ngFor="let sta of status" [value]="sta">{{sta}}</option>
+						<!-- [disabled]="disabledSelect" -->
+					</select>
+					<div class="ErrorText" *ngIf="isSearchTermBlank">
+						{{'SearchErrorMsg'|translate}}
+					</div>
+				</div>
+				<div class="gray-title-bar" *ngIf="grayTitle">
+					<ul>
+						<li (click)="clickEvent('avaya')" [ngClass]="change ? 'noncursor' : 'img-cursor'"><a
+								class="removehyperlink">{{greyTitleText}}</a></li>
+					</ul>
+				</div>
+				<div class="loading-shade" *ngIf="isLoadingResults">
+					<div class="loader" alt="Please wait..."></div>
+				</div>
+				<br>
+				<br>
+				<div class="search-body" *ngIf="totalRecords > 0 ">
+					<!-- *ngIf="totalRecords > 0 " -->
+					<div class="container-fluid filterContainer">
+						<!-- *ngIf="totalRecords > 0 " -->
+						<div class="row flex-column flex-md-row">
+							<div class="col-xs-6 col-sm-4 col-lg-2 p-0 bg-dark flex-shrink-1">
+								<nav
+									class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
+									<div class="collapse navbar-collapse">
+										<ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
+											<div ngbDropdown class="d-inline-block">
+												<h6 class="Language desktop"> FILTERS</h6>
+												<hr>
+
+												<mat-list class="desktop mat-list mat-list-base container MainFilter"
+													id="filterNoWrap">
+													<div>
+														<div class="CategoryContainer row"
+															*ngIf="languageArray.length > 0">
+															<h6 class="LanguageTitle">
+																{{'languageForSearch' | translate}}</h6>
+															<div class="ScrollbarForFilters">
+																<ng-scrollbar #scrollEl class="scrollbar-for-home">
+																	<div style="padding: 1em;">
+																		<mat-list-item
+																			class="mat-list-base mat-list-item mat-list-item-content">
+																			<mat-checkbox [(ngModel)]="select_all"
+																				(ngModelChange)="onSelectAllLanguageType($event)"
+																				class="country">
+																				{{'selectAll' | translate}}
+																			</mat-checkbox>
+																		</mat-list-item>
+																		<ng-container *ngFor="let d of languageArray;">
+																			<mat-list-item *ngIf="d.count > 0">
+																				<!-- *ngIf="d.count > 0"  -->
+																				<mat-checkbox [checked]="d.name"
+																					(change)="LanguageSelection($event,d.name)"
+																					aria-label={{d.name}}
+																					[(ngModel)]="d.is_selected"
+																					class="countryList">
+																					{{d.name}} ({{d.count}})
+																				</mat-checkbox>
+																			</mat-list-item>
+																		</ng-container>
+																	</div>
+																</ng-scrollbar>
+															</div>
+														</div>
+													</div>
+
+
+
+													<div>
+														<div class="CategoryContainer row"
+															*ngIf="contentTypeArray.length > 0">
+															<h6 class="ContentTitle">{{'contentType' | translate}} </h6>
+															<div class="ScrollbarForFilters">
+																<ng-scrollbar #scrollEl class="scrollbar-for-home">
+																	<div style="padding: 1em;">
+																		<mat-list-item class="mat-list">
+																			<mat-checkbox [(ngModel)]="select_all1"
+																				(ngModelChange)="onSelectAllContentType($event)"
+																				class="country">
+																				{{'selectAll' | translate}}
+																			</mat-checkbox>
+																		</mat-list-item>
+																		<ng-container>
+																			<mat-list-item
+																				*ngFor="let d of contentTypeArray;">
+																				<!-- *ngIf="d.count > 0"  -->
+																				<mat-checkbox [checked]="d.name"
+																					(change)="contentTypeSelection($event,d.name)"
+																					aria-label={{d.name}}
+																					[(ngModel)]="d.is_selected1"
+																					class="countryList">
+																					{{d.name}} ({{d.count}})
+																				</mat-checkbox>
+																			</mat-list-item>
+																		</ng-container>
+																	</div>
+																</ng-scrollbar>
+															</div>
+														</div>
+													</div>
+
+													<div>
+														<div class="CategoryContainer row"
+															*ngIf="docTypeArray.length > 0">
+															<h6 class="DocumentTitle">{{'documentType' | translate}}
+															</h6>
+															<div class="ScrollbarForFilters">
+																<ng-scrollbar #scrollEl class="scrollbar-for-home">
+																	<div style="padding: 1em;">
+																		<mat-list-item>
+																			<mat-checkbox [(ngModel)]="select_all2"
+																				(ngModelChange)="onSelectAllDocumentType($event)"
+																				class="country">
+																				{{'selectAll' | translate}}
+																			</mat-checkbox>
+																		</mat-list-item>
+																		<ng-container>
+																			<mat-list-item
+																				*ngFor="let d of docTypeArray;">
+																				<!-- *ngIf="d.count > 0"  -->
+																				<mat-checkbox [checked]="d.name"
+																					(change)="docTypeSelection($event,d.name)"
+																					aria-label={{d.name}}
+																					[(ngModel)]="d.is_selected2"
+																					class="countryList">
+																					{{d.name}} ({{d.count}})
+																				</mat-checkbox>
+																			</mat-list-item>
+																		</ng-container>
+																	</div>
+																</ng-scrollbar>
+															</div>
+														</div>
+													</div>
+
+												</mat-list>
+
+											</div>
+										</ul>
+									</div>
+								</nav>
+							</div>
+							<div class="mobile-view">
+								<div>
+									<div>
+										<h6>
+											<i class="fa fa-filter"></i>
+											Refine Results </h6>
+									</div>
+									<mat-accordion>
+
+										<mat-expansion-panel (opened)="panelOpenState = true"
+											(closed)="panelOpenState = false" id="whiteWrapRemove"
+											*ngIf="languageArray.length >0 ">
+											<mat-expansion-panel-header>
+												<mat-panel-title>
+													{{'languageForSearch' | translate}}
+												</mat-panel-title>
+												<mat-panel-description>
+													<!-- {{panelOpenState ? 'open' : 'closed'}} -->
+												</mat-panel-description>
+											</mat-expansion-panel-header>
+											<p>
+												<mat-list>
+													<mat-list-item>
+														<mat-checkbox [(ngModel)]="select_all"
+															(ngModelChange)="onSelectAllLanguageType($event)"
+															class="country">
+															{{'selectAll' | translate}} </mat-checkbox>
+													</mat-list-item>
+													<ng-container *ngFor="let d of languageArray;">
+														<mat-list-item>
+															<!-- *ngIf="d.count > 0"  -->
+															<mat-checkbox [checked]="d.name"
+																(change)="LanguageSelection($event,d.name)"
+																aria-label={{d.name}} [(ngModel)]="d.is_selected"
+																class="countryList">{{d.name}}({{d.count}})
+															</mat-checkbox>
+														</mat-list-item>
+													</ng-container>
+												</mat-list>
+											</p>
+										</mat-expansion-panel>
+									</mat-accordion>
+									<mat-accordion>
+
+										<mat-expansion-panel (opened)="panelOpenState = true"
+											(closed)="panelOpenState = false" id="whiteWrapRemove1"
+											*ngIf="contentTypeArray.length >0 ">
+											<mat-expansion-panel-header>
+												<mat-panel-title>
+													{{'contentType' | translate}}
+												</mat-panel-title>
+												<mat-panel-description>
+													<!-- {{panelOpenState ? 'open' : 'closed'}} -->
+												</mat-panel-description>
+											</mat-expansion-panel-header>
+											<p>
+												<mat-list>
+													<ng-container>
+														<mat-list-item>
+															<mat-checkbox [(ngModel)]="select_all1"
+																(ngModelChange)="onSelectAllContentType($event)"
+																class="country">
+																{{'selectAll' | translate}}</mat-checkbox>
+														</mat-list-item>
+														<mat-list-item *ngFor="let d of contentTypeArray;">
+															<!-- *ngIf="d.count > 0"  -->
+															<mat-checkbox [checked]="d.name"
+																(change)="contentTypeSelection($event,d.name)"
+																aria-label={{d.name}} [(ngModel)]="d.is_selected1"
+																class="countryList">{{d.name}}({{d.count}})
+															</mat-checkbox>
+														</mat-list-item>
+													</ng-container>
+												</mat-list>
+											</p>
+										</mat-expansion-panel>
+									</mat-accordion>
+									<mat-accordion>
+
+										<mat-expansion-panel (opened)="panelOpenState = true"
+											(closed)="panelOpenState = false" id="whiteWrapRemove2"
+											*ngIf="docTypeArray.length >0 ">
+											<mat-expansion-panel-header>
+												<mat-panel-title>
+													{{'documentType' | translate}}
+												</mat-panel-title>
+												<mat-panel-description>
+													<!-- {{panelOpenState ? 'open' : 'closed'}} -->
+												</mat-panel-description>
+											</mat-expansion-panel-header>
+											<p>
+												<mat-list>
+													<mat-list-item>
+														<mat-checkbox [(ngModel)]="select_all2"
+															(ngModelChange)="onSelectAllDocumentType($event)"
+															class="country">
+															{{'selectAll' | translate}} </mat-checkbox>
+													</mat-list-item>
+													<ng-container>
+														<mat-list-item *ngFor="let d of docTypeArray;">
+															<!-- *ngIf="d.count > 0"  -->
+															<mat-checkbox [checked]="d.name"
+																(change)="docTypeSelection($event,d.name)"
+																aria-label={{d.name}} [(ngModel)]="d.is_selected2"
+																class="countryList">{{d.name}}({{d.count}})
+															</mat-checkbox>
+														</mat-list-item>
+													</ng-container>
+												</mat-list>
+											</p>
+										</mat-expansion-panel>
+									</mat-accordion>
+								</div>
+							</div>
+							<main class="col bg-faded py-3 flex-grow-1">
+								<div class="sortBy">
+									<h6 style="text-align:right">{{'sortBy' | translate}}
+										<select (change)="onSortBySelection($event,$event.target.value)" name="Sort">
+											<option *ngFor="let sta of Sort" [value]="sta">{{sta}}</option>
+										</select>
+									</h6>
+								</div>
+								<div class="results" [hidden]="isLoadingResults">
+									<div class="block">
+										<div class="show-results" *ngIf="totalRecords > 0 ">
+											<p class="red-msg">{{'OneCareShowing' | translate}} {{fromSearchResult}} -
+												{{toSearchResult}} {{'OneCareOf' | translate}}
+												{{totalRecords}} {{'OneCareResults' | translate}} </p>
+										</div>
+										<ng-container *ngIf="searchResultJsonResponse?.body?.results.length  > 0">
+											<div class="inner"
+												*ngFor="let serachValues of searchResultJsonResponse?.body?.results | paginate: { itemsPerPage:10, currentPage: pageChange, totalItems: searchResultJsonResponse?.body?.displayResults }">
+												<div class="col">
+													<h3 class="searchH3"
+														[innerHTML]="setMergeTitle(serachValues.url,serachValues.tileTitle, serachValues.formTitle)"
+														id="JSONContainer">
+													</h3>
+													<p id="JSONContainer" [innerHTML]="serachValues.formDescription">
+													</p>
+													<div class="SortValues">
+														<ul id="menu">
+															<li *ngIf="serachValues.lastmodifieddate">Last Updated:</li>
+															<li *ngIf="serachValues.lastmodifieddate" id="JSONContainer"
+																[innerHTML]="serachValues.lastmodifieddate">
+															</li>
+															<li *ngIf="serachValues.doctype"> |
+															</li>
+															<li *ngIf="serachValues.doctype" id="JSONContainer"
+																[innerHTML]="serachValues.doctype">
+																<!-- {{serachValues.doctype}}&nbsp;| &nbsp; -->
+															</li>
+															<li *ngIf="serachValues.language"> |
+															</li>
+															<!-- <li id="JSONContainer" [innerHTML]="serachValues.size">	
+														</li> -->
+															<li *ngIf="serachValues.language" id="JSONContainer"
+																[innerHTML]="serachValues.language">
+																<!-- {{serachValues.language}}&nbsp;| &nbsp; -->
+															</li>
+															<li *ngIf="serachValues.supportcontenttype"> |
+															</li>
+															<li *ngIf="serachValues.supportcontenttype"
+																id="JSONContainer"
+																[innerHTML]="serachValues.supportcontenttype">
+																<!-- {{serachValues.supportcontenttype}}&nbsp;| &nbsp; -->
+															</li>
+															<li *ngIf="serachValues.supportdocumenttype"> |
+															</li>
+															<li *ngIf="serachValues.supportdocumenttype"
+																id="JSONContainer"
+																[innerHTML]="serachValues.supportdocumenttype">
+																<!-- {{serachValues.supportdocumenttype}} -->
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</ng-container>
+									</div>
+									<pagination-controls *ngIf="totalRecords > 9" class="my-pagination"
+										(pageChange)="onPageChange($event)" previousLabel="" nextLabel="">
+									</pagination-controls>
+								</div>
+							</main>
+						</div>
+					</div>
+				</div>
+				<ng-container
+					*ngIf="searchResultJsonResponse?.body?.totalResults == 0 || searchResultJsonResponse?.body?.totalResults == '0'">
+					<div class="inner">
+						<div class="col">
+							<p>{{'OneCareSearchTermDidntMatch' | translate}}.
+							</p>
+							<p>{{'OneCareAdjustSearchTerm' | translate}}.</p>
+						</div>
+					</div>
+				</ng-container>
+			</div>
+		</div>
+		<!-- End Flexible Template wrapper -->
+
+	</div>
+
+	<!-- End main container -->

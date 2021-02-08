@@ -1,0 +1,66 @@
+@import "../../../../../stylesheets/abstracts/_variables.scss";
+@import "../../../../../stylesheets/abstracts/_mixins.scss";
+.tabs-container {
+  max-width: $max-width;
+  margin: -50px auto 0;
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0;
+    li {
+      flex: 1;
+      border-top: 5px solid $silver;
+      background: $gallery;
+      margin-right: 5px;
+      padding: 0 12px;
+      text-align: center;
+      max-width: 200px;
+      font-weight: bold;
+      outline: none;
+      cursor: pointer;
+      height: 46px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      &.active {
+        border-top: 5px solid $brand-color;
+        background: $white;
+      }
+      &:first-child{
+       // max-width: 70px;
+      }
+      i {
+        margin-right: 10px;
+        color: $mine;
+      }
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 900px) {
+    ul {
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    margin: 0;
+    ul {
+      padding: 0;
+      background: $tundora;
+    }
+  }
+}
+.tab-content {
+  padding: $comp-block-padding;
+  background: $white;
+  position: relative;
+  .tab-content-inner {
+    max-width: $max-width;
+    margin: 0 auto;
+    h3,p {
+      margin-bottom: 20px;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    padding: 50px 20px;
+  }
+}

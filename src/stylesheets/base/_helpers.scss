@@ -1,0 +1,184 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+/**
+ * Clear inner floats
+ */
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+/**
+ * Main content containers
+ * 1. Make the container full-width with a maximum width
+ * 2. Center it in the viewport
+ * 3. Leave some space on the edges, especially valuable on small screens
+ */
+.container {
+  max-width: $max-width; /* 1 */
+  margin-left: auto; /* 2 */
+  margin-right: auto; /* 2 */
+  padding-left: 20px; /* 3 */
+  padding-right: 20px; /* 3 */
+  width: 100%; /* 1 */
+ }
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+.hide-text {
+  overflow: hidden;
+  padding: 0; /* 1 */
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.visually-hidden {
+  border: 0;
+  clip-path: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.loading-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 1);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .loader {
+    background: url('/cs/cop/assets/images/ajax-loader.gif') no-repeat;
+    background-size: contain;
+    height: 100px;
+    width: 100px;
+  }
+}
+
+.tabular-data-wrapper {
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    overflow-x: auto;
+    /* .mat-table {
+      width: 767px;
+    } */
+    .mat-paginator-range-label {
+      margin: 0 20px;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .mat-header-row, .mat-row {
+    .mat-column-startDate,
+    .mat-column-status,
+    .mat-column-possibleActions,
+    .mat-column-dateClosed,
+    .mat-column-actions
+     {
+      display: none;
+    }
+  }
+}
+
+.error {
+  font-size: $text-font-size-small;
+  color: $brand-color;
+}
+
+.file-upload-table {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin-top: 20px;
+  .table-header-row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    .table-header-col {
+      background-color: #4c4c4c;
+      color: white;
+      flex: 1;
+      padding: 15px;
+      border-left: 1px solid #ccc;
+      &.name {
+        flex: 2;
+      }
+      &:first-child {
+        border-left: none;
+      }
+      @media screen and (max-width: 767px) {
+        &.size {
+          display: none;
+        }
+      }
+
+    }
+  }
+  .table-row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    .table-col {
+      padding: 15px;
+      font-size: 14px;
+      border-left: 1px solid #ccc;
+      flex: 1;
+      align-items: flex-start;
+      overflow: hidden;
+      word-wrap: break-word;
+      min-height: inherit;
+      &.name {
+        flex: 2;
+      }
+      &.action {
+        button {
+          background: none;
+          border: none;
+          outline: none;
+          color: red;
+          font-size: 12px;
+          cursor: pointer;
+        }
+
+      }
+      &:first-child {
+        border-left: none;
+      }
+      @media screen and (max-width: 767px) {
+        &.size {
+          display: none;
+        }
+      }
+    }
+    &:nth-child(2n+1) {
+      background: #e7e7e7;
+    }
+  }
+}
+.attach-file {
+  margin-top: 5px;
+  padding: 0;
+  color: transparent;
+  border: 0px;
+  max-width: 180px;
+}

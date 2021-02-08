@@ -1,0 +1,50 @@
+<!--Action card block comes here-->
+<cop-news-section *ngIf="newsData[0]?.TopNews?.length > 0" [newsData]="topNewsData" ></cop-news-section> 
+<div class="action-card-block">
+  <h2 class="pattern-underline">{{'OneCareGetSupport' | translate}}</h2>
+  <p class="subText" *ngIf="originUrlPath && !isAvayaCCass && sinInLink && !isAvayaCloudOffice"><a href="{{sinInLink}}">{{'OneCareSignIn' | translate}}</a> {{'OneCareSignInMessagePersonalized' | translate}}</p>
+  <p class="subText" *ngIf="originUrlPath && !isAvayaCCass && sinInLink && isAvayaCloudOffice && !ringSSoSession"><a href="{{sinInLink}}">{{'OneCareSignIn' | translate}}</a> {{'OneCareSignInMessagePersonalized' | translate}}</p>
+  <div class="tileSelectorDiv" *ngIf="titles && titles.length > 0 && !originUrlPath">
+    <label class="tileSelectorLabel">{{'OneCareView' | translate}}:</label>
+    <select class="tileSelectorDropDown" (change)="tileViewSelectorChange($event)">
+        <option *ngIf="defaultTitleText !=''" selected="selected" class="tileSelectorOptions">{{defaultTitleText}}</option>
+        <option *ngFor="let title of titles" class="tileSelectorOptions">{{title}}</option>
+    </select>
+  </div>
+
+  <div class="action-card-block-wrapper">
+    <div class="loading-shade" *ngIf="isLoadingResults">
+      <div class="loader" alt="Please wait..."></div>
+    </div>
+    <div class="action-card-wrapper" *ngFor="let card of cards" [hidden]="isLoadingResults">
+      <!-- <div class="action-card raise" *ngIf="card.displayinportal=='true' && card.categoryassocs.length == 1 ">
+        <cop-action-card
+          [data]="{id: card.id, function: card.categoryassocs[0]?.id, title: card.title, description: card.description, tileicon:card.tileicon, isPublic:originUrlPath}">
+        </cop-action-card>
+      </div>
+      <div class="action-card raise" *ngIf="card.displayinportal=='true' && card.categoryassocs.length > 1">
+        <cop-action-card 
+        [data]="{id: card.id, title: card.title, description: card.description, tileicon:card.tileicon, isPublic:originUrlPath}">
+      </cop-action-card>
+      </div> -->
+        <div class="action-card raise" *ngIf="card.displayinportal=='true'">
+        <cop-action-card
+          [data]="{id: card.id, function: card.categoryassocs[0]?.id, title: card.title, description: card.description, tileicon:card.tileicon, isPublic:originUrlPath}">
+        </cop-action-card>
+      </div>
+      <div class="action-card raise" *ngIf="isAvayaCloudOffice && card.displayinportal=='false' && ringSSoSession">
+        <cop-action-card 
+        [data]="{id: card.id, title: card.title, description: card.description, tileicon:card.tileicon, isPublic:originUrlPath}">
+      </cop-action-card>
+      </div>
+      </div>
+  
+    </div>
+    
+  </div>
+
+<cop-news-section *ngIf="newsData[0]?.News?.length > 0" [newsData]="news"></cop-news-section>
+
+
+
+ 

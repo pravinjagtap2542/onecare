@@ -1,0 +1,124 @@
+@import "../../../../../stylesheets/abstracts/variables";
+@import "../../../../../stylesheets/abstracts/mixins";
+@import "../../../../../stylesheets/components/titles";
+@import "../../../../../stylesheets/base/_helpers.scss";
+
+.pattern-underline {
+	//background: url('../../../../../cs/cop/assets/images/svgs/avaya-bar.svg') no-repeat 50% 100%;
+}
+
+.action-card-block {
+  background: $color-light-gray;
+  padding: 15px 0 60px 0px;
+  .tileSelectorDiv{
+    margin-left: 5%;
+    margin-bottom: 2em;
+    .tileSelectorLabel{
+      font-weight: bold;
+    }
+    .tileSelectorDropDown{
+      background-color: $color-light-gray;
+      margin-left: 10px;
+      padding: 1px;
+      width: 15em;
+    }
+  }
+  .subText{
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-family: HCo Gotham SSm;
+    a{
+      color:#0000EE !important;
+    }
+  }
+  .action-card-block-wrapper {
+    max-width: $max-width;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    .loading-shade {
+      max-width: 90%;
+      background: #fff;
+      z-index: 99998;
+      position: relative;
+      width: 90%;
+      .loader{
+        margin: 100px auto;
+      }
+      @media screen and (max-width: 767px) {
+      //  top: 54em;
+        height: 3000px;
+      }
+    }
+    .action-card-wrapper{
+      max-width: 320px;
+    .action-card {
+      flex: 1;
+      border-top: 5px solid $brand-color;
+      background: $white;
+      margin-right: 15px;
+      margin-bottom: 15px;
+      min-width: 250px;
+      // max-width: 277px;
+      cursor: pointer;
+      &.action-card-create {
+        background: none;
+        border: none;
+        h6 {
+          padding: 25px 20px 10px 0;
+          font-size: 30px;
+          font-weight: 600;
+        }
+        p {
+          padding: 0 20px 0 0;
+          font-size: 16px;
+        }
+        &:after {
+          content: "\e90a";
+          font-size: 38px;
+          display: inline-block;
+          font-family: "fontcustom";
+          font-style: normal;
+          font-weight: bold;
+          font-variant: normal;
+          line-height: 1;
+          text-decoration: inherit;
+          text-rendering: optimizeLegibility;
+          text-transform: none;
+          -moz-osx-font-smoothing: grayscale;
+          -webkit-font-smoothing: antialiased;
+          font-smoothing: antialiased;
+          color:$alto;
+          float: right;
+          padding: 0 20px;
+        }
+      }
+      @media screen and (max-width: 1024px) {
+        max-width: none;
+      }
+      @media screen and (max-width: 545px) {
+
+        margin-right: 0;
+      }
+    }
+  }
+  }
+  @media screen and (max-width: 1024px){
+    padding: 50px 20px 35px;
+  }
+}
+
+@import '~@angular/material/theming';
+
+.raise {
+  @include mat-elevation-transition;
+  @include mat-elevation(0);
+
+  &:hover {
+    @include mat-elevation(8);
+  }
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "qatype": "values",
+    "CCOverrideTarget": null,
+    "title": "Region",
+    "ansvalidation": {},
+    "description": "Select your company's region",
+    "qcontext": null,
+    "CCOverrideContent": null,
+    "variant": null,
+    "repointto": null,
+    "qorder": null,
+    "valuelabel": ["APAC", "CALA", "CANADA", "EMEA", "US"]
+  },
+  {
+   "qatype": "values",
+   "CCOverrideTarget": null,
+   "title": "Category",
+   "ansvalidation": {},
+   "description": "Please select the category which best describes the area you need support.",
+   "qcontext": "Variable1",
+   "CCOverrideContent": null,
+   "variant": null,
+   "repointto": null,
+   "qorder": null,
+   "valuelabel": [
+     "PRM administration and processes",
+     "User Profiles",
+     "Link ID requests",
+     "MDF funds and claims",
+     "Leads and Opportunities",
+     "SSR requests",
+     "GSS access",
+     "Partner Portal Issues and Questions"
+   ]
+ },
+ {
+    "qatype": "readonly",
+    "CCOverrideTarget": null,
+    "title": "Request Details",
+    "ansvalidation": {},
+    "description": "Please describe the situation you need us to assist with. Make sure you provide all necessary details.",
+    "qcontext": null,
+    "CCOverrideContent": null,
+    "variant": null,
+    "repointto": null,
+    "qorder": null,
+    "valuelabel": "<h3>Provide the request details here</h3>"
+  }
+]

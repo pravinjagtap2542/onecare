@@ -1,0 +1,305 @@
+<div *ngIf="!isIE">
+    <div *ngIf="!publicPage && !welcomePage && !searchPage">
+        <cop-header></cop-header>
+        <customer-care-main *ngIf="searchResultsStatus"></customer-care-main>
+        <cop-search-results *ngIf="!searchResultsStatus"></cop-search-results>
+        <cop-footer></cop-footer>
+    </div>
+
+
+
+    <div *ngIf="publicPage && !welcomePage">
+        <cop-public-header></cop-public-header>
+        <cop-public></cop-public>
+        <customer-care-main></customer-care-main>
+        <cop-public-footer> </cop-public-footer>
+    </div>
+
+    <div *ngIf="searchPage">
+         <cop-searchpage-header></cop-searchpage-header> 
+               <!-- <cop-public-header></cop-public-header> -->
+        <cop-search-page></cop-search-page>
+        <cop-public-footer> </cop-public-footer>
+    </div>
+
+    <!-- <div *ngIf="welcomePage && !publicPage">
+        <cop-welcome-header></cop-welcome-header>
+        <cop-welcome></cop-welcome>
+        <customer-care-main></customer-care-main>
+        <cop-welcome-footer></cop-welcome-footer>
+    </div> -->
+</div>
+
+<!-- <i class="icon-ava-outline"></i>
+<i class="icon-blog-solid"></i>
+
+.icon-build-outline, <i class="icon-build-outline">
+.icon-buy-outline, <i class="icon-buy-outline"></i>
+.icon-chat-now-solid, <i class="icon-chat-now-solid"></i>
+.icon-chat-outline, <i class="icon-chat-outline"></i>
+.icon-chat-with-rep,<i class="icon-chat-with-rep"></i>
+.icon-cloud-outline,<i class="icon-cloud-outline"></i>
+.icon-cloud-solid, <i class="icon-cloud-solid"></i>
+.icon-cloud-storage-outline, <i class="icon-cloud-storage-outline">
+.icon-cloud-storage-solid, <i class="icon-cloud-storage-solid"></i>
+.icon-connect-outline, <i class="icon-connect-outline"></i>
+.icon-customer-engagement-outline,<i class="icon-customer-engagement-outline"></i>
+.icon-customer-engagement-solid,<i class="icon-customer-engagement-solid"></i>
+.icon-designs-outline,<i class="icon-designs-outline"></i>
+.icon-document-outline,<i class="icon-document-outline"></i>
+.icon-edp-outline,<i class="icon-edp-outline"></i>
+.icon-efficiency-outline,<i class="icon-efficiency-outline"></i>
+.icon-efficiency-solid,<i class="icon-efficiency-solid"></i>
+.icon-effortless-engagement-outline,<i class="icon-effortless-engagement-outline"></i>
+.icon-effortless-engagement-solid,<i class="icon-effortless-engagement-solid"></i>
+.icon-email-outline,<i class="icon-email-outline"></i>
+.icon-enable-outline,<i class="icon-enable-outline"></i>
+.icon-enable-solid,<i class="icon-enable-solid"></i>
+.icon-engagement-environment-outline,<i class="icon-engagement-environment-outline"></i>
+.icon-engagement-environment-solid,<i class="icon-engagement-environment-solid"></i>
+.icon-enhanced-collaboration-outline,<i class="icon-enhanced-collaboration-outline"></i>
+.icon-enhanced-collaboration-solid,<i class="icon-enhancement-collaboration-solid"></i>
+.icon-enhancement-solid,<i class="icon-enhancement-solid"></i>
+.icon-epiphany-outline,<i class="icon-epiphany-outline"></i>
+.icon-epiphany-solid,<i class="icon-epiphany-solid"></i>
+.icon-explore-outline,<i class="icon-explore-outline"></i>
+.icon-fabric-networking-outline,<i class="icon-fabric-networking-outline"></i>
+.icon-find-partner-outline,<i class="icon-find-partner-outline"></i>
+.icon-find-partner-solid,<i class="icon-find-partner-solid"></i>
+.icon-growth-outline,<i class="icon-growth-outline"></i>
+.icon-how-to-buy-solid,<i class="icon-how-to-buy-solid"></i>
+.icon-improved-customer-service-outline,<i class="icon-improved-customer-service-outline"></i>
+.icon-improved-customer-service-solid,<i class="icon-improved-customer-service-solid"></i>
+.icon-increased-productivity-outline, <i class="icon-increased-productivity-outline"></i>
+.icon-increased-productivity-solid,<i class="icon-increased-productivity-solid"></i>
+.icon-learn-outline, <i class="icon-learn-outline"></i>
+.icon-mid-market-outline, <i class="icon-mid-market-outline"></i>
+.icon-mobility-outline,<i class="icon-mobility-outline"></i>
+.icon-mobility-solid,<i class="icon-mobility-solid"></i>
+.icon-network-scalability-outline,<i class="icon-network-scalability-outline"></i>
+.icon-online-quote-outline,<i class="icon-online-quote-outline"></i>
+.icon-phone-outline,<i class="icon-phone-outline"></i>
+.icon-phone-solid,<i class="icon-phone-solid"></i>
+.icon-productivity-outline,<i class="icon-productivity-outline"></i>
+.icon-products-outline,<i class="icon-products-outline"></i>
+.icon-quote-outline, <i class="icon-quote-outline"></i>
+.icon-quote-solid,<i class="icon-quote-solid"></i>
+.icon-reduced-cost-outline,<i class="icon-reduced-cost-outline"></i>
+.icon-revenue-growth-outline,<i class="icon-revenue-growth-outline"></i>
+.icon-revenue-growth-solid,<i class="icon-revenue-growth-solid"></i>
+.icon-risk-management-outline,<i class="icon-risk-management-outline"></i>
+.icon-risk-management-solid,<i class="icon-risk-management-solid"></i>
+.icon-services-solid,<i class="icon-services-solid"></i>
+.icon-services-team-outline,<i class="icon-services-team-outline"></i>
+.icon-share-outline,<i class="icon-share-outline"></i>
+.icon-subscribe-outline,<i class="icon-subscribe-outline"></i>
+.icon-team-engagement-outline,<i class="icon-team-engagement-outline"></i>
+.icon-team-engagement-solid,<i class="icon-team-engagement-solid"></i>
+.icon-try-outline,<i class="icon-try-outline"></i>
+.icon-tv,<i class="icon-tv"></i>
+.icon-vertical-business-outline,<i class="icon-vertical-business-outline"></i>
+.icon-video-outline,<i class="icon-video-outline"></i>
+.icon-wechat-twitter,<i class="icon-wechat-twitter"></i>
+.icon-weibo-twitter,<i class="icon-weibo-twitter"></i>
+.icon-video-chat,<i class="icon-video-chat"></i>
+.icon-video-mobile,<i class="icon-video-mobile"></i>
+.icon-video1,<i class="icon-video1"></i>
+.icon-view,<i class="icon-view"></i>
+.icon-voicemail,<i class="icon-voicemail"></i>
+.icon-website,<i class="icon-website"></i> 
+.icon-about,<i class="icon-about"></i>
+.icon-build,<i class="icon-build"></i>
+.icon-collaborate,<i class="icon-collaborate"></i>
+.icon-discover, <i class="icon-discover"></i>
+.icon-learn,<i class="icon-learn"></i>
+.icon-opportunity,<i class="icon-opportunity"></i>
+.icon-partner,<i class="icon-partner"></i>
+.icon-shop,<i class="icon-shop"></i>   <p>need to look </p>
+.icon-solutions,<i class="icon-solutions"></i>
+.icon-support,<i class="icon-support"></i>
+.icon-technology,<i class="icon-technology"></i>
+.icon-find-technology-partner,<i class="icon-find-technology-partner"></i>
+.icon-marketplace,<i class="icon-marketplace"></i>
+.icon-snap-store,<i class="icon-snap-store"></i>
+.icon-apps-off-shelf,<i class="icon-apps-off-shelf"></i>
+.icon-Avaya-collab,<i class="icon-Avaya-collab"></i>
+.icon-breeze,<i class="icon-breeze"></i>
+.icon-breeze-training,<i class="icon-breeze-training"></i>
+.icon-breeze-training-resources,<i class="icon-breeze-training-resources"></i>
+.icon-catalog,<i class="icon-technology"></i>
+.icon-code-modules,<i class="icon-code-modules"></i>
+.icon-custom-apps,<i class="icon-custom-apps"></i>
+.icon-devcon-support,<i class="icon-devcon-support"></i>
+.icon-documentation,<i class="icon-documentation"></i>
+.icon-explore-devcon,<i class="icon-explore-devcon"></i>
+.icon-map,<i class="icon-map"></i>
+.icon-oceana,<i class="icon-oceana"></i>
+.icon-oceana-training,<i class="icon-oceana-training"></i>
+.icon-online-courses,<i class="icon-online-courses"></i>
+.icon-SDK-courses,<i class="icon-SDK-courses"></i>
+.icon-support-login,<i class="icon-support-login"></i>
+.icon-zang-cloud,<i class="icon-zang-cloud"></i>
+.icon-zang-meetups,<i class="icon-zang-meetups"></i>
+.icon-zang-support,<i class="icon-zang-support"></i>
+.icon-competency,<i class="icon-competency"></i>
+.icon-application-requirements,<i class="icon-application-requirements"></i>
+.icon-award-winning-solution,<i class="icon-award-winning-solution"></i>
+.icon-best-fit-partners,<i class="icon-best-fit-partners"></i>
+.icon-compliance-tested,<i class="icon-compliance-tested"></i>
+.icon-consultant-portal,<i class="icon-consultant-portal"></i>
+.icon-consultant-webinars,<i class="icon-consultant-webinars"></i>
+.icon-consultants,<i class="icon-consultants"></i>
+.icon-contact-us,<i class="icon-contact-us"></i>
+.icon-dedicated-consultant,<i class="icon-dedicated-consultant"></i>
+.icon-experience,<i class="icon-experience"></i>
+.icon-experience-one,<i class="icon-experience-one"></i>
+.icon-find-channel-partner,<i class="icon-find-channel-partner"></i>
+.icon-goals,<i class="icon-goals"></i>
+.icon-inform,<i class="icon-inform"></i>
+.icon-interoperable,<i class="icon-interoperable"></i>
+.icon-joint-solutions,<i class="icon-joint-solutions"></i>
+.icon-linkedin,<i class="icon-linkedin"></i>
+.icon-resource-support,<i class="icon-resource-support"></i>
+.icon-rewards,<i class="icon-rewards"></i>
+.icon-search-marketplace,<i class="icon-search-marketplace"></i>
+.icon-support-one,<i class="icon-support-one"></i>
+.icon-tech-alliances,<i class="icon-tech-alliances"></i>
+.icon-tech-leadership,<i class="icon-tech-leadership"></i>
+.icon-technology-partner,<i class="icon-technology-partner"></i>
+.icon-analytics-engage-cloud,<i class="icon-analytics-engage-cloud"></i>
+.icon-customer-engage-cloud,<i class="icon-customer-engage-cloud"></i>
+.icon-developer-engage-cloud,<i class="icon-developer-engage-cloud"></i>
+.icon-team-engage-cloud,<i class="icon-team-engage-cloud"></i>
+.icon-digital-transform,<i class="icon-digital-transform"></i>
+.icon-exec-thought-leader,<i class="icon-exec-thought-leader"></i>
+.icon-services,<i class="icon-services"></i>
+.icon-billing,<i class="icon-billing"></i>
+.icon-help,<i class="icon-help"></i>
+.icon-overview,<i class="icon-overview"></i>
+.icon-products,<i class="icon-products"></i>
+.icon-services-team,<i class="icon-services-team"></i>
+.icon-artificial-intelligence,<i class="icon-artificial-intelligence"></i>
+.icon-analysts1,<i class="icon-analysts1"></i>
+.icon-analysts2,<i class="icon-analysts2"></i>
+.icon-analysts3,<i class="icon-analysts3"></i>
+.icon-analysts4,<i class="icon-analysts4"></i>
+.icon-avaya-worldwide,<i class="icon-avaya-worldwide"></i>
+.icon-be-avaya,<i class="icon-be-avaya"></i>
+.icon-carbon-reduction,<i class="icon-carbon-reduction"></i>
+.icon-conflict-minerals,<i class="icon-conflict-minerals"></i>
+.icon-corporate-responsibility,<i class="icon-corporate-responsibility"></i>
+.icon-disability,<i class="icon-disability"></i>
+.icon-diversity,<i class="icon-diversity"></i>
+.icon-EMEA-locations,<i class="icon-EMEA-locations"></i>
+.icon-headquarters,<i class="icon-headquarters"></i>
+.icon-investor-relations,<i class="icon-investor-relations"></i>
+.icon-leadership,<i class="icon-leadership"></i>
+.icon-media-collab,<i class="icon-media-collab"></i>
+.icon-media-engage,<i class="icon-media-engage"></i>
+.icon-media-video-collab,<i class="icon-media-video-collab"></i>
+.icon-membership,<i class="icon-membership"></i>
+.icon-NA-locations,<i class="icon-NA-locations"></i>
+.icon-news,<i class="icon-news"></i>
+.icon-product-design1,<i class="icon-product-design1"></i>
+.icon-product-design,<i class="icon-product-design"></i>
+.icon-SA-locations, <i class="icon-SA-locations"></i>
+.icon-shumer-invest-relat,<i class="icon-shumer-invest-relat"></i>
+.icon-tech-benefits,<i class="icon-tech-benefits"></i>
+.icon-workplace,<i class="icon-workplace"></i>
+.icon-doing-biz,<i class="icon-doing-biz"></i>
+.icon-budget,<i class="icon-budget"></i>
+.icon-buy-back,<i class="icon-buy-back"></i>
+.icon-end-of-life,<i class="icon-end-of-life"></i>
+.icon-gray-market,<i class="icon-gray-market"></i>
+.icon-minimize-cash,<i class="icon-minimize-cash"></i>
+.icon-refurbished-equip,<i class="icon-refurbished-equip"></i>
+.icon-tax-advant,<i class="icon-tax-advant"></i>
+.icon-germany,<i class="icon-germany"></i>
+.icon-large-biz,<i class="icon-large-biz"></i>
+.icon-small-biz,<i class="icon-small-biz"></i>
+.icon-mobile-caller,<i class="icon-mobile-caller"></i>
+.icon-mobile-caller-one,<i class="icon-mobile-caller-one"></i>
+.icon-police,<i class="icon-police"></i>
+.icon-law,<i class="icon-law"></i>
+.icon-gov,<i class="icon-gov"></i>
+.icon-gov-one,<i class="icon-gov-one"></i>
+.icon-vantage,<i class="icon-vantage"></i>
+
+.icon-add,<i class="icon-add"></i>
+.icon-affordable,<i class="icon-affordable"></i>
+.icon-agenda,<i class="icon-agenda"></i>
+.icon-arrow-down,<i class="icon-arrow-down"></i>
+.icon-arrow-left,<i class="icon-arrow-left"></i>
+.icon-arrow-right,<i class="icon-arrow-right"></i>
+.icon-arrow-up,<i class="icon-arrow-up"></i>
+.icon-best-practices,<i class="icon-best-practices"></i>
+.icon-blog1,<i class="icon-blog1"></i>
+.icon-booth,<i class="icon-booth"></i>
+.icon-calendar,<i class="icon-calendar"></i>
+.icon-cc-supervisor,<i class="icon-cc-supervisor"></i>
+.icon-checkmark,<i class="icon-checkmark"></i>
+.icon-cloud-avaya-live,<i class="icon-cloud-avaya-live"></i>
+.icon-cloud-avaya,<i class="icon-cloud-avaya"></i>
+.icon-cloud-video,<i class="icon-cloud-video"></i>
+.icon-commitment,<i class="icon-commitment"></i>
+.icon-computer,<i class="icon-computer"></i>
+.icon-context-store,<i class="icon-context-store"></i>
+.icon-contracts,<i class="icon-contracts"></i>
+.icon-copy,<i class="icon-copy"></i>
+.icon-dashboard,<i class="icon-dashboard"></i>
+.icon-dialer,<i class="icon-dialer"></i>
+.icon-digital-info,<i class="icon-digital-info"></i>
+.icon-disrupt,<i class="icon-disrupt"></i>
+.icon-download,<i class="icon-download"></i>
+.icon-edit,<i class="icon-edit"></i>
+.icon-energize,<i class="icon-energize"></i>
+.icon-email-voice-integration,<i class="icon-email-voice-integration"></i>
+.icon-fax,<i class="icon-fax"></i>
+.icon-hearing,<i class="icon-hearing"></i>
+.icon-heterogeneity,<i class="icon-heterogeneity"></i>
+.icon-hospital,<i class="icon-hospital"></i>
+.icon-image,<i class="icon-image"></i>
+.icon-implementation-credits,<i class="icon-implementation-credits"></i>
+.icon-increase-costs,<i class="icon-increase-costs"></i>
+.icon-interoperability,<i class="icon-interoperability"></i>
+.icon-investor-relations1,<i class="icon-investor-relations1"></i>
+.icon-last-year-info,<i class="icon-last-year-info"></i>
+.icon-licensing,<i class="icon-licensing"></i>
+.icon-locations, <i class="icon-locations"></i>
+.icon-mesh-architecture,<i class="icon-mesh-architecture"></i>
+.icon-multicast,<i class="icon-multicast"></i>
+.icon-notifications,<i class="icon-notifications"></i>
+.icon-objective,<i class="icon-objective"></i>
+.icon-orders,<i class="icon-orders"></i>
+.icon-paragraph,<i class="icon-paragraph"></i>
+.icon-parts-list,<i class="icon-parts-list"></i>
+.icon-pin,<i class="icon-pin"></i>
+.icon-pr-ar,<i class="icon-pr-ar"></i>
+.icon-print,<i class="icon-print"></i>
+.icon-product-placement,<i class="icon-product-placement"></i>
+.icon-reduce-costs,<i class="icon-reduce-costs"></i>
+.icon-refresh,<i class="icon-refresh"></i>
+.icon-register,<i class="icon-register"></i>
+.icon-reliability,<i class="icon-reliability"></i>
+.icon-responsibility-report,<i class="icon-responsibility-report"></i>
+.icon-save-the-date,<i class="icon-save-the-date"></i>
+.icon-save,<i class="icon-save"></i>
+.icon-scopia,<i class="icon-scopia"></i>
+.icon-security,<i class="icon-security"></i>
+.icon-settings,<i class="icon-settings"></i>
+.icon-share,<i class="icon-share"></i>
+.icon-sms,<i class="icon-sms"></i>
+.icon-sound,<i class="icon-sound"></i>
+.icon-speech-recognition,<i class="icon-speech-recognition"></i>
+.icon-sponsorship,<i class="icon-sponsorship"></i>
+.icon-touchtone-phone,<i class="icon-touchtone-phone"></i>
+.icon-trash,<i class="icon-trash"></i>
+.icon-truck,<i class="icon-truck"></i>
+.icon-upload,<i class="icon-upload"></i>
+.icon-orders,<i class="icon-orders"></i>  <p> need to test </p>
+.icon-filter,<i class="icon-filter"></i>
+.icon-history,<i class="icon-history"></i> <p> need to test </p>
+.icon-clipboard, <i class="icon-clipboard"></i>
+.icon-avatar,<i class="icon-avatar"></i>
+
+ -->

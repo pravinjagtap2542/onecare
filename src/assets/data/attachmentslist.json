@@ -1,0 +1,31 @@
+{
+  "@count": 3,
+  "@start": 1,
+  "@totalcount": 3,
+  "Messages": [],
+  "ResourceName": "attachment",
+  "ReturnCode": 0,
+  "content":    [
+     {"attachment":       {
+        "href": "cid:5b2c91230015f151303bf340",
+        "len": 4,
+        "name": "ScrubRetValFile.txt",
+        "type": "text/plain",
+        "xmime:contentType": "text/plain"
+     }},
+     {"attachment":       {
+        "href": "cid:5b841b01002f22c1301deda0",
+        "len": 4,
+        "name": "ScrubRetValFile.txt",
+        "type": "text/plain",
+        "xmime:contentType": "text/plain"
+     }},
+     {"attachment":       {
+        "href": "cid:5b8426df0011e0053086a150",
+        "len": 1260,
+        "name": "toolrunner.bat.UNSAFE",
+        "type": "application/octet-stream",
+        "xmime:contentType": "application/octet-stream"
+     }}
+  ]
+}

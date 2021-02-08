@@ -1,0 +1,186 @@
+<div class="av-modal-inner">
+  <div class="av-modal-header">
+      <h2 class="mainHeading">{{'serviceOutages' | translate}}</h2>
+      <i class="" (click)="closeModal()">X</i>
+      <!-- <h5>How can we assist to take the business further?</h5> -->
+  </div>
+  <p class="pText">{{'CheckBelowListsForServiceInterruptions' | translate}} </p>
+  <p class="pText">{{'InCaseYouAreAffectedBy' | translate}} <span class="spanText">{{'affected' | translate}}</span> {{'IconToCreateATicket' | translate}}</p>
+  <p class="pText">{{'InCaseYouExperienceAnUnlistedIssue' | translate}}</p>
+  <h4 class="outagesHeadingUnplanned">{{'unplannedOutages' | translate}}</h4>
+  <div class="loading-shade" *ngIf="isLoadingResults">
+    <div class="loader" alt="Please wait..."></div>
+  </div>
+    <table>
+    <tr>
+      <th>{{'status' | translate}}</th>
+      <th> {{'description' | translate}}</th>
+      <th class="mobile">{{'service' | translate}}</th>
+      <th class="mobile">{{'location' | translate}}</th>
+      <th class="mobile start-number-column">{{'start' | translate}}</th>
+      <th class="mobile resolved-number-column">{{'resolved' | translate}}</th>
+      <th class="mobile ticket-number-column">{{'ticketHeaderInOutages' | translate}}</th>
+      <th class="mobile"> {{'workaround' | translate}}</th>
+      <th class="mobile">{{'latestUpdates' | translate}}</th>
+      <th class="mobile">{{'clickIfAffected' | translate}}</th>
+    </tr>
+    <tr *ngFor="let unplannedContent of unplannedOutageContent; index as i">
+      <td>{{unplannedContent.CustOpsIncident.Status}}</td>
+      <td>{{unplannedContent.CustOpsIncident.StatusBoardDescription}}
+        <div>
+          <img class="moreImage"  src="../../../../cs/cop/assets/images/drop-down-icon.png" (click)="showMoreIncidentId(unplannedContent.CustOpsIncident.IncidentID)">
+        </div>
+        <table *ngIf="showMore && showMoreIncident == unplannedContent.CustOpsIncident.IncidentID">
+          <tr>
+            <th class="showMoreHeader">{{'service' | translate}}</th>
+            <td class="showMoreData">{{unplannedContent.CustOpsIncident.Service}}</td>
+          </tr>
+          <tr>
+            <th class="showMoreHeader">{{'location' | translate}}</th>
+            <td class="showMoreData">{{unplannedContent.CustOpsIncident.Location}}</td>
+          </tr>
+          <tr>
+            <th class="showMoreHeader">{{'start'| translate}}</th>
+            <td class="showMoreData">{{unplannedContent.CustOpsIncident.OutageStart  | date:'M/dd/yyyy h:mm:ss a'}}</td>
+          </tr>
+          <tr>
+            <th class="showMoreHeader">{{'resolved' | translate}}</th>
+            <td class="showMoreData">{{unplannedContent.CustOpsIncident.OutageEnd  | date:'M/dd/yyyy h:mm:ss a'}}</td>
+          </tr>
+          <tr>
+            <th class="showMoreHeader">{{'ticketHeaderInOutages' | translate}} </th>
+            <td class="showMoreData">{{unplannedContent.CustOpsIncident.IncidentID}}</td>
+          </tr>
+          <tr>
+            <th class="showMoreHeader">{{'workaround' | translate}}</th>
+            <td class="showMoreData">
+                <span [innerHTML] = "unplannedContent.activeContent ? unplannedContent.activeContent :  unplannedContent.CustOpsIncident.Workaround[0]"></span>
+        <button (click)= RowSelected(i) class="showMore" *ngIf ="unplannedContent.CustOpsIncident.Workaround.length > 1">{{unplannedContent.showMore ? 'Show less': 'Show more...' }}</button> 
+            </td>
+          </tr>
+          <!-- <tr>
+            <th class="showMoreHeader">Latest Update</th>
+            <td class="showMoreData"><img class="outageListImg" src="../../../../cs/cop/assets/images/affected.png" width="30px" height="30px" title="Click to report you are affected by this outage" (click)="onAffectedClick(unplannedContent.CustOpsIncident.IncidentID)"></td>
+          </tr> -->
+          <tr>
+            <th class="showMoreHeader">{{'latestUpdates' | translate}} </th>
+            <td class="showMoreData"><img class="outageListImg" src="../../../../cs/cop/assets/images/news.png" width="30px" height="30px" title="Latest Change" data-target="#popUp" data-toggle="example" (click)="openInfoPopup(unplannedContent)"></td>
+          </tr>
+          <tr>
+            <th class="showMoreHeader">{{'clickIfAffected' | translate}}  </th>
+            <td class="showMoreData"><img class="outageListImg" src="../../../../cs/cop/assets/images/affected.png" width="30px" height="30px" title="Click to report you are affected by this outage" (click)="onAffectedClick(unplannedContent.CustOpsIncident.IncidentID)"></td>
+          </tr>
+        </table>
+     </td>
+      <td class="mobile">{{unplannedContent.CustOpsIncident.Service}}</td>
+      <td class="mobile">{{unplannedContent.CustOpsIncident.Location}}</td>
+      <td class="mobile">{{unplannedContent.CustOpsIncident.OutageStart  | date:'M/dd/yyyy h:mm:ss a'}}</td>
+      <td class="mobile">{{unplannedContent.CustOpsIncident.OutageEnd  | date:'M/dd/yyyy h:mm:ss a'}}</td>
+      <td class="mobile">{{unplannedContent.CustOpsIncident.IncidentID}}</td>
+      <td class="mobile">
+     <span [innerHTML] = "unplannedContent.activeContent ? unplannedContent.activeContent :  unplannedContent.CustOpsIncident.Workaround[0]"></span>
+         <button (click)= RowSelected(i) class="showMore" *ngIf ="unplannedContent.CustOpsIncident.Workaround.length > 1">{{unplannedContent.showMore ? 'Show less': 'Show more...' }}</button> 
+        </td> 
+
+        
+
+        <td class="mobile"><img class="outageListImg" src="../../../../cs/cop/assets/images/news.png" width="30px" height="30px" title="Latest Updates" data-target="#popUp" data-toggle="example" (click)="openInfoPopup(unplannedContent)"></td>
+      <td class="mobile"><img class="outageListImg" src="../../../../cs/cop/assets/images/affected.png" width="30px" height="30px" title="Click to report you are affected by this outage" (click)="onAffectedClick(unplannedContent.CustOpsIncident.IncidentID)"></td>
+    
+    </tr>
+  </table>
+
+ 
+
+  
+  <h4 class="outagesHeadingPlanned">{{'plannedMaintenance' | translate}} </h4>
+    <table>
+    <tr>
+      <th>{{'status' | translate}}</th>
+      <th>{{'description' | translate}}</th>
+      <th class="mobile">{{'service' | translate}}</th>
+      <th class="mobile">{{'location' | translate}}</th>
+      <th class="mobile">{{'start' | translate}}</th>
+      <th class="mobile">{{'end' | translate}}</th>
+      <th class="mobile">{{'ticketHeaderInOutages' | translate}}</th>
+      <th class="mobile">{{'additionalInformation' | translate}}  </th>
+    </tr>
+    <tr *ngFor="let plannedContent of plannedOutageContent; index as i">
+      <td>{{plannedContent.CustOpsChange.header.Status}}</td>
+      <td>{{plannedContent.CustOpsChange.StatusBoardDescription}}
+        <div>
+          <img class="moreImage"  src="../../../../cs/cop/assets/images/drop-down-icon.png" (click)="showMoreIncidentId(plannedContent.CustOpsChange.header.ChangeID)">
+        </div>
+        <table *ngIf="showMore && showMoreIncident == plannedContent.CustOpsChange.header.ChangeID">
+          <tr>
+            <th class="showMoreHeader">{{'service' | translate}}</th>
+            <td class="showMoreData">{{plannedContent.CustOpsChange.Service}}</td>
+          </tr>
+          <tr>
+            <th class="showMoreHeader">{{'location' | translate}}</th>
+            <td class="showMoreData">{{plannedContent.CustOpsChange.middle.Location}}</td>
+          </tr>
+          <tr>
+            <th class="showMoreHeader">{{'start' | translate}}</th>
+            <td class="showMoreData">{{plannedContent.CustOpsChange.header.PlannedStart  | date:'M/dd/yyyy h:mm:ss a'}}</td>
+          </tr>
+          <tr>
+            <th class="showMoreHeader">{{'resolved' | translate}}</th>
+            <td class="showMoreData">{{plannedContent.CustOpsChange.header.PlannedEnd  | date:'M/dd/yyyy h:mm:ss a'}}</td>
+          </tr>
+          <tr>
+            <th class="showMoreHeader">{{'ticketHeaderInOutages' | translate}}</th>
+            <td class="showMoreData">{{plannedContent.CustOpsChange.header.ChangeID}}</td>
+          </tr>
+          <tr>
+            <th class="showMoreHeader">{{'additionalInformation' | translate}} </th>
+            <td class="showMoreData">
+                <span [innerHTML] = "plannedContent.activeContent  ? plannedContent.activeContent : plannedContent.CustOpsChange.StatusBoardInformation[0]"></span>
+        <button (click)= RowSelected1(i) class="showMore" *ngIf ="plannedContent.CustOpsChange.StatusBoardInformation.length > 1">{{plannedContent.showMore ? 'Show less': 'Show more...' }}</button> 
+            </td>
+          </tr>
+          <!-- <tr>
+            <th class="showMoreHeader">Additional Information</th>
+            <td class="showMoreData">{{plannedContent.CustOpsChange.StatusBoardInformation}}</td>
+          </tr> -->
+        </table>
+      </td>
+      <td class="mobile">{{plannedContent.CustOpsChange.Service}}</td>
+      <td class="mobile">{{plannedContent.CustOpsChange.middle.Location}}</td>
+      <td class="mobile">{{plannedContent.CustOpsChange.header.PlannedStart  | date:'M/dd/yyyy h:mm:ss a'}}</td>
+      <td class="mobile">{{plannedContent.CustOpsChange.header.PlannedEnd  | date:'M/dd/yyyy h:mm:ss a'}}</td>
+      <td class="mobile">{{plannedContent.CustOpsChange.header.ChangeID}}</td>
+      <td class="mobile">
+        <span [innerHTML] = "plannedContent.activeContent ? plannedContent.activeContent : plannedContent.CustOpsChange.StatusBoardInformation[0]"></span>
+        <button (click)= RowSelected1(i) class="showMore" *ngIf ="plannedContent.CustOpsChange.StatusBoardInformation.length > 1">{{plannedContent.showMore ? 'Show less': 'Show more...' }}</button> 
+      </td>
+    </tr>
+  </table>
+</div>
+
+  <!-- modal pop up -->
+  <div class="modal" id="popUp" [ngClass]="{'show':showModal}">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">{{'latestUpdates' | translate}} </h4>
+          <button type="button" class="close" data-dismiss="modal" (click)="closeInfoPopup()">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <p *ngFor=" let array of essayArray">{{array}}</p>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn1 btn-danger" data-dismiss="modal" (click)="showModal=false">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+

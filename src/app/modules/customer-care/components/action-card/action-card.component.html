@@ -1,0 +1,109 @@
+<!-- 
+    For non public pages
+ -->
+ 
+ 
+<div *ngIf="!data.isPublic"
+  class="action-inner"
+  [routerLink]="[origin]"
+  [queryParams]="{modal: 'show', function: data.id, category: data.function, origin: origin}">
+  <div class="icon-action-inner">
+    <p class="icon">
+      <img src="{{data.tileicon}}">
+    </p>
+    <h6> {{data.title}} </h6>
+  </div>
+  <p> {{data.description}} </p>
+  <div class="action-link">
+   {{'OneCareNewRequest' | translate}}
+    <i class="icon-add"></i>
+  </div>
+</div>
+
+<!-- 
+    For public page, depending on routerLink
+ -->
+<div *ngIf="data.isPublic && !isAvayaCloudOffice  && !isAvayaCCass"
+  class="action-inner"
+  [routerLink]="public"
+  [queryParams]="{modal: 'show', function: data.id, category: data.function, origin: 'public'}">
+  <div class="icon-action-inner">
+    <p class="icon">
+      <img src="{{data.tileicon}}">
+    </p>
+    <h6> {{data.title}} </h6>
+  </div>
+  <p> {{data.description}} </p>
+  <div class="action-link">
+    {{'OneCareNewRequest' | translate}}
+    <i class="icon-add"></i>
+  </div>
+</div>
+
+<div *ngIf="data.isPublic && isAvayaCloudOffice && viewTitle =='AvayaCloudOffice'"
+  class="action-inner"
+  [routerLink]="public"
+  [queryParams]="{modal: 'show', function: data.id, category: data.function, origin: 'public' , view:'AvayaCloudOffice'}">
+  <div class="icon-action-inner">
+    <p class="icon">
+      <img src="{{data.tileicon}}">
+    </p>
+    <h6> {{data.title}} </h6>
+  </div>
+  <p> {{data.description}} </p>
+  <div class="action-link">
+    {{'OneCareNewRequest' | translate}}
+    <i class="icon-add"></i>
+  </div>
+</div>
+
+<div *ngIf="data.isPublic && isAvayaCCass && viewTitle =='AvayaOneCloudCCaaS'"
+  class="action-inner"
+  [routerLink]="public"
+  [queryParams]="{modal: 'show', function: data.id, category: data.function, origin: 'public' , view:'AvayaOneCloudCCaaS'}">
+  <div class="icon-action-inner">
+    <p class="icon">
+      <img src="{{data.tileicon}}">
+    </p>
+    <h6> {{data.title}} </h6>
+  </div>
+  <p> {{data.description}} </p>
+  <div class="action-link">
+    {{'OneCareNewRequest' | translate}}
+    <i class="icon-add"></i>
+  </div>
+</div>
+
+<div *ngIf="data.isPublic && isAvayaCloudOffice && viewTitle =='AvayaCloudOffice_fr'"
+  class="action-inner"
+  [routerLink]="public"
+  [queryParams]="{modal: 'show', function: data.id, category: data.function, origin: 'public' , view:'AvayaCloudOffice_fr'}">
+  <div class="icon-action-inner">
+    <p class="icon">
+      <img src="{{data.tileicon}}">
+    </p>
+    <h6> {{data.title}} </h6>
+  </div>
+  <p> {{data.description}} </p>
+  <div class="action-link">
+    {{'OneCareNewRequest' | translate}}
+    <i class="icon-add"></i>
+  </div>
+</div>
+
+<div *ngIf="data.isPublic && isAvayaCCass && viewTitle =='AvayaOneCloudCCaaS_fr'"
+  class="action-inner"
+  [routerLink]="public"
+  [queryParams]="{modal: 'show', function: data.id, category: data.function, origin: 'public' , view:'AvayaOneCloudCCaaS_fr'}">
+  <div class="icon-action-inner">
+    <p class="icon">
+      <img src="{{data.tileicon}}">
+    </p>
+    <h6> {{data.title}} </h6>
+  </div>
+  <p> {{data.description}} </p>
+  <div class="action-link">
+    {{'OneCareNewRequest' | translate}}
+    <i class="icon-add"></i>
+  </div>
+</div>

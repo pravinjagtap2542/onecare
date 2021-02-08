@@ -1,0 +1,1723 @@
+
+@font-face {
+	font-family: "fontcustom";
+	src: url("/cs/cop/assets/font-icons/fontcustom.eot");
+	src: url("/cs/cop/assets/font-icons/fontcustom.eot?#iefix") format("embedded-opentype"),
+	url("/cs/cop/assets/font-icons/fontcustom.woff") format("woff"),
+	url("/cs/cop/assets/font-icons/fontcustom.ttf") format("truetype"),
+	url("/cs/cop/assets/font-icons/fontcustom.svg#fontcustom") format("svg");
+}
+
+// copy all below here ==>
+// copy below this line
+
+.icon-ava-outline,
+.icon-blog-outline,
+.icon-blog-solid,
+.icon-build-outline,
+.icon-buy-outline,
+.icon-chat-now-solid,
+.icon-chat-outline,
+.icon-chat-with-rep,
+.icon-cloud-outline,
+.icon-cloud-solid,
+.icon-cloud-storage-outline,
+.icon-cloud-storage-solid,
+.icon-connect-outline,
+.icon-customer-engagement-outline,
+.icon-customer-engagement-solid,
+.icon-designs-outline,
+.icon-document-outline,
+.icon-edp-outline,
+.icon-efficiency-outline,
+.icon-efficiency-solid,
+.icon-effortless-engagement-outline,
+.icon-effortless-engagement-solid,
+.icon-email-outline,
+.icon-enable-outline,
+.icon-enable-solid,
+.icon-engagement-environment-outline,
+.icon-engagement-environment-solid,
+.icon-enhanced-collaboration-outline,
+.icon-enhanced-collaboration-solid,
+.icon-enhancement-solid,
+.icon-epiphany-outline,
+.icon-epiphany-solid,
+.icon-explore-outline,
+.icon-fabric-networking-outline,
+.icon-find-partner-outline,
+.icon-find-partner-solid,
+.icon-growth-outline,
+.icon-how-to-buy-solid,
+.icon-improved-customer-service-outline,
+.icon-improved-customer-service-solid,
+.icon-increased-productivity-outline,
+.icon-increased-productivity-solid,
+.icon-learn-outline,
+.icon-mid-market-outline,
+.icon-mobility-outline,
+.icon-mobility-solid,
+.icon-network-scalability-outline,
+.icon-online-quote-outline,
+.icon-phone-outline,
+.icon-phone-solid,
+.icon-productivity-outline,
+.icon-products-outline,
+.icon-quote-outline,
+.icon-quote-solid,
+.icon-reduced-cost-outline,
+.icon-revenue-growth-outline,
+.icon-revenue-growth-solid,
+.icon-risk-management-outline,
+.icon-risk-management-solid,
+.icon-services-solid,
+.icon-services-team-outline,
+.icon-share-outline,
+.icon-subscribe-outline,
+.icon-team-engagement-outline,
+.icon-team-engagement-solid,
+.icon-try-outline,
+.icon-tv,
+.icon-vertical-business-outline,
+.icon-video-outline,
+.icon-wechat-twitter,
+.icon-weibo-twitter,
+.icon-video-chat,
+.icon-video-mobile,
+.icon-video1,
+.icon-view,
+.icon-voicemail,
+.icon-website,
+.icon-about,
+.icon-build,
+.icon-collaborate,
+.icon-discover,
+.icon-learn,
+.icon-opportunity,
+.icon-partner,
+.icon-shop,
+.icon-solutions,
+.icon-support,
+.icon-technology,
+.icon-find-technology-partner,
+.icon-marketplace,
+.icon-snap-store,
+.icon-apps-off-shelf,
+.icon-Avaya-collab,
+.icon-breeze,
+.icon-breeze-training,
+.icon-breeze-training-resources,
+.icon-catalog,
+.icon-code-modules,
+.icon-custom-apps,
+.icon-devcon-support,
+.icon-documentation,
+.icon-explore-devcon,
+.icon-map,
+.icon-oceana,
+.icon-oceana-training,
+.icon-online-courses,
+.icon-SDK-courses,
+.icon-support-login,
+.icon-zang-cloud,
+.icon-zang-meetups,
+.icon-zang-support,
+.icon-competency,
+.icon-application-requirements,
+.icon-award-winning-solution,
+.icon-best-fit-partners,
+.icon-compliance-tested,
+.icon-consultant-portal,
+.icon-consultant-webinars,
+.icon-consultants,
+.icon-contact-us,
+.icon-dedicated-consultant,
+.icon-experience,
+.icon-experience-one,
+.icon-find-channel-partner,
+.icon-goals,
+.icon-inform,
+.icon-interoperable,
+.icon-joint-solutions,
+.icon-linkedin,
+.icon-resource-support,
+.icon-rewards,
+.icon-search-marketplace,
+.icon-support-one,
+.icon-tech-alliances,
+.icon-tech-leadership,
+.icon-technology-partner,
+.icon-analytics-engage-cloud,
+.icon-customer-engage-cloud,
+.icon-developer-engage-cloud,
+.icon-team-engage-cloud,
+.icon-digital-transform,
+.icon-exec-thought-leader,
+.icon-services,
+.icon-billing,
+.icon-help,
+.icon-overview,
+.icon-products,
+.icon-services-team,
+.icon-artificial-intelligence,
+.icon-analysts1,
+.icon-analysts2,
+.icon-analysts3,
+.icon-analysts4,
+.icon-avaya-worldwide,
+.icon-be-avaya,
+.icon-carbon-reduction,
+.icon-conflict-minerals,
+.icon-corporate-responsibility,
+.icon-disability,
+.icon-diversity,
+.icon-EMEA-locations,
+.icon-headquarters,
+.icon-investor-relations,
+.icon-leadership,
+.icon-media-collab,
+.icon-media-engage,
+.icon-media-video-collab,
+.icon-membership,
+.icon-NA-locations,
+.icon-news,
+.icon-product-design1,
+.icon-product-design,
+.icon-SA-locations,
+.icon-shumer-invest-relat,
+.icon-tech-benefits,
+.icon-workplace,
+.icon-doing-biz,
+.icon-budget,
+.icon-buy-back,
+.icon-end-of-life,
+.icon-gray-market,
+.icon-minimize-cash,
+.icon-refurbished-equip,
+.icon-tax-advant,
+.icon-germany,
+.icon-large-biz,
+.icon-small-biz,
+.icon-mobile-caller,
+.icon-mobile-caller-one,
+.icon-police,
+.icon-law,
+.icon-gov,
+.icon-gov-one,
+.icon-vantage,
+
+.icon-add,
+.icon-affordable,
+.icon-agenda,
+.icon-arrow-down,
+.icon-arrow-left,
+.icon-arrow-right,
+.icon-arrow-up,
+.icon-best-practices,
+.icon-blog1,
+.icon-booth,
+.icon-calendar,
+.icon-cc-supervisor,
+.icon-checkmark,
+.icon-cloud-avaya-live,
+.icon-cloud-avaya,
+.icon-cloud-video,
+.icon-commitment,
+.icon-computer,
+.icon-context-store,
+.icon-contracts,
+.icon-copy,
+.icon-dashboard,
+.icon-dialer,
+.icon-digital-info,
+.icon-disrupt,
+.icon-download,
+.icon-edit,
+.icon-energize,
+.icon-email-voice-integration,
+.icon-fax,
+.icon-hearing,
+.icon-heterogeneity,
+.icon-hospital,
+.icon-image,
+.icon-implementation-credits,
+.icon-increase-costs,
+.icon-interoperability,
+.icon-investor-relations1,
+.icon-last-year-info,
+.icon-licensing,
+.icon-locations,
+.icon-mesh-architecture,
+.icon-multicast,
+.icon-notifications,
+.icon-objective,
+.icon-orders,
+.icon-paragraph,
+.icon-parts-list,
+.icon-pin,
+.icon-pr-ar,
+.icon-print,
+.icon-product-placement,
+.icon-reduce-costs,
+.icon-refresh,
+.icon-register,
+.icon-reliability,
+.icon-responsibility-report,
+.icon-save-the-date,
+.icon-save,
+.icon-scopia,
+.icon-security,
+.icon-settings,
+.icon-share,
+.icon-sms,
+.icon-sound,
+.icon-speech-recognition,
+.icon-sponsorship,
+.icon-touchtone-phone,
+.icon-trash,
+.icon-truck,
+.icon-upload,
+.icon-orders,
+.icon-filter,
+.icon-history,
+.icon-clipboard,
+.icon-avatar,
+.icon-menu {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	line-height: 1;
+}
+/**/
+.icon-ava-outline:before,
+.icon-blog-outline:before,
+.icon-blog-solid:before,
+.icon-build-outline:before,
+.icon-buy-outline:before,
+.icon-chat-now-solid:before,
+.icon-chat-outline:before,
+.icon-chat-with-rep:before,
+.icon-cloud-outline:before,
+.icon-cloud-solid:before,
+.icon-cloud-storage-outline:before,
+.icon-cloud-storage-solid:before,
+.icon-connect-outline:before,
+.icon-customer-engagement-outline:before,
+.icon-customer-engagement-solid:before,
+.icon-designs-outline:before,
+.icon-document-outline:before,
+.icon-edp-outline:before,
+.icon-efficiency-outline:before,
+.icon-efficiency-solid:before,
+.icon-effortless-engagement-outline:before,
+.icon-effortless-engagement-solid:before,
+.icon-email-outline:before,
+.icon-enable-outline:before,
+.icon-enable-solid:before,
+.icon-engagement-environment-outline:before,
+.icon-engagement-environment-solid:before,
+.icon-enhanced-collaboration-outline:before,
+.icon-enhanced-collaboration-solid:before,
+.icon-enhancement-solid:before,
+.icon-epiphany-outline:before,
+.icon-epiphany-solid:before,
+.icon-explore-outline:before,
+.icon-fabric-networking-outline:before,
+.icon-find-partner-outline:before,
+.icon-find-partner-solid:before,
+.icon-growth-outline:before,
+.icon-how-to-buy-solid:before,
+.icon-improved-customer-service-outline:before,
+.icon-improved-customer-service-solid:before,
+.icon-increased-productivity-outline:before,
+.icon-increased-productivity-solid:before,
+.icon-learn-outline:before,
+.icon-mid-market-outline:before,
+.icon-mobility-outline:before,
+.icon-mobility-solid:before,
+.icon-network-scalability-outline:before,
+.icon-online-quote-outline:before,
+.icon-phone-outline:before,
+.icon-phone-solid:before,
+.icon-productivity-outline:before,
+.icon-products-outline:before,
+.icon-quote-outline:before,
+.icon-quote-solid:before,
+.icon-reduced-cost-outline:before,
+.icon-revenue-growth-outline:before,
+.icon-revenue-growth-solid:before,
+.icon-risk-management-outline:before,
+.icon-risk-management-solid:before,
+.icon-services-solid:before,
+.icon-services-team-outline:before,
+.icon-share-outline:before,
+.icon-subscribe-outline:before,
+.icon-team-engagement-outline:before,
+.icon-team-engagement-solid:before,
+.icon-try-outline:before,
+.icon-tv:before,
+.icon-vertical-business-outline:before,
+.icon-video-outline:before,
+.icon-wechat-twitter:before,
+.icon-weibo-twitter:before,
+.icon-video-chat:before,
+.icon-video-mobile:before,
+.icon-video1:before,
+.icon-view:before,
+.icon-voicemail:before,
+.icon-website:before,
+.icon-highlights:before,
+.icon-about:before,
+.icon-build:before,
+.icon-collaborate:before,
+.icon-discover:before,
+.icon-learn:before,
+.icon-opportunity:before,
+.icon-partner:before,
+.icon-shop:before,
+.icon-solutions:before,
+.icon-support:before,
+.icon-technology:before,
+.icon-find-technology-partner:before,
+.icon-marketplace:before,
+.icon-snap-store:before,
+.icon-apps-off-shelf:before,
+.icon-Avaya-collab:before,
+.icon-breeze:before,
+.icon-breeze-training:before,
+.icon-breeze-training-resources:before,
+.icon-catalog:before,
+.icon-code-modules:before,
+.icon-custom-apps:before,
+.icon-devcon-support:before,
+.icon-documentation:before,
+.icon-explore-devcon:before,
+.icon-map:before,
+.icon-oceana:before,
+.icon-oceana-training:before,
+.icon-online-courses:before,
+.icon-SDK-courses:before,
+.icon-support-login:before,
+.icon-zang-cloud:before,
+.icon-zang-meetups:before,
+.icon-zang-support:before,
+.icon-competency:before,
+.icon-application-requirements:before,
+.icon-award-winning-solution:before,
+.icon-best-fit-partners:before,
+.icon-compliance-tested:before,
+.icon-consultant-portal:before,
+.icon-consultant-webinars:before,
+.icon-consultants:before,
+.icon-contact-us:before,
+.icon-dedicated-consultant:before,
+.icon-experience:before,
+.icon-experience-one:before,
+.icon-find-channel-partner:before,
+.icon-goals:before,
+.icon-inform:before,
+.icon-interoperable:before,
+.icon-joint-solutions:before,
+.icon-linkedin:before,
+.icon-resource-support:before,
+.icon-rewards:before,
+.icon-search-marketplace:before,
+.icon-support-one:before,
+.icon-tech-alliances:before,
+.icon-tech-leadership:before,
+.icon-technology-partner:before,
+.icon-analytics-engage-cloud:before,
+.icon-customer-engage-cloud:before,
+.icon-developer-engage-cloud:before,
+.icon-team-engage-cloud:before,
+.icon-digital-transform:before,
+.icon-exec-thought-leader:before,
+.icon-services:before,
+.icon-billing:before,
+.icon-help:before,
+.icon-overview:before,
+.icon-products:before,
+.icon-services-team:before,
+.icon-artificial-intelligence:before,
+.icon-analysts1:before,
+.icon-analysts2:before,
+.icon-analysts3:before,
+.icon-analysts4:before,
+.icon-avaya-worldwide:before,
+.icon-be-avaya:before,
+.icon-carbon-reduction:before,
+.icon-conflict-minerals:before,
+.icon-corporate-responsibility:before,
+.icon-disability:before,
+.icon-diversity:before,
+.icon-EMEA-locations:before,
+.icon-headquarters:before,
+.icon-investor-relations:before,
+.icon-leadership:before,
+.icon-media-collab:before,
+.icon-media-engage:before,
+.icon-media-video-collab:before,
+.icon-membership:before,
+.icon-NA-locations:before,
+.icon-news:before,
+.icon-product-design1:before,
+.icon-product-design:before,
+.icon-SA-locations:before,
+.icon-shumer-invest-relat:before,
+.icon-tech-benefits:before,
+.icon-workplace:before,
+.icon-doing-biz:before,
+.icon-budget:before,
+.icon-buy-back:before,
+.icon-end-of-life:before,
+.icon-gray-market:before,
+.icon-minimize-cash:before,
+.icon-refurbished-equip:before,
+.icon-tax-advant:before,
+.icon-germany:before,
+.icon-large-biz:before,
+.icon-small-biz:before,
+.icon-mobile-caller:before,
+.icon-mobile-caller-one:before,
+.icon-police:before,
+.icon-law:before,
+.icon-gov:before,
+.icon-gov-one:before,
+.icon-vantage:before,
+
+.icon-add:before,
+.icon-affordable:before,
+.icon-agenda:before,
+.icon-arrow-down:before,
+.icon-arrow-left:before,
+.icon-arrow-right:before,
+.icon-arrow-up:before,
+.icon-best-practices:before,
+.icon-blog1:before,
+.icon-booth:before,
+.icon-calendar:before,
+.icon-cc-supervisor:before,
+.icon-checkmark:before,
+.icon-cloud-avaya-live:before,
+.icon-cloud-avaya:before,
+.icon-cloud-video:before,
+.icon-commitment:before,
+.icon-computer:before,
+.icon-context-store:before,
+.icon-contracts:before,
+.icon-copy:before,
+.icon-dashboard:before,
+.icon-dialer:before,
+.icon-digital-info:before,
+.icon-disrupt:before,
+.icon-download:before,
+.icon-edit:before,
+.icon-energize:before,
+.icon-email-voice-integration:before,
+.icon-fax:before,
+.icon-hearing:before,
+.icon-heterogeneity:before,
+.icon-hospital:before,
+.icon-image:before,
+.icon-implementation-credits:before,
+.icon-increase-costs:before,
+.icon-interoperability:before,
+.icon-investor-relations1:before,
+.icon-last-year-info:before,
+.icon-licensing:before,
+.icon-locations:before,
+.icon-mesh-architecture:before,
+.icon-multicast:before,
+.icon-notifications:before,
+.icon-objective:before,
+.icon-orders:before,
+.icon-paragraph:before,
+.icon-parts-list:before,
+.icon-pin:before,
+.icon-pr-ar:before,
+.icon-print:before,
+.icon-product-placement:before,
+.icon-reduce-costs:before,
+.icon-refresh:before,
+.icon-register:before,
+.icon-reliability:before,
+.icon-responsibility-report:before,
+.icon-save-the-date:before,
+.icon-save:before,
+.icon-scopia:before,
+.icon-security:before,
+.icon-settings:before,
+.icon-share:before,
+.icon-sms:before,
+.icon-sound:before,
+.icon-speech-recognition:before,
+.icon-sponsorship:before,
+.icon-touchtone-phone:before,
+.icon-trash:before,
+.icon-truck:before,
+.icon-upload:before,
+.icon-orders:before,
+.icon-filter:before,
+.icon-history:before,
+.icon-clipboard:before,
+.icon-avatar:before,
+.icon-menu:before {
+	display: inline-block;
+	font-family: "fontcustom";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	line-height: 1;
+	text-decoration: inherit;
+	text-rendering: optimizeLegibility;
+	text-transform: none;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+/**/
+.icon-ava-outline:before { content: "\f259"; }
+.icon-blog-outline:before { content: "\f230"; }
+.icon-blog-solid:before { content: "\f231"; }
+.icon-build-outline:before { content: "\f25a"; }
+.icon-buy-outline:before { content: "\f25d"; }
+.icon-chat-now-solid:before { content: "\f1f5"; }
+.icon-chat-outline:before { content: "\f260"; }
+.icon-chat-with-rep:before { content: "\f1f6"; }
+.icon-cloud-outline:before { content: "\f1f7"; }
+.icon-cloud-solid:before { content: "\f1f8"; }
+.icon-cloud-storage-outline:before { content: "\f1f9"; }
+.icon-cloud-storage-solid:before { content: "\f1fa"; }
+.icon-connect-outline:before { content: "\f1fb"; }
+.icon-customer-engagement-outline:before { content: "\f1fc"; }
+.icon-customer-engagement-solid:before { content: "\f1fd"; }
+.icon-designs-outline:before { content: "\f1fe"; }
+.icon-document-outline:before { content: "\f1ff"; }
+.icon-edp-outline:before { content: "\f200"; }
+.icon-efficiency-outline:before { content: "\f201"; }
+.icon-efficiency-solid:before { content: "\f202"; }
+.icon-effortless-engagement-outline:before { content: "\f203"; }
+.icon-effortless-engagement-solid:before { content: "\f204"; }
+.icon-email-outline:before { content: "\f205"; }
+.icon-enable-outline:before { content: "\f206"; }
+.icon-enable-solid:before { content: "\f207"; }
+.icon-engagement-environment-outline:before { content: "\f208"; }
+.icon-engagement-environment-solid:before { content: "\f209"; }
+.icon-enhanced-collaboration-outline:before { content: "\f20a"; }
+.icon-enhanced-collaboration-solid:before { content: "\f20b"; }
+.icon-enhancement-solid:before { content: "\f20c"; }
+.icon-epiphany-outline:before { content: "\f20d"; }
+.icon-epiphany-solid:before { content: "\f20e"; }
+.icon-explore-outline:before { content: "\f25b"; }
+.icon-fabric-networking-outline:before { content: "\f20f"; }
+.icon-find-partner-outline:before { content: "\f210"; }
+.icon-find-partner-solid:before { content: "\f211"; }
+.icon-growth-outline:before { content: "\f212"; }
+.icon-how-to-buy-solid:before { content: "\f213"; }
+.icon-improved-customer-service-outline:before { content: "\f214"; }
+.icon-improved-customer-service-solid:before { content: "\f215"; }
+.icon-increased-productivity-outline:before { content: "\f216"; }
+.icon-increased-productivity-solid:before { content: "\f217"; }
+.icon-learn-outline:before { content: "\f25c"; }
+.icon-mid-market-outline:before { content: "\f218"; }
+.icon-mobility-outline:before { content: "\f219"; }
+.icon-mobility-solid:before { content: "\f21a"; }
+.icon-network-scalability-outline:before { content: "\f21b"; }
+.icon-online-quote-outline:before { content: "\f262"; }
+.icon-phone-outline:before { content: "\f21c"; }
+.icon-phone-solid:before { content: "\f21d"; }
+.icon-productivity-outline:before { content: "\f21e"; }
+.icon-products-outline:before { content: "\f21f"; }
+.icon-quote-outline:before { content: "\f220"; }
+.icon-quote-solid:before { content: "\f221"; }
+.icon-reduced-cost-outline:before { content: "\f222"; }
+.icon-revenue-growth-outline:before { content: "\f223"; }
+.icon-revenue-growth-solid:before { content: "\f224"; }
+.icon-risk-management-outline:before { content: "\f225"; }
+.icon-risk-management-solid:before { content: "\f226"; }
+.icon-services-solid:before { content: "\f227"; }
+.icon-services-team-outline:before { content: "\f232"; }
+.icon-share-outline:before { content: "\f25e"; }
+.icon-subscribe-outline:before { content: "\f228"; }
+.icon-team-engagement-outline:before { content: "\f229"; }
+.icon-team-engagement-solid:before { content: "\f22a"; }
+.icon-try-outline:before { content: "\f261"; }
+.icon-tv:before { content: "\f263"; }
+.icon-vertical-business-outline:before { content: "\f22d"; }
+.icon-video-outline:before { content: "\f22e"; }
+.icon-wechat-twitter:before { content: "\f264"; }
+.icon-weibo-twitter:before { content: "\f265"; }
+.icon-video-chat:before { content: "\e902"; }
+.icon-video-mobile:before { content: "\e903"; }
+.icon-video1:before { content: "\e904"; }
+.icon-view:before { content: "\e905"; }
+.icon-voicemail:before { content: "\e906"; }
+.icon-website:before { content: "\e907"; }
+.icon-highlights:before { content: "\e900"; }
+.icon-about:before { content: "\e917"; }
+.icon-build:before { content: "\e916"; }
+.icon-collaborate:before { content: "\e915"; }
+.icon-discover:before { content: "\e914"; }
+.icon-learn:before { content: "\e913"; }
+.icon-opportunity:before { content: "\e912"; }
+.icon-partner:before { content: "\e911"; }
+.icon-shop:before { content: "\e910"; }
+.icon-solutions:before { content: "\e909"; }
+.icon-support:before { content: "\e908"; }
+.icon-technology:before { content: "\e901"; }
+.icon-find-technology-partner:before { content: "\e930"; }
+.icon-marketplace:before { content: "\e927"; }
+.icon-snap-store:before { content: "\e922"; }
+.icon-apps-off-shelf:before { content: "\e941"; }
+.icon-Avaya-collab:before { content: "\e940"; }
+.icon-breeze:before { content: "\e939"; }
+.icon-breeze-training:before { content: "\e938"; }
+.icon-breeze-training-resources:before { content: "\e937"; }
+.icon-catalog:before { content: "\e936"; }
+.icon-code-modules:before { content: "\e935"; }
+.icon-custom-apps:before { content: "\e934"; }
+.icon-devcon-support:before { content: "\e933"; }
+.icon-documentation:before { content: "\e932"; }
+.icon-explore-devcon:before { content: "\e931"; }
+.icon-map:before { content: "\e928"; }
+.icon-oceana:before { content: "\e926"; }
+.icon-oceana-training:before { content: "\e925"; }
+.icon-online-courses:before { content: "\e924"; }
+.icon-SDK-courses:before { content: "\e923"; }
+.icon-support-login:before { content: "\e921"; }
+.icon-zang-cloud:before { content: "\e920"; }
+.icon-zang-meetups:before { content: "\e919"; }
+.icon-zang-support:before { content: "\e918"; }
+.icon-competency:before { content: "\e972"; }
+.icon-application-requirements:before { content: "\e971"; }
+.icon-award-winning-solution:before { content: "\e970"; }
+.icon-best-fit-partners:before { content: "\e969"; }
+.icon-compliance-tested:before { content: "\e962"; }
+.icon-consultant-portal:before { content: "\e961"; }
+.icon-consultant-webinars:before { content: "\e960"; }
+.icon-consultants:before { content: "\e959"; }
+.icon-contact-us:before { content: "\e958"; }
+.icon-dedicated-consultant:before { content: "\e957"; }
+.icon-experience:before { content: "\e956"; }
+.icon-experience-one:before { content: "\e955"; }
+.icon-find-channel-partner:before { content: "\e954"; }
+.icon-goals:before { content: "\e953"; }
+.icon-inform:before { content: "\e952"; }
+.icon-interoperable:before { content: "\e951"; }
+.icon-joint-solutions:before { content: "\e950"; }
+.icon-linkedin:before { content: "\e949"; }
+.icon-resource-support:before { content: "\e948"; }
+.icon-rewards:before { content: "\e947"; }
+.icon-search-marketplace:before { content: "\e946"; }
+.icon-support-one:before { content: "\e945"; }
+.icon-tech-alliances:before { content: "\e944"; }
+.icon-tech-leadership:before { content: "\e943"; }
+.icon-technology-partner:before { content: "\e942"; }
+.icon-analytics-engage-cloud:before { content: "\e980"; }
+.icon-customer-engage-cloud:before { content: "\e979"; }
+.icon-developer-engage-cloud:before { content: "\e978"; }
+.icon-team-engage-cloud:before { content: "\e977"; }
+.icon-digital-transform:before { content: "\e983"; }
+.icon-exec-thought-leader:before { content: "\e982"; }
+.icon-services:before { content: "\e981"; }
+.icon-billing:before { content: "\e976"; }
+.icon-help:before { content: "\e975"; }
+.icon-overview:before { content: "\e974"; }
+.icon-products:before { content: "\e973"; }
+.icon-services-team:before { content: "\e984"; }
+.icon-artificial-intelligence:before { content: "\e985"; }
+.icon-analysts1:before { content: "\e986"; }
+.icon-analysts2:before { content: "\e987"; }
+.icon-analysts3:before { content: "\e988"; }
+.icon-analysts4:before { content: "\e989"; }
+.icon-avaya-worldwide:before { content: "\e990"; }
+.icon-be-avaya:before { content: "\e991"; }
+.icon-carbon-reduction:before { content: "\e992"; }
+.icon-conflict-minerals:before { content: "\e993"; }
+.icon-corporate-responsibility:before { content: "\e800"; }
+.icon-disability:before { content: "\e801"; }
+.icon-diversity:before { content: "\e802"; }
+.icon-EMEA-locations:before { content: "\e803"; }
+.icon-headquarters:before { content: "\e804"; }
+.icon-investor-relations:before { content: "\e805"; }
+.icon-leadership:before { content: "\e806"; }
+.icon-media-collab:before { content: "\e807"; }
+.icon-media-engage:before { content: "\e808"; }
+.icon-media-video-collab:before { content: "\e809"; }
+.icon-membership:before { content: "\e810"; }
+.icon-NA-locations:before { content: "\e811"; }
+.icon-news:before { content: "\e816"; }
+.icon-product-design1:before { content: "\e817"; }
+.icon-product-design:before { content: "\e818"; }
+.icon-SA-locations:before { content: "\e819"; }
+.icon-shumer-invest-relat:before { content: "\e820"; }
+.icon-tech-benefits:before { content: "\e821"; }
+.icon-workplace:before { content: "\e822"; }
+.icon-doing-biz:before { content: "\e823"; }
+.icon-budget:before { content: "\e824"; }
+.icon-buy-back:before { content: "\e825"; }
+.icon-end-of-life:before { content: "\e826"; }
+.icon-gray-market:before { content: "\e827"; }
+.icon-minimize-cash:before { content: "\e828"; }
+.icon-refurbished-equip:before { content: "\e829"; }
+.icon-tax-advant:before { content: "\e830"; }
+.icon-germany:before { content: "\e831"; }
+.icon-large-biz:before { content: "\e833"; }
+.icon-small-biz:before { content: "\e832"; }
+.icon-mobile-caller:before { content: "\e834"; }
+.icon-mobile-caller-one:before { content: "\e835"; }
+.icon-police:before { content: "\e836"; }
+.icon-law:before { content: "\e837"; }
+.icon-gov:before { content: "\e838"; }
+.icon-gov-one:before { content: "\e839"; }
+.icon-vantage:before { content: "\e840"; }
+
+.icon-add:before {content: "\e90a";}
+.icon-affordable:before {content: "\e90b";}
+.icon-agenda:before {content: "\e90c";}
+.icon-arrow-down:before {content: "\e90d";}
+.icon-arrow-left:before {content: "\e90e";}
+.icon-arrow-right:before {content: "\e90f";}
+.icon-arrow-up:before {content: "\e91a";}
+.icon-best-practices:before {content: "\e91b";}
+.icon-blog1:before {content: "\e91c";}
+.icon-booth:before {content: "\e91d";}
+.icon-calendar:before {content: "\e91f";}
+.icon-cc-supervisor:before {content: "\e929";}
+.icon-checkmark:before {content: "\e92a";}
+.icon-cloud-avaya-live:before {content: "\e92b";}
+.icon-cloud-avaya:before {content: "\e92c";}
+.icon-cloud-video:before {content: "\e92d";}
+.icon-commitment:before {content: "\e92e";}
+.icon-computer:before {content: "\e92f";}
+.icon-context-store:before {content: "\e93a";}
+.icon-contracts:before {content: "\e93b";}
+.icon-copy:before {content: "\e93c";}
+.icon-dashboard:before {content: "\e93d";}
+.icon-dialer:before {content: "\e93e";}
+.icon-digital-info:before {content: "\e93f";}
+.icon-disrupt:before {content: "\e94a";}
+.icon-download:before {content: "\e94b";}
+.icon-edit:before {content: "\e94c";}
+.icon-email-voice-integration:before {content: "\e94d";}
+.icon-energize:before {content: "\e94e";}
+.icon-fax:before {content: "\e95a";}
+.icon-hearing:before {content: "\e95b";}
+.icon-heterogeneity:before {content: "\e95c";}
+.icon-hospital:before {content: "\e97e";}
+.icon-image:before {content: "\e97f";}
+.icon-implementation-credits:before {content: "\e98a";}
+.icon-increase-costs:before {content: "\e98b";}
+.icon-interoperability:before {content: "\e98c";}
+.icon-investor-relations1:before {content: "\e98d";}
+.icon-last-year-info:before {content: "\e98e";}
+.icon-licensing:before {content: "\e98f";}
+.icon-locations:before {content: "\e994";}
+.icon-mesh-architecture:before {content: "\e995";}
+.icon-multicast:before {content: "\e996";}
+.icon-notifications:before {content: "\e997";}
+.icon-objective:before {content: "\e998";}
+.icon-orders:before {content: "\e999";}
+.icon-paragraph:before {content: "\e99a";}
+.icon-parts-list:before {content: "\e99b";}
+.icon-pin:before {content: "\e99c";}
+.icon-pr-ar:before {content: "\e99d";}
+.icon-print:before {content: "\e99e";}
+.icon-product-placement:before {content: "\e99f";}
+.icon-reduce-costs:before {content: "\e9a0";}
+.icon-refresh:before {content: "\e9a1";}
+.icon-register:before {content: "\e9a2";}
+.icon-reliability:before {content: "\e9a3";}
+.icon-responsibility-report:before {content: "\e9a4";}
+.icon-save-the-date:before {content: "\e9a5";}
+.icon-save:before {content: "\e9a6";}
+.icon-scopia:before {content: "\e9a7";}
+.icon-security:before {content: "\e9a8";}
+.icon-settings:before {content: "\e9a9";}
+.icon-share:before {content: "\e9aa";}
+.icon-sms:before {content: "\e9ab";}
+.icon-sound:before {content: "\e9ac";}
+.icon-speech-recognition:before {content: "\e9ad";}
+.icon-sponsorship:before {content: "\e9ae";}
+.icon-touchtone-phone:before {content: "\e9af";}
+.icon-trash:before {content: "\e9b1";}
+.icon-truck:before {content: "\e9b2";}
+.icon-upload:before {content: "\e9b3";}
+.icon-orders:before {content: "\e91e";}
+.icon-filter:before {content: "\e95e";}
+.icon-history:before {content: "\e95d";}
+.icon-clipboard:before {content: "\e94f";}
+.icon-avatar:before {content: "\e95f";}
+.icon-menu:before {content: "\e963";}
+/**/
+
+
+
+
+
+
+
+.has-border {
+	transform: scale(.65);
+	margin: -.15em 0;
+}
+.has-border:before,
+.has-border-before {
+	border-radius: 9em;
+	width:  100%;
+	height: 100%;
+	border: .1em solid;   // has to scale and inherit color
+	padding: .2em;        // ~ equal to margin
+	margin: 0 -.2em;      // equal to padding
+}
+
+
+
+
+
+.icon-ava-outline-border,
+.icon-blog-outline-border,
+.icon-blog-solid-border,
+.icon-build-outline-border,
+.icon-buy-outline-border,
+.icon-chat-now-solid-border,
+.icon-chat-outline-border,
+.icon-chat-with-rep-border,
+.icon-cloud-outline-border,
+.icon-cloud-solid-border,
+.icon-cloud-storage-outline-border,
+.icon-cloud-storage-solid-border,
+.icon-connect-outline-border,
+.icon-customer-engagement-outline-border,
+.icon-customer-engagement-solid-border,
+.icon-designs-outline-border,
+.icon-document-outline-border,
+.icon-edp-outline-border,
+.icon-efficiency-outline-border,
+.icon-efficiency-solid-border,
+.icon-effortless-engagement-outline-border,
+.icon-effortless-engagement-solid-border,
+.icon-email-outline-border,
+.icon-enable-outline-border,
+.icon-enable-solid-border,
+.icon-engagement-environment-outline-border,
+.icon-engagement-environment-solid-border,
+.icon-enhanced-collaboration-outline-border,
+.icon-enhanced-collaboration-solid-border,
+.icon-enhancement-solid-border,
+.icon-epiphany-outline-border,
+.icon-epiphany-solid-border,
+.icon-explore-outline-border,
+.icon-fabric-networking-outline-border,
+.icon-find-partner-outline-border,
+.icon-find-partner-solid-border,
+.icon-growth-outline-border,
+.icon-how-to-buy-solid-border,
+.icon-improved-customer-service-outline-border,
+.icon-improved-customer-service-solid-border,
+.icon-increased-productivity-outline-border,
+.icon-increased-productivity-solid-border,
+.icon-learn-outline-border,
+.icon-mid-market-outline-border,
+.icon-mobility-outline-border,
+.icon-mobility-solid-border,
+.icon-network-scalability-outline-border,
+.icon-online-quote-outline-border,
+.icon-phone-outline-border,
+.icon-phone-solid-border,
+.icon-productivity-outline-border,
+.icon-products-outline-border,
+.icon-quote-outline-border,
+.icon-quote-solid-border,
+.icon-reduced-cost-outline-border,
+.icon-revenue-growth-outline-border,
+.icon-revenue-growth-solid-border,
+.icon-risk-management-outline-border,
+.icon-risk-management-solid-border,
+.icon-services-solid-border,
+.icon-services-team-outline-border,
+.icon-share-outline-border,
+.icon-subscribe-outline-border,
+.icon-team-engagement-outline-border,
+.icon-team-engagement-solid-border,
+.icon-try-outline-border,
+.icon-tv-border,
+.icon-vertical-business-outline-border,
+.icon-video-outline-border,
+.icon-wechat-twitter-border,
+.icon-weibo-twitter-border,
+.icon-video-chat-border,
+.icon-video-mobile-border,
+.icon-video1-border,
+.icon-view-border,
+.icon-voicemail-border,
+.icon-website-border,
+.icon-highlights-border,
+.icon-about-border,
+.icon-build-border,
+.icon-collaborate-border,
+.icon-discover-border,
+.icon-learn-border,
+.icon-opportunity-border,
+.icon-partner-border,
+.icon-shop-border,
+.icon-solutions-border,
+.icon-support-border,
+.icon-technology-border,
+.icon-find-technology-partner-border,
+.icon-marketplace-border,
+.icon-snap-store-border,
+.icon-apps-off-shelf-border,
+.icon-Avaya-collab-border,
+.icon-breeze-border,
+.icon-breeze-training-border,
+.icon-breeze-training-resources-border,
+.icon-catalog-border,
+.icon-code-modules-border,
+.icon-custom-apps-border,
+.icon-devcon-support-border,
+.icon-documentation-border,
+.icon-explore-devcon-border,
+.icon-map-border,
+.icon-oceana-border,
+.icon-oceana-training-border,
+.icon-online-courses-border,
+.icon-SDK-courses-border,
+.icon-support-login-border,
+.icon-zang-cloud-border,
+.icon-zang-meetups-border,
+.icon-zang-support-border,
+.icon-competency-border,
+.icon-application-requirements-border,
+.icon-award-winning-solution-border,
+.icon-best-fit-partners-border,
+.icon-compliance-tested-border,
+.icon-consultant-portal-border,
+.icon-consultant-webinars-border,
+.icon-consultants-border,
+.icon-contact-us-border,
+.icon-dedicated-consultant-border,
+.icon-experience-border,
+.icon-experience-one-border,
+.icon-find-channel-partner-border,
+.icon-goals-border,
+.icon-inform-border,
+.icon-interoperable-border,
+.icon-joint-solutions-border,
+.icon-linkedin-border,
+.icon-resource-support-border,
+.icon-rewards-border,
+.icon-search-marketplace-border,
+.icon-support-one-border,
+.icon-tech-alliances-border,
+.icon-tech-leadership-border,
+.icon-technology-partner-border,
+.icon-analytics-engage-cloud-border,
+.icon-customer-engage-cloud-border,
+.icon-developer-engage-cloud-border,
+.icon-team-engage-cloud-border,
+.icon-digital-transform-border,
+.icon-exec-thought-leader-border,
+.icon-services-border,
+.icon-billing-border,
+.icon-help-border,
+.icon-overview-border,
+.icon-products-border,
+.icon-services-team-border,
+.icon-artificial-intelligence-border,
+.icon-analysts1-border,
+.icon-analysts2-border,
+.icon-analysts3-border,
+.icon-analysts4-border,
+.icon-avaya-worldwide-border,
+.icon-be-avaya-border,
+.icon-carbon-reduction-border,
+.icon-conflict-minerals-border,
+.icon-corporate-responsibility-border,
+.icon-disability-border,
+.icon-diversity-border,
+.icon-EMEA-locations-border,
+.icon-headquarters-border,
+.icon-investor-relations-border,
+.icon-leadership-border,
+.icon-media-collab-border,
+.icon-media-engage-border,
+.icon-media-video-collab-border,
+.icon-membership-border,
+.icon-NA-locations-border,
+.icon-news-border,
+.icon-product-design1-border,
+.icon-product-design-border,
+.icon-SA-locations-border,
+.icon-shumer-invest-relat-border,
+.icon-tech-benefits-border,
+.icon-workplace-border,
+.icon-doing-biz-border,
+.icon-budget-border,
+.icon-buy-back-border,
+.icon-end-of-life-border,
+.icon-gray-market-border,
+.icon-minimize-cash-border,
+.icon-refurbished-equip-border,
+.icon-tax-advant-border,
+.icon-germany-border,
+.icon-large-biz-border,
+.icon-small-biz-border,
+.icon-mobile-caller-border,
+.icon-mobile-caller-one-border,
+.icon-police-border,
+.icon-law-border,
+.icon-gov-border,
+.icon-gov-one-border,
+.icon-vantage-border,
+
+.icon-add-border,
+.icon-affordable-border,
+.icon-agenda-border,
+.icon-arrow-down-border,
+.icon-arrow-left-border,
+.icon-arrow-right-border,
+.icon-arrow-up-border,
+.icon-best-practices-border,
+.icon-blog1-border,
+.icon-booth-border,
+.icon-calendar-border,
+.icon-cc-supervisor-border,
+.icon-checkmark-border,
+.icon-cloud-avaya-live-border,
+.icon-cloud-avaya-border,
+.icon-cloud-video-border,
+.icon-commitment-border,
+.icon-computer-border,
+.icon-context-store-border,
+.icon-contracts-border,
+.icon-copy-border,
+.icon-dashboard-border,
+.icon-dialer-border,
+.icon-digital-info-border,
+.icon-disrupt-border,
+.icon-download-border,
+.icon-edit-border,
+.icon-energize-border,
+.icon-email-voice-integration-border,
+.icon-fax-border,
+.icon-hearing-border,
+.icon-heterogeneity-border,
+.icon-hospital-border,
+.icon-image-border,
+.icon-implementation-credits-border,
+.icon-increase-costs-border,
+.icon-interoperability-border,
+.icon-investor-relations1-border,
+.icon-last-year-info-border,
+.icon-licensing-border,
+.icon-locations-border,
+.icon-mesh-architecture-border,
+.icon-multicast-border,
+.icon-notifications-border,
+.icon-objective-border,
+.icon-orders-border,
+.icon-paragraph-border,
+.icon-parts-list-border,
+.icon-pin-border,
+.icon-pr-ar-border,
+.icon-print-border,
+.icon-product-placement-border,
+.icon-reduce-costs-border,
+.icon-refresh-border,
+.icon-register-border,
+.icon-reliability-border,
+.icon-responsibility-report-border,
+.icon-save-the-date-border,
+.icon-save-border,
+.icon-scopia-border,
+.icon-security-border,
+.icon-settings-border,
+.icon-share-border,
+.icon-sms-border,
+.icon-sound-border,
+.icon-speech-recognition-border,
+.icon-sponsorship-border,
+.icon-touchtone-phone-border,
+.icon-trash-border,
+.icon-truck-border,
+.icon-upload-border,
+.icon-orders-border,
+.icon-filter-border,
+.icon-history-border,
+.icon-clipboard-border,
+.icon-avatar-border,
+.icon-menu-border {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	line-height: 1;
+	@extend .has-border;
+}
+
+
+
+.icon-ava-outline-border:before,
+.icon-blog-outline-border:before,
+.icon-blog-solid-border:before,
+.icon-build-outline-border:before,
+.icon-buy-outline-border:before,
+.icon-chat-now-solid-border:before,
+.icon-chat-outline-border:before,
+.icon-chat-with-rep-border:before,
+.icon-cloud-outline-border:before,
+.icon-cloud-solid-border:before,
+.icon-cloud-storage-outline-border:before,
+.icon-cloud-storage-solid-border:before,
+.icon-connect-outline-border:before,
+.icon-customer-engagement-outline-border:before,
+.icon-customer-engagement-solid-border:before,
+.icon-designs-outline-border:before,
+.icon-document-outline-border:before,
+.icon-edp-outline-border:before,
+.icon-efficiency-outline-border:before,
+.icon-efficiency-solid-border:before,
+.icon-effortless-engagement-outline-border:before,
+.icon-effortless-engagement-solid-border:before,
+.icon-email-outline-border:before,
+.icon-enable-outline-border:before,
+.icon-enable-solid-border:before,
+.icon-engagement-environment-outline-border:before,
+.icon-engagement-environment-solid-border:before,
+.icon-enhanced-collaboration-outline-border:before,
+.icon-enhanced-collaboration-solid-border:before,
+.icon-enhancement-solid-border:before,
+.icon-epiphany-outline-border:before,
+.icon-epiphany-solid-border:before,
+.icon-explore-outline-border:before,
+.icon-fabric-networking-outline-border:before,
+.icon-find-partner-outline-border:before,
+.icon-find-partner-solid-border:before,
+.icon-growth-outline-border:before,
+.icon-how-to-buy-solid-border:before,
+.icon-improved-customer-service-outline-border:before,
+.icon-improved-customer-service-solid-border:before,
+.icon-increased-productivity-outline-border:before,
+.icon-increased-productivity-solid-border:before,
+.icon-learn-outline-border:before,
+.icon-mid-market-outline-border:before,
+.icon-mobility-outline-border:before,
+.icon-mobility-solid-border:before,
+.icon-network-scalability-outline-border:before,
+.icon-online-quote-outline-border:before,
+.icon-phone-outline-border:before,
+.icon-phone-solid-border:before,
+.icon-productivity-outline-border:before,
+.icon-products-outline-border:before,
+.icon-quote-outline-border:before,
+.icon-quote-solid-border:before,
+.icon-reduced-cost-outline-border:before,
+.icon-revenue-growth-outline-border:before,
+.icon-revenue-growth-solid-border:before,
+.icon-risk-management-outline-border:before,
+.icon-risk-management-solid-border:before,
+.icon-services-solid-border:before,
+.icon-services-team-outline-border:before,
+.icon-share-outline-border:before,
+.icon-subscribe-outline-border:before,
+.icon-team-engagement-outline-border:before,
+.icon-team-engagement-solid-border:before,
+.icon-try-outline-border:before,
+.icon-tv-border:before,
+.icon-vertical-business-outline-border:before,
+.icon-video-outline-border:before,
+.icon-wechat-twitter-border:before,
+.icon-weibo-twitter-border:before,
+.icon-video-chat-border:before,
+.icon-video-mobile-border:before,
+.icon-video1-border:before,
+.icon-view-border:before,
+.icon-voicemail-border:before,
+.icon-website-border:before,
+.icon-highlights-border:before,
+.icon-about-border:before,
+.icon-build-border:before,
+.icon-collaborate-border:before,
+.icon-discover-border:before,
+.icon-learn-border:before,
+.icon-opportunity-border:before,
+.icon-partner-border:before,
+.icon-shop-border:before,
+.icon-solutions-border:before,
+.icon-support-border:before,
+.icon-technology-border:before,
+.icon-find-technology-partner-border:before,
+.icon-marketplace-border:before,
+.icon-snap-store-border:before,
+.icon-apps-off-shelf-border:before,
+.icon-Avaya-collab-border:before,
+.icon-breeze-border:before,
+.icon-breeze-training-border:before,
+.icon-breeze-training-resources-border:before,
+.icon-catalog-border:before,
+.icon-code-modules-border:before,
+.icon-custom-apps-border:before,
+.icon-devcon-support-border:before,
+.icon-documentation-borderv,
+.icon-explore-devcon-border:before,
+.icon-map-borderv,
+.icon-oceana-border:before,
+.icon-oceana-training-border:before,
+.icon-online-courses-border:before,
+.icon-SDK-courses-border:before,
+.icon-support-login-border:before,
+.icon-zang-cloud-border:before,
+.icon-zang-meetups-border:before,
+.icon-zang-support-border:before,
+.icon-competency-border:before,
+.icon-application-requirements-border:before,
+.icon-award-winning-solution-border:before,
+.icon-best-fit-partners-border:before,
+.icon-compliance-tested-border:before,
+.icon-consultant-portal-border:before,
+.icon-consultant-webinars-border:before,
+.icon-consultants-border:before,
+.icon-contact-us-border:before,
+.icon-dedicated-consultant-border:before,
+.icon-experience-border:before,
+.icon-experience-one-border:before,
+.icon-find-channel-partner-border:before,
+.icon-goals-border:before,
+.icon-inform-border:before,
+.icon-interoperable-border:before,
+.icon-joint-solutions-border:before,
+.icon-linkedin-border:before,
+.icon-resource-support-border:before,
+.icon-rewards-border:before,
+.icon-search-marketplace-border:before,
+.icon-support-one-border:before,
+.icon-tech-alliances-border:before,
+.icon-tech-leadership-border:before,
+.icon-technology-partner-border:before,
+.icon-analytics-engage-cloud-border:before,
+.icon-customer-engage-cloud-border:before,
+.icon-developer-engage-cloud-border:before,
+.icon-team-engage-cloud-border:before,
+.icon-digital-transform-border:before,
+.icon-exec-thought-leader-border:before,
+.icon-services-border:before,
+.icon-billing-border:before,
+.icon-help-border:before,
+.icon-overview-border:before,
+.icon-products-border:before,
+.icon-services-team-border:before,
+.icon-artificial-intelligence-border:before,
+.icon-analysts1-border:before,
+.icon-analysts2-border:before,
+.icon-analysts3-border:before,
+.icon-analysts4-border:before,
+.icon-avaya-worldwide-border:before,
+.icon-be-avaya-border:before,
+.icon-carbon-reduction-border:before,
+.icon-conflict-minerals-border:before,
+.icon-corporate-responsibility-border:before,
+.icon-disability-border:before,
+.icon-diversity-border:before,
+.icon-EMEA-locations-border:before,
+.icon-headquarters-border:before,
+.icon-investor-relations-border:before,
+.icon-leadership-border:before,
+.icon-media-collab-border:before,
+.icon-media-engage-border:before,
+.icon-media-video-collab-border:before,
+.icon-membership-border:before,
+.icon-NA-locations-border:before,
+.icon-news-border:before,
+.icon-product-design1-border:before,
+.icon-product-design-border:before,
+.icon-SA-locations-border:before,
+.icon-shumer-invest-relat-border:before,
+.icon-tech-benefits-border:before,
+.icon-workplace-border:before,
+.icon-doing-biz-border:before,
+.icon-budget-border:before,
+.icon-buy-back-border:before,
+.icon-end-of-life-border:before,
+.icon-gray-market-border:before,
+.icon-minimize-cash-border:before,
+.icon-refurbished-equip-border:before,
+.icon-tax-advant-border:before,
+.icon-germany-border:before,
+.icon-large-biz-border:before,
+.icon-small-biz-border:before,
+.icon-mobile-caller-border:before,
+.icon-mobile-caller-one-border:before,
+.icon-police-border:before,
+.icon-law-border:before,
+.icon-gov-border:before,
+.icon-gov-one-border:before,
+.icon-vantage-border:before,
+
+.icon-add-border:before,
+.icon-affordable-border:before,
+.icon-agenda-border:before,
+.icon-arrow-down-border:before,
+.icon-arrow-left-border:before,
+.icon-arrow-right-border:before,
+.icon-arrow-up-border:before,
+.icon-best-practices-border:before,
+.icon-blog1-border:before,
+.icon-booth-border:before,
+.icon-calendar-border:before,
+.icon-cc-supervisor-border:before,
+.icon-checkmark-border:before,
+.icon-cloud-avaya-live-border:before,
+.icon-cloud-avaya-border:before,
+.icon-cloud-video-border:before,
+.icon-commitment-border:before,
+.icon-computer-border:before,
+.icon-context-store-border:before,
+.icon-contracts-border:before,
+.icon-copy-border:before,
+.icon-dashboard-border:before,
+.icon-dialer-border:before,
+.icon-digital-info-border:before,
+.icon-disrupt-border:before,
+.icon-download-border:before,
+.icon-edit-border:before,
+.icon-energize-border:before,
+.icon-email-voice-integration-border:before,
+.icon-fax-border:before,
+.icon-hearing-border:before,
+.icon-heterogeneity-border:before,
+.icon-hospital-border:before,
+.icon-image-border:before,
+.icon-implementation-credits-border:before,
+.icon-increase-costs-border:before,
+.icon-interoperability-border:before,
+.icon-investor-relations1-border:before,
+.icon-last-year-info-border:before,
+.icon-licensing-border:before,
+.icon-locations-border:before,
+.icon-mesh-architecture-border:before,
+.icon-multicast-border:before,
+.icon-notifications-border:before,
+.icon-objective-border:before,
+.icon-orders-border:before,
+.icon-paragraph-border:before,
+.icon-parts-list-border:before,
+.icon-pin-border:before,
+.icon-pr-ar-border:before,
+.icon-print-border:before,
+.icon-product-placement-border:before,
+.icon-reduce-costs-border:before,
+.icon-refresh-border:before,
+.icon-register-border:before,
+.icon-reliability-border:before,
+.icon-responsibility-report-border:before,
+.icon-save-the-date-border:before,
+.icon-save-border:before,
+.icon-scopia-border:before,
+.icon-security-border:before,
+.icon-settings-border:before,
+.icon-share-border:before,
+.icon-sms-border:before,
+.icon-sound-border:before,
+.icon-speech-recognition-border:before,
+.icon-sponsorship-border:before,
+.icon-touchtone-phone-border:before,
+.icon-trash-border:before,
+.icon-truck-border:before,
+.icon-upload-border:before,
+.icon-orders-border:before,
+.icon-filter-border:before,
+.icon-history-border:before,
+.icon-clipboard-border:before,
+.icon-avatar-border:before,
+.icon-menu-border:before
+ {
+	display: inline-block;
+	font-family: "fontcustom";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	line-height: 1;
+	text-decoration: inherit;
+	text-rendering: optimizeLegibility;
+	text-transform: none;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	@extend .has-border-before;
+}
+/**/
+
+
+.icon-ava-outline-border:before { content: "\f259"; }
+.icon-blog-outline-border:before { content: "\f230"; }
+.icon-blog-solid-border:before { content: "\f231"; }
+.icon-build-outline-border:before { content: "\f25a"; }
+.icon-buy-outline-border:before { content: "\f25d"; }
+.icon-chat-now-solid-border:before { content: "\f1f5"; }
+.icon-chat-outline-border:before { content: "\f260"; }
+.icon-chat-with-rep-border:before { content: "\f1f6"; }
+.icon-cloud-outline-border:before { content: "\f1f7"; }
+.icon-cloud-solid-border:before { content: "\f1f8"; }
+.icon-cloud-storage-outline-border:before { content: "\f1f9"; }
+.icon-cloud-storage-solid-border:before { content: "\f1fa"; }
+.icon-connect-outline-border:before { content: "\f1fb"; }
+.icon-customer-engagement-outline-border:before { content: "\f1fc"; }
+.icon-customer-engagement-solid-border:before { content: "\f1fd"; }
+.icon-designs-outline-border:before { content: "\f1fe"; }
+.icon-document-outline-border:before { content: "\f1ff"; }
+.icon-edp-outline-border:before { content: "\f200"; }
+.icon-efficiency-outline-border:before { content: "\f201"; }
+.icon-efficiency-solid-border:before { content: "\f202"; }
+.icon-effortless-engagement-outline-border:before { content: "\f203"; }
+.icon-effortless-engagement-solid-border:before { content: "\f204"; }
+.icon-email-outline-border:before { content: "\f205"; }
+.icon-enable-outline-border:before { content: "\f206"; }
+.icon-enable-solid-border:before { content: "\f207"; }
+.icon-engagement-environment-outline-border:before { content: "\f208"; }
+.icon-engagement-environment-solid-border:before { content: "\f209"; }
+.icon-enhanced-collaboration-outline-border:before { content: "\f20a"; }
+.icon-enhanced-collaboration-solid-border:before { content: "\f20b"; }
+.icon-enhancement-solid-border:before { content: "\f20c"; }
+.icon-epiphany-outline-border:before { content: "\f20d"; }
+.icon-epiphany-solid-border:before { content: "\f20e"; }
+.icon-explore-outline-border:before { content: "\f25b"; }
+.icon-fabric-networking-outline-border:before { content: "\f20f"; }
+.icon-find-partner-outline-border:before { content: "\f210"; }
+.icon-find-partner-solid-border:before { content: "\f211"; }
+.icon-growth-outline-border:before { content: "\f212"; }
+.icon-how-to-buy-solid-border:before { content: "\f213"; }
+.icon-improved-customer-service-outline-border:before { content: "\f214"; }
+.icon-improved-customer-service-solid-border:before { content: "\f215"; }
+.icon-increased-productivity-outline-border:before { content: "\f216"; }
+.icon-increased-productivity-solid-border:before { content: "\f217"; }
+.icon-learn-outline-border:before { content: "\f25c"; }
+.icon-mid-market-outline-border:before { content: "\f218"; }
+.icon-mobility-outline-border:before { content: "\f219"; }
+.icon-mobility-solid-border:before { content: "\f21a"; }
+.icon-network-scalability-outline-border:before { content: "\f21b"; }
+.icon-online-quote-outline-border:before { content: "\f262"; }
+.icon-phone-outline-border:before { content: "\f21c"; }
+.icon-phone-solid-border:before { content: "\f21d"; }
+.icon-productivity-outline-border:before { content: "\f21e"; }
+.icon-products-outline-border:before { content: "\f21f"; }
+.icon-quote-outline-border:before { content: "\f220"; }
+.icon-quote-solid-border:before { content: "\f221"; }
+.icon-reduced-cost-outline-border:before { content: "\f222"; }
+.icon-revenue-growth-outline-border:before { content: "\f223"; }
+.icon-revenue-growth-solid-border:before { content: "\f224"; }
+.icon-risk-management-outline-border:before { content: "\f225"; }
+.icon-risk-management-solid-border:before { content: "\f226"; }
+.icon-services-solid-border:before { content: "\f227"; }
+.icon-services-team-outline-border:before { content: "\f232"; }
+.icon-share-outline-border:before { content: "\f25e"; }
+.icon-subscribe-outline-border:before { content: "\f228"; }
+.icon-team-engagement-outline-border:before { content: "\f229"; }
+.icon-team-engagement-solid-border:before { content: "\f22a"; }
+.icon-try-outline-border:before { content: "\f261"; }
+.icon-tv-border:before { content: "\f263"; }
+.icon-vertical-business-outline-border:before { content: "\f22d"; }
+.icon-video-outline-border:before { content: "\f22e"; }
+.icon-wechat-twitter-border:before { content: "\f264"; }
+.icon-weibo-twitter-border:before { content: "\f265"; }
+.icon-video-chat-border:before { content: "\e902"; }
+.icon-video-mobile-border:before { content: "\e903"; }
+.icon-video1-border:before { content: "\e904"; }
+.icon-view-border:before { content: "\e905"; }
+.icon-voicemail-border:before { content: "\e906"; }
+.icon-website-border:before { content: "\e907"; }
+.icon-highlights-border:before { content: "\e900"; }
+.icon-about-border:before { content: "\e917"; }
+.icon-build-border:before { content: "\e916"; }
+.icon-collaborate-border:before { content: "\e915"; }
+.icon-discover-border:before { content: "\e914"; }
+.icon-learn-border:before { content: "\e913"; }
+.icon-opportunity-border:before { content: "\e912"; }
+.icon-partner-border:before { content: "\e911"; }
+.icon-shop-border:before { content: "\e910"; }
+.icon-solutions-border:before { content: "\e909"; }
+.icon-support-border:before { content: "\e908"; }
+.icon-technology-border:before { content: "\e901"; }
+.icon-find-technology-partner-border:before { content: "\e930"; }
+.icon-marketplace-border:before { content: "\e927"; }
+.icon-snap-store-border:before { content: "\e922"; }
+.icon-apps-off-shelf-border:before { content: "\e941"; }
+.icon-Avaya-collab-border:before { content: "\e940"; }
+.icon-breeze-border:before { content: "\e939"; }
+.icon-breeze-training-border:before { content: "\e938"; }
+.icon-breeze-training-resources-border:before { content: "\e937"; }
+.icon-catalog-border:before { content: "\e936"; }
+.icon-code-modules-border:before { content: "\e935"; }
+.icon-custom-apps-border:before { content: "\e934"; }
+.icon-devcon-support-border:before { content: "\e933"; }
+.icon-documentation-border:before { content: "\e932"; }
+.icon-explore-devcon-border:before { content: "\e931"; }
+.icon-map-border:before { content: "\e928"; }
+.icon-oceana-border:before { content: "\e926"; }
+.icon-oceana-training-border:before { content: "\e925"; }
+.icon-online-courses-border:before { content: "\e924"; }
+.icon-SDK-courses-border:before { content: "\e923"; }
+.icon-support-login-border:before { content: "\e921"; }
+.icon-zang-cloud-border:before { content: "\e920"; }
+.icon-zang-meetups-border-border:before { content: "\e919"; }
+.icon-zang-support-border:before { content: "\e918"; }
+.icon-competency-border:before { content: "\e972"; }
+.icon-application-requirements-border:before { content: "\e971"; }
+.icon-award-winning-solution-border:before { content: "\e970"; }
+.icon-best-fit-partners-border:before { content: "\e969"; }
+.icon-compliance-tested-border:before { content: "\e962"; }
+.icon-consultant-portal-border:before { content: "\e961"; }
+.icon-consultant-webinars-border:before { content: "\e960"; }
+.icon-consultants-border:before { content: "\e959"; }
+.icon-contact-us-border:before { content: "\e958"; }
+.icon-dedicated-consultant-border:before { content: "\e957"; }
+.icon-experience-border:before { content: "\e956"; }
+.icon-experience-one-border:before { content: "\e955"; }
+.icon-find-channel-partner-border:before { content: "\e954"; }
+.icon-goals-border:before { content: "\e953"; }
+.icon-inform-border:before { content: "\e952"; }
+.icon-interoperable-border:before { content: "\e951"; }
+.icon-joint-solutions-border:before { content: "\e950"; }
+.icon-linkedin-border:before { content: "\e949"; }
+.icon-resource-support-border:before { content: "\e948"; }
+.icon-rewards-border:before { content: "\e947"; }
+.icon-search-marketplace-border:before { content: "\e946"; }
+.icon-support-one-border:before { content: "\e945"; }
+.icon-tech-alliances-border:before { content: "\e944"; }
+.icon-tech-leadership-border:before { content: "\e943"; }
+.icon-technology-partner-border:before { content: "\e942"; }
+.icon-analytics-engage-cloud-border:before { content: "\e980"; }
+.icon-customer-engage-cloud-border:before { content: "\e979"; }
+.icon-developer-engage-cloud-border:before { content: "\e978"; }
+.icon-team-engage-cloud-border:before { content: "\e977"; }
+.icon-digital-transform-border:before { content: "\e983"; }
+.icon-exec-thought-leader-border:before { content: "\e982"; }
+.icon-services-border:before { content: "\e981"; }
+.icon-billing-border:before { content: "\e976"; }
+.icon-help-border:before { content: "\e975"; }
+.icon-overview-border:before { content: "\e974"; }
+.icon-products-border:before { content: "\e973"; }
+.icon-services-team-border:before { content: "\e984"; }
+.icon-artificial-intelligence-border:before { content: "\e985"; }
+.icon-analysts1-border:before { content: "\e986"; }
+.icon-analysts2-border:before { content: "\e987"; }
+.icon-analysts3-border:before { content: "\e988"; }
+.icon-analysts4-border:before { content: "\e989"; }
+.icon-avaya-worldwide-border:before { content: "\e990"; }
+.icon-be-avaya-border:before { content: "\e991"; }
+.icon-carbon-reduction-border:before { content: "\e992"; }
+.icon-conflict-minerals-border:before { content: "\e993"; }
+.icon-corporate-responsibility-border:before { content: "\e800"; }
+.icon-disability-border:before { content: "\e801"; }
+.icon-diversity-border:before { content: "\e802"; }
+.icon-EMEA-locations-border:before { content: "\e803"; }
+.icon-headquarters-border:before { content: "\e804"; }
+.icon-investor-relations-border:before { content: "\e805"; }
+.icon-leadership-border:before { content: "\e806"; }
+.icon-media-collab-border:before { content: "\e807"; }
+.icon-media-engage-border:before { content: "\e808"; }
+.icon-media-video-collab-border:before { content: "\e809"; }
+.icon-membership-border:before { content: "\e810"; }
+.icon-NA-locations-border:before { content: "\e811"; }
+.icon-news-border:before { content: "\e816"; }
+.icon-product-design1-border:before { content: "\e817"; }
+.icon-product-design-border:before { content: "\e818"; }
+.icon-SA-locations-border:before { content: "\e819"; }
+.icon-shumer-invest-relat-border:before { content: "\e820"; }
+.icon-tech-benefits-border:before { content: "\e821"; }
+.icon-workplace-border:before { content: "\e822"; }
+.icon-doing-biz-border:before { content: "\e823"; }
+.icon-budget-border:before { content: "\e824"; }
+.icon-buy-back-border:before { content: "\e825"; }
+.icon-end-of-life-border:before { content: "\e826"; }
+.icon-gray-market-border:before { content: "\e827"; }
+.icon-minimize-cash-border:before { content: "\e828"; }
+.icon-refurbished-equip-border:before { content: "\e829"; }
+.icon-tax-advant-border:before { content: "\e830"; }
+.icon-germany-border:before { content: "\e831"; }
+.icon-large-biz-border:before { content: "\e833"; }
+.icon-small-biz-border:before { content: "\e832"; }
+.icon-mobile-caller-border:before { content: "\e834"; }
+.icon-mobile-caller-one-border:before { content: "\e835"; }
+.icon-police-border:before { content: "\e836"; }
+.icon-law-border-border:before { content: "\e837"; }
+.icon-gov-border:before { content: "\e838"; }
+.icon-gov-one-border:before { content: "\e839"; }
+.icon-vantage-border:before { content: "\e840"; }
+
+.icon-add-border:before {content: "\e90a";}
+.icon-affordable-border:before {content: "\e90b";}
+.icon-agenda-border:before {content: "\e90c";}
+.icon-arrow-down-border:before {content: "\e90d";}
+.icon-arrow-left-border:before {content: "\e90e";}
+.icon-arrow-right-border:before {content: "\e90f";}
+.icon-arrow-up-border:before {content: "\e91a";}
+.icon-best-practices-border:before {content: "\e91b";}
+.icon-blog1-border:before {content: "\e91c";}
+.icon-booth-border:before {content: "\e91d";}
+.icon-calendar-border:before {content: "\e91f";}
+.icon-cc-supervisor-border:before {content: "\e929";}
+.icon-checkmark-border:before {content: "\e92a";}
+.icon-cloud-avaya-live-border:before {content: "\e92b";}
+.icon-cloud-avaya-border:before {content: "\e92c";}
+.icon-cloud-video-border:before {content: "\e92d";}
+.icon-commitment-border:before {content: "\e92e";}
+.icon-computer-border:before {content: "\e92f";}
+.icon-context-store-border:before {content: "\e93a";}
+.icon-contracts-border:before {content: "\e93b";}
+.icon-copy-border:before {content: "\e93c";}
+.icon-dashboard-border:before {content: "\e93d";}
+.icon-dialer-border:before {content: "\e93e";}
+.icon-digital-info-border:before {content: "\e93f";}
+.icon-disrupt-border:before {content: "\e94a";}
+.icon-download-border:before {content: "\e94b";}
+.icon-edit-border:before {content: "\e94c";}
+.icon-email-voice-integration-border:before {content: "\e94d";}
+.icon-energize-border:before {content: "\e94e";}
+.icon-fax-border:before {content: "\e95a";}
+.icon-hearing-border:before {content: "\e95b";}
+.icon-heterogeneity-border:before {content: "\e95c";}
+.icon-hospital-border:before {content: "\e97e";}
+.icon-image-border:before {content: "\e97f";}
+.icon-implementation-credits-border:before {content: "\e98a";}
+.icon-increase-costs-border:before {content: "\e98b";}
+.icon-interoperability-border:before {content: "\e98c";}
+.icon-investor-relations1-border:before {content: "\e98d";}
+.icon-last-year-info-border:before {content: "\e98e";}
+.icon-licensing-border:before {content: "\e98f";}
+.icon-locations-border:before {content: "\e994";}
+.icon-mesh-architecture-border:before {content: "\e995";}
+.icon-multicast-border:before {content: "\e996";}
+.icon-notifications-border:before {content: "\e997";}
+.icon-objective-border:before {content: "\e998";}
+.icon-orders-border:before {content: "\e999";}
+.icon-paragraph-border:before {content: "\e99a";}
+.icon-parts-list-border:before {content: "\e99b";}
+.icon-pin-border:before {content: "\e99c";}
+.icon-pr-ar-border:before {content: "\e99d";}
+.icon-print-border:before {content: "\e99e";}
+.icon-product-placement-border:before {content: "\e99f";}
+.icon-reduce-costs-border:before {content: "\e9a0";}
+.icon-refresh-border:before {content: "\e9a1";}
+.icon-register-border:before {content: "\e9a2";}
+.icon-reliability-border:before {content: "\e9a3";}
+.icon-responsibility-report-border:before {content: "\e9a4";}
+.icon-save-the-date-border:before {content: "\e9a5";}
+.icon-save-border:before {content: "\e9a6";}
+.icon-scopia-border:before {content: "\e9a7";}
+.icon-security-border:before {content: "\e9a8";}
+.icon-settings-border:before {content: "\e9a9";}
+.icon-share-border:before {content: "\e9aa";}
+.icon-sms-border:before {content: "\e9ab";}
+.icon-sound-border:before {content: "\e9ac";}
+.icon-speech-recognition-border:before {content: "\e9ad";}
+.icon-sponsorship-border:before {content: "\e9ae";}
+.icon-touchtone-phone-border:before {content: "\e9af";}
+.icon-trash-border:before {content: "\e9b1";}
+.icon-truck-border:before {content: "\e9b2";}
+.icon-upload-border:before {content: "\e9b3";}
+.icon-orders-border:before {content: "\e91e";}
+.icon-filter-border:before {content: "\e95e";}
+.icon-history-border:before {content: "\e95d";}
+.icon-clipboard-border:before {content: "\e94f";}
+.icon-avatar-border:before {content: "\e95f";}
+.icon-menu-border:before {content: "\e963";}

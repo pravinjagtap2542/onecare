@@ -1,0 +1,19 @@
+<footer class="footer">
+    <div class="footer-links">
+      <div class="logo"></div>
+      <div class="links">
+          <p *ngFor="let link of footer.footerlinks" >
+    <!-- <a href="" *ngIf = "link.title =='Cookies'" onclick="delete_cookie()"> {{link.title}} </a> -->
+       <!-- <button type="button" *ngIf = "link.title =='Cookies'" onclick="delete_cookie()"> {{link.title}} </button> -->
+       <a class="optanon-show-settings"  *ngIf = "link.title =='Cookies'"  data-ignore-geolocation="true" href="/" onclick="delete_cookie()" > Cookies </a> 
+       <!-- OptanonAlertBoxClosed=; path=/; domain=.www.avaya.com; expires=' + new Date(0).toUTCString(); document.cookie = 'OptanonConsent=; path=/; domain=.www.avaya.com; expires=' + new Date(0).toUTCString() -->
+        <a [href]="link.url" *ngIf="link.title!='Cookies'"> {{link.title}} </a>
+         
+       </p>
+      </div>
+      <div class="copyright">
+          <p> {{footer.footernote}} </p>
+      </div>
+    </div>
+  </footer>
+  

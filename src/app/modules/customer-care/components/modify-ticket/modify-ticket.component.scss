@@ -1,0 +1,193 @@
+@import "../../../../../stylesheets/abstracts/_variables.scss";
+@import "../../../../../stylesheets/abstracts/_mixins.scss";
+@import "../../../../../stylesheets/base/_helpers.scss";
+.modify-ticket {
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+  background: $color-light-gray;
+  .modify-ticket-info {
+    flex: 1;
+    margin-right: 40px;
+    .label-group {
+      margin-bottom: 20px;
+      .label {
+        margin-bottom: 5px;
+        font-size: $text-font-size-small;
+      }
+      .label-info {
+        padding: 5px;
+        background: $color-lighter-gray;
+        font-size: $text-font-size-small;
+        min-height: 27px;
+      }
+    }
+  }
+  .modify-ticket-tabs {
+    flex: 3;
+    ul.tabs {
+      li {
+        padding: 13px 35px;
+        margin-right: 2px;
+        color: $white;
+        background: $jelly-bean;
+        display: inline-block;
+        font-size: $text-font-size-small;
+        cursor: pointer;
+        &.selected {
+          color: $text-color;
+          background: $white;
+        }
+      }
+    }
+    .tab-content {
+      padding: 60px 10px;
+      background: #fff;
+      font-size: $text-font-size-small;
+      color: $text-gray;
+      p {
+        margin-bottom: 10px;
+        font-size: $text-font-size-small;
+      }
+      .title {
+        padding: 15px 0 5px;
+        font-size: $text-font-size;
+        color: $text-color;
+        
+      }
+      
+      .info {
+        padding: 10px;
+        background: $mercury;
+        font-size: $text-font-size-small;
+        min-height: 100px;
+        color: $text-color;
+        ul li pre {
+          white-space: pre-wrap;
+          line-height: 20px;
+          word-wrap: break-word;
+        }
+        &.mainTitle{
+          min-height: 40px;
+        }
+      }
+      .heading {
+        margin: 20px 0 0;
+        font-size: $text-font-size;
+        color: $text-color;
+        border-bottom: 1px solid $silver;
+        padding-bottom: 8px;
+      }
+      .fileName{
+        color : blue;
+        &:hover{
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+      .updates-info-textarea {
+        width: 100%;
+        height: 100px;
+        outline: none;
+        resize: none;
+        padding: 10px;
+        border: 1px solid $silver;
+      }
+      .updates-heading  {
+        margin: 20px 0 0;
+        font-size: $text-font-size;
+        color: $text-color;
+        border-bottom: 1px solid $silver;
+        padding-bottom: 8px;
+      }
+      .update-info {
+        display: flex;
+        flex-direction: column;
+        max-width: $max-width;
+        font-size: 14px;
+        border: 1px solid $silver;
+        border-collapse: collapse;
+        .update-col {
+          padding: 15px;
+          border-left: 1px solid $silver;
+          &.col-update-date {
+            width: 40%;
+          }
+          &.col-update-desc {
+            width: 60%;
+          }
+        }
+        .update-header {
+          display: flex;
+          flex-direction: row;
+          .update-col {
+            background-color: $tundora;
+            color: $white;
+          }
+        }
+        .update-row {
+          display: flex;
+          flex-direction: row;
+          &:nth-child(2n+1) {
+            background: $mercury;
+          }
+        }
+      }
+      .button-wrapper {
+        width: 100%;
+        margin: 100px auto;
+        text-align: center;
+        .btn {
+          width: 30%;
+        }
+      }
+    }
+  }
+
+  .tab-content{
+    .actionDropdown{
+      border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    padding: 2px 13px;
+    width: 50%;
+    height: 30px;
+    outline: 0;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    display: block;
+    .modify-ticket-info {
+      margin-right: 0;
+      display: none;
+    }
+    .modify-ticket-tabs {
+      flex: 3;
+      ul.tabs {
+        li {
+          padding: 13px 15px;
+        }
+      }
+      .tab-content {
+        padding: 25px 20px;
+        .button-wrapper {
+          .btn {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.submitUpdate {
+  padding-top: 13px;
+}
+.fileScaninfo{
+  color: blue;
+  font-size: $text-font-size-small;
+  width:100%;
+  padding-top: 25px;
+  text-align: left;
+  float: left;
+}

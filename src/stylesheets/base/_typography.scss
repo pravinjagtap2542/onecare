@@ -1,0 +1,34 @@
+/**
+ * Basic typography style for copy text
+ */
+body {
+  color: $text-color;
+  font: normal 100% $avaya-font;
+  font-family: $avaya-font !important;
+  line-height: normal;
+  margin: 0 !important;
+  padding: 0;
+}
+
+h1 {
+  font-size: $h1-font-size;
+}
+h2 {
+  font-size: $h2-font-size;
+}
+h3 {
+  font-size: $h3-font-size;
+}
+h4 {
+  font-size: $h4-font-size;
+}
+h5 {
+  font-size: $h5-font-size;
+}
+h6 {
+  font-size: $h6-font-size;
+}
+
+p {
+  font-size: $text-font-size;
+}
